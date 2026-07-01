@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanks — Julie Chasen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: #eef3f7;
+    color: #00263e;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .card {
+    background: #ffffff;
+    max-width: 560px; width: 100%;
+    padding: 56px 48px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 38, 62, 0.08);
+  }
+  .check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px;
+    background: #f5a800;
+    border-radius: 50%;
+    margin-bottom: 28px;
+    color: #00263e;
+    font-size: 30px; font-weight: 700;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #007db4;
+    margin-bottom: 14px; font-weight: 500;
+  }
+  h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: 2.2rem;
+    letter-spacing: -0.02em; line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  h1 em { color: #007db4; font-style: italic; }
+  p { color: #4e738a; font-size: 1rem; margin-bottom: 12px; }
+  .back {
+    margin-top: 32px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #00263e; color: #ffffff;
+    padding: 13px 24px; border-radius: 999px;
+    font-weight: 600; font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .back:hover { background: #007db4; }
+  .back .arrow { transition: transform 0.2s; }
+  .back:hover .arrow { transform: translateX(-3px); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <span class="eyebrow">Reservation received</span>
+    <h1>You're <em>in</em>.</h1>
+    <p>I'll confirm your spot and send the exact date, venue, and payment details as soon as they're locked.</p>
+    <p>Watch your inbox — and thanks for reserving.</p>
+    <a href="/" class="back"><span class="arrow">←</span> Back to portfolio</a>
+  </div>
+</body>
+</html>
