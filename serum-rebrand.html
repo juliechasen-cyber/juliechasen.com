@@ -471,6 +471,66 @@
     font-size: 0.72rem; color: #5a6a6f;
   }
 
+  /* ---------- PRODUCT SHELF ---------- */
+  section.products-shelf {
+    padding: 100px 0 120px;
+    background: var(--white);
+  }
+  .products-shelf .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--granite); margin-bottom: 20px;
+  }
+  .products-shelf .section-eyebrow::before {
+    content: ""; width: 28px; height: 1px; background: var(--sky);
+  }
+  .products-shelf .shelf-lede {
+    color: var(--granite); font-size: 1.05rem;
+    line-height: 1.65; max-width: 60ch;
+    margin-bottom: 64px;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 24px;
+  }
+  .product-card {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+  }
+  .product-card-img {
+    width: 100%; aspect-ratio: 4/5;
+    display: flex; align-items: center; justify-content: center;
+    background: #fefefe;
+    padding: 24px;
+  }
+  .product-card-img img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+  }
+  .product-card-name {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-top: 22px;
+  }
+  .product-card-price {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.95rem;
+    color: var(--granite);
+    margin-top: 8px;
+  }
+  @media (max-width: 720px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 20px;
+    }
+  }
+
   /* ---------- CTA ---------- */
   section.cta-block {
     background: var(--navy); color: var(--white);
@@ -670,6 +730,49 @@
         </div>
       </div>
       <div class="laptop-base"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT SHELF -->
+<section class="products-shelf">
+  <div class="wrap">
+    <span class="section-eyebrow">The product line</span>
+    <h2 class="section-h">The full <em>refreshed catalog</em>.</h2>
+    <p class="shelf-lede">Four SKUs, one visual system. New naming, new labels, new photography — every product now reads as part of the same premium brand.</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-card-img">
+          <img src="images/products/tantrik-yoni.webp" alt="Tantrik Yoni pleasure serum — amber bottle with pink botanical label">
+        </div>
+        <div class="product-card-name">Tantrik Yoni</div>
+        <div class="product-card-price">$24.00</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img">
+          <img src="images/products/rub-away.webp" alt="Rub Away CBD and Chinese pain relief salve — amber jar with teal botanical label">
+        </div>
+        <div class="product-card-name">Rub Away</div>
+        <div class="product-card-price">$38.00</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img">
+          <img src="images/products/hanitizer.webp" alt="Hanitizer lemongrass and eucalyptus hand sanitizer — amber spray bottle with teal botanical label">
+        </div>
+        <div class="product-card-name">Hanitizer</div>
+        <div class="product-card-price">$18.00</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img">
+          <img src="images/products/pure-lehua.webp" alt="Pure Lehua cleanser and mask — amber bottle with teal botanical label">
+        </div>
+        <div class="product-card-name">Pure Lehua</div>
+        <div class="product-card-price">$36.00</div>
+      </div>
     </div>
   </div>
 </section>
