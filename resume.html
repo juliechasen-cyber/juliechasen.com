@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julie Chasen — Resume</title>
+<meta name="description" content="Award-winning senior marketing leader — 10+ years across digital, content, brand, and PR, with deep expertise in commercial real estate and structured finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f3b57;
+    --body: #2a2a2a;
+    --muted: #6b6b6b;
+    --line: #e2e6ea;
+    --bg: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--body);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+  }
+
+  nav.topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.topbar .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    letter-spacing: 0.24em;
+    color: var(--ink);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 0.6; }
+  .nav-links .download {
+    padding: 8px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-links .download:hover {
+    background: var(--ink);
+    color: #fff;
+    opacity: 1;
+  }
+
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 40px 96px;
+  }
+
+  header.resume-head {
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  header.resume-head h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6vw, 3.2rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  header.resume-head .contact {
+    font-size: 0.88rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  header.resume-head .contact a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  header.resume-head .contact a:hover { border-color: var(--muted); }
+  header.resume-head .contact .dot {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--line);
+  }
+
+  section.block { margin-bottom: 40px; }
+  h2.section-title {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 20px;
+  }
+
+  p.summary {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--body);
+  }
+
+  .job { margin-bottom: 26px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+  .job-company {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .job-location {
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+  .job-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  .job-title {
+    font-style: italic;
+    font-size: 0.94rem;
+    color: var(--body);
+  }
+  .job-dates {
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .job ul {
+    list-style: none;
+    padding: 0;
+  }
+  .job li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 5px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+  .job li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    background: var(--ink);
+    border-radius: 50%;
+  }
+  .job-note {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .education-item {
+    font-size: 0.95rem;
+  }
+  .education-item strong { color: var(--ink); font-weight: 600; }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.9rem;
+  }
+  .skill-row:last-child { border-bottom: none; }
+  .skill-label {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .skill-body { color: var(--body); }
+
+  footer.page-foot {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 40px 48px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer.page-foot a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+  footer.page-foot a:hover { border-color: var(--ink); }
+
+  @media (max-width: 640px) {
+    nav.topbar .wrap { padding: 16px 20px; }
+    .brand { font-size: 0.95rem; letter-spacing: 0.2em; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 0.82rem; }
+    .nav-links .download { padding: 6px 12px; font-size: 0.72rem; }
+    main { padding: 40px 24px 64px; }
+    header.resume-head .contact .dot { display: block; height: 4px; visibility: hidden; }
+    .skill-row { grid-template-columns: 1fr; gap: 4px; }
+    footer.page-foot { padding: 24px; }
+  }
+
+  @media print {
+    nav.topbar, footer.page-foot { display: none; }
+    body { font-size: 10.5pt; }
+    main { padding: 24pt 32pt; max-width: 100%; }
+    .job li { font-size: 10pt; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Julie Chasen</a>
+    <div class="nav-links">
+      <a href="mailto:juliechasen@gmail.com">Contact</a>
+      <a href="files/julie-chasen-resume.pdf" target="_blank" rel="noopener" class="download">Download PDF</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="resume-head">
+    <h1>Julie Chasen</h1>
+    <div class="contact">
+      San Diego, CA<span class="dot">·</span>
+      <a href="tel:+16196347965">619-634-7965</a><span class="dot">·</span>
+      <a href="mailto:juliechasen@gmail.com">juliechasen@gmail.com</a><span class="dot">·</span>
+      <a href="https://juliechasen.com">juliechasen.com</a>
+    </div>
+  </header>
+
+  <section class="block">
+    <h2 class="section-title">Summary</h2>
+    <p class="summary">
+      Award-winning senior marketing leader with 10+ years of experience owning marketing strategy, budgets, and execution across digital, content, brand, and PR — with deep expertise in commercial real estate and structured finance. Helped scale a lending platform from $103M to over $1B in cumulative financing volume through data-driven campaigns, investor-ready collateral, and executive thought leadership. A rare strategist–designer hybrid: takes campaigns from positioning and messaging through finished creative — brand systems, pitch decks, and digital content — without outside agencies. Skilled at translating complex financial concepts into clear, compelling narratives, and an early adopter of AI-driven marketing workflows and automation.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-company">Chasen Designs</span><span class="job-location">— Remote</span></div>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Founder &amp; Senior Marketing Director</span>
+        <span class="job-dates">2014 – 2022</span>
+      </div>
+      <ul>
+        <li>Founded and led an independent marketing consultancy serving clients in commercial real estate, media, and professional services</li>
+        <li>Defined marketing strategy, visual identity, and digital presence for clients — from initial positioning through creative execution</li>
+        <li>Directed PR and communications initiatives, crafting narratives and external-facing content that strengthened client credibility in their markets</li>
+        <li>Oversaw creative direction and project teams, delivering brand systems, collateral, presentations, and digital content while maintaining quality and brand integrity</li>
+      </ul>
+      <div class="job-note">Independent practice paused 2022–2026 while serving in a full-time role at Bayview Asset Management.</div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-company">Bayview Asset Management</span><span class="job-location">— Remote</span></div>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Marketing Manager, Bayview PACE (subsidiary of BAM)</span>
+        <span class="job-dates">2022 – 2026</span>
+      </div>
+      <ul>
+        <li>Developed and led all marketing initiatives for a commercial lending platform that scaled from $103M in 2022 to over $1B in cumulative financing volume by early 2026</li>
+        <li>Directed brand strategy through a major platform integration as Bayview PACE became a division of Bayview Commercial Mortgage Finance, ensuring seamless market alignment</li>
+        <li>Owned and optimized the full marketing budget, allocating spend across channels to maximize ROI and campaign performance</li>
+        <li>Created all investor-ready collateral — case studies, pitch decks, deal announcements, and sponsor-facing materials — in partnership with senior leadership, originations, and underwriting</li>
+        <li>Led PR and external communications strategy: press releases, deal announcements, industry media outreach, and executive thought leadership</li>
+        <li>Analyzed performance across organic, direct, referral, email, and social channels to optimize digital strategy and improve acquisition efficiency</li>
+        <li>Owned website content strategy so the digital experience reflected the company's growth, credibility, and evolving market position</li>
+        <li>Partnered with internal AI teams to automate and enhance marketing workflows and processes</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-company">Marcus &amp; Millichap Commercial Real Estate</span><span class="job-location">— La Jolla, CA</span></div>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Marketing Coordinator</span>
+        <span class="job-dates">2017 – 2018</span>
+      </div>
+      <ul>
+        <li>Developed investor presentations, offering memoranda, and marketing packages supporting commercial real estate sales</li>
+        <li>Produced in-house marketing materials using proprietary internal software and maintained the office Marketing Center</li>
+        <li>Coordinated events, client symposiums, recruiting events, sales contests, advertising, and public relations</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-company">Fox 5 San Diego</span><span class="job-location">— San Diego, CA</span></div>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Freelance Graphic Artist</span>
+        <span class="job-dates">2009 – 2015</span>
+      </div>
+      <ul>
+        <li>Created broadcast news graphics and animations for morning and evening shows; on-call designer for special projects supporting the art director</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-company">MGN Online</span><span class="job-location">— Cardiff, CA</span></div>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Graphic Journalist</span>
+        <span class="job-dates">2011 – 2014</span>
+      </div>
+      <ul>
+        <li>Designed daily news content for print and broadcast stock libraries; in-house designer, photographer, and app/web content developer</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div><span class="job-company">Platt College</span><span class="job-location">— San Diego, CA</span></div>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Instructor — Digital Publishing &amp; Portfolio</span>
+        <span class="job-dates">2008 – 2009</span>
+      </div>
+      <ul>
+        <li>Taught Digital Publishing and Portfolio courses, developing and delivering lectures and applied coursework</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Education</h2>
+    <div class="education-item">
+      <strong>Bachelor of Arts, Digital Arts</strong> (Minor: Advertising) — Art Institute of California, San Diego
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Skills &amp; Competencies</h2>
+    <div class="skill-row">
+      <div class="skill-label">Strategy &amp; Brand</div>
+      <div class="skill-body">Integrated multi-channel campaign strategy, brand positioning, account-based marketing (ABM), audience segmentation, marketing budget management</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Digital Marketing</div>
+      <div class="skill-body">Paid search, LinkedIn advertising, SEO, content marketing, website strategy and digital experience optimization, webinar and event marketing</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Communications</div>
+      <div class="skill-body">Public and media relations, executive thought leadership, investor-ready collateral, pitch materials, and executive presentations</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">AI &amp; Operations</div>
+      <div class="skill-body">AI-driven marketing and workflow automation, marketing operations, funnel management, performance analytics and reporting</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Design &amp; Creative</div>
+      <div class="skill-body">Brand identity and visual systems, presentation and pitch deck design, marketing collateral, motion and broadcast graphics, photography, Adobe Creative Suite (Photoshop, Illustrator, InDesign)</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Tools &amp; Platforms</div>
+      <div class="skill-body">Proficient across a wide range of CRM, email marketing, web/CMS, analytics, design, and AI platforms including Salesforce, DealCloud, Constant Contact, and Adobe Creative Suite and other tools</div>
+    </div>
+  </section>
+</main>
+
+<footer class="page-foot">
+  <span>© Julie Chasen</span>
+  <a href="files/julie-chasen-resume.pdf" target="_blank" rel="noopener">Download PDF version</a>
+</footer>
+
+</body>
+</html>
