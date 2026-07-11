@@ -478,9 +478,10 @@
     min-height: 360px;
     background:
       linear-gradient(135deg,
-        #007db4 0%,
-        #4e738a 38%,
-        #f5a800 100%);
+        rgba(0, 38, 62, 0.78) 0%,
+        rgba(0, 125, 180, 0.45) 55%,
+        rgba(245, 168, 0, 0.30) 100%),
+      url('images/mission-bay-resort.jpg') center / cover no-repeat;
     display: flex; flex-direction: column; justify-content: space-between;
     padding: 36px;
     color: var(--white);
@@ -532,6 +533,11 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.4rem);
     letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .course-visual .location-addr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem; letter-spacing: 0.04em;
+    opacity: 0.9; margin-top: 10px; line-height: 1.5;
   }
   .course-visual .swap-note {
     font-family: 'JetBrains Mono', monospace;
@@ -1018,7 +1024,8 @@
       <div class="course-visual">
         <div class="v-top">
           <span class="location-label">Workshop venue</span>
-          <div class="location-name">TBD<br>San Diego, CA</div>
+          <div class="location-name">San Diego<br>Mission Bay Resort</div>
+          <div class="location-addr">Upper-upscale waterfront property<br>1775 East Mission Bay Drive<br>San Diego, CA</div>
         </div>
       </div>
 
@@ -1039,11 +1046,11 @@
         <div class="course-meta">
           <div>
             <strong>Time</strong>
-            <span>9 AM – 1 PM (4 hrs)</span>
+            <span>9 AM – 2 PM (incl. 1-hr lunch break)</span>
           </div>
           <div>
             <strong>Location</strong>
-            <span>San Diego · TBD</span>
+            <span>San Diego Mission Bay Resort</span>
           </div>
           <div>
             <strong>Date</strong>
@@ -1063,8 +1070,8 @@
             <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
             <button type="submit" class="course-cta">Reserve your spot <span class="arrow">→</span></button>
           </div>
-          <p class="form-note">I'll confirm your reservation and send the exact date, venue, and payment details as soon as they're locked.</p>
-          <p class="reservation-count"><span class="dot-green"></span>5 reserved already · Limited spots</p>
+          <p class="form-note">I'll confirm your reservation and send the exact date and payment details as soon as they're locked.</p>
+          <p class="reservation-count"><span class="dot-green"></span>Only 10 spots available — make sure you get yours</p>
         </form>
       </div>
     </div>
@@ -1078,7 +1085,8 @@
     <h2 class="section-title display">Have a project? <em>Let's talk</em>.</h2>
     <p class="lede">Tell me what you're working on — or what you're stuck on. I'll respond within a day, usually faster.</p>
     <div class="contact-actions">
-      <a href="mailto:juliechasen@gmail.com" class="btn btn-primary">juliechasen@gmail.com <span class="btn-arrow">→</span></a>
+      <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0wqBh9oxfbtuU5iaZpJvBOqS7SP9bGlgC5tr0jcGwWPfNfMzP9B_DH7e7DwqgpUEupeqvEG-YW" class="btn btn-primary" target="_blank" rel="noopener">Schedule a meeting <span class="btn-arrow">→</span></a>
+      <a href="mailto:juliechasen@gmail.com" class="btn btn-secondary">juliechasen@gmail.com</a>
       <a href="https://www.linkedin.com/in/juliechasen/" class="btn btn-secondary" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
   </div>
