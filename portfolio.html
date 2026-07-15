@@ -253,6 +253,48 @@
     font-size: 0.82rem;
     font-family: 'Manrope', sans-serif;
   }
+  .work-cover.cover-press-release {
+    background: linear-gradient(135deg, #00263e 0%, #007db4 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: var(--white); padding: 24px;
+    text-align: center;
+  }
+  .work-cover.cover-press-release .placeholder-label { display: none; }
+  .work-cover.cover-press-release .stat-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #f5a800;
+    margin-bottom: 12px; font-weight: 600;
+  }
+  .work-cover.cover-press-release .stat-number {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 7vw, 4.6rem);
+    line-height: 1; letter-spacing: -0.03em;
+    color: var(--white);
+  }
+  .work-cover.cover-press-release .stat-sub {
+    margin-top: 12px;
+    color: rgba(255,255,255,0.72);
+    font-size: 0.82rem;
+    font-family: 'Manrope', sans-serif;
+    max-width: 22ch;
+  }
+  .work-cover.cover-press-release .live-badge {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 10px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .work-cover.cover-press-release .live-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: #f5a800; box-shadow: 0 0 0 3px rgba(245,168,0,0.28);
+  }
   .work-cover .placeholder-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
@@ -878,7 +920,25 @@
 
     <div class="work-grid">
 
-      <!-- CASE 1: National Commercial Lending Platform (hero proof) -->
+      <!-- CASE 1: Free Press Release Generator (live tool) -->
+      <a href="/press-release-generator" class="work-card">
+        <div class="work-cover cover-press-release">
+          <span class="live-badge">Free Tool · Live</span>
+          <span class="stat-eyebrow">Draft in ~60 seconds</span>
+          <span class="stat-number">CRE Press<br>Release Tool</span>
+          <span class="stat-sub">Free for brokers &amp; principals. No login, no payment.</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Commercial Real Estate</span><span class="dot">·</span><span>Live Tool</span>
+          </div>
+          <h3 class="work-title">A free press release generator for the CRE industry</h3>
+          <p class="work-desc">Built end to end — Next.js app, Claude Sonnet drafting, .docx and .pdf output with the property photo dropped in. Pick a release type (Coming Soon, Just Listed, Just Sold), fill a short form, get a publish-ready first draft. A gift to the industry, and a preview of the larger AI marketing platform I'm building for CRE.</p>
+          <span class="work-tag">Open the tool →</span>
+        </div>
+      </a>
+
+      <!-- CASE 2: National Commercial Lending Platform (hero proof) -->
       <a href="/lending-platform" class="work-card">
         <div class="work-cover cover-finance">
           <span class="placeholder-label"></span>
@@ -893,7 +953,7 @@
         </div>
       </a>
 
-      <!-- CASE 2: TFP Donation Portal -->
+      <!-- CASE 3: TFP Donation Portal -->
       <a href="/tfp-portal" class="work-card">
         <div class="work-cover cover-tfp-portal">
           <span class="stat-eyebrow">Platform-Layer Fees</span>
@@ -910,7 +970,7 @@
         </div>
       </a>
 
-      <!-- CASE 3: CRE Brokerage Systems -->
+      <!-- CASE 4: CRE Brokerage Systems -->
       <a href="/cre-collateral" class="work-card">
         <div class="work-cover cover-mm">
           <span class="placeholder-label"></span>
@@ -925,7 +985,7 @@
         </div>
       </a>
 
-      <!-- CASE 4: Serum Brand Refresh -->
+      <!-- CASE 5: Serum Brand Refresh -->
       <a href="/serum-rebrand" class="work-card">
         <div class="work-cover cover-olanani">
           <span class="placeholder-label"></span>
