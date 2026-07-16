@@ -537,6 +537,18 @@
   }
   footer .mono { color: var(--granite); }
   footer a { color: inherit; text-decoration: none; }
+
+  /* Print — used by the .pdf download (Save as PDF). Show only the draft. */
+  @media print {
+    body * { visibility: hidden; }
+    #preview_body, #preview_body * { visibility: visible; }
+    #preview_body {
+      position: absolute; left: 0; top: 0; width: 100%;
+      padding: 48px; filter: none !important;
+    }
+    #preview_body .slot { background: none; color: #000; padding: 0; }
+    #preview_body .powered { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -553,7 +565,7 @@
   <div class="wrap">
     <span class="eyebrow-row mono">A free tool for the CRE industry</span>
     <div class="client-line">Built end to end by Julie Chasen</div>
-    <h1 class="case-title">Draft a CRE press release in about a <em>minute</em>.</h1>
+    <h1 class="case-title">Draft a CRE <em>press release</em>.</h1>
     <p class="case-lede">A tool for brokers and principals — pick a release type, fill a short form, upload a property image, and get a publish-ready first draft. Free to try, no signup — just your email, and the draft is yours.</p>
     <div class="badge-row">
       <span class="badge"><span class="dot"></span>Free to try</span>
@@ -562,60 +574,223 @@
       <span class="badge"><span class="dot"></span>.docx &amp; .pdf</span>
     </div>
     <div class="cta-row">
-      <a href="https://cre-press-release-generator.vercel.app" class="btn-hero btn-white" target="_blank" rel="noopener">Open the tool <span class="btn-arrow">↗</span></a>
+      <a href="#tool" class="btn-hero btn-white">Open the tool <span class="btn-arrow">↓</span></a>
       <a href="#fits" class="btn-hero btn-ghost-dark">Why I built it</a>
     </div>
   </div>
 </header>
 
-<section class="what">
-  <div class="wrap">
-    <span class="section-eyebrow mono">Three release types, one wire format</span>
-    <h2 class="section-h">Pick the moment. The tool handles the <em>structure</em>.</h2>
-
-    <div class="what-grid">
-      <div class="what-item">
-        <span class="what-num">01 — Coming Soon</span>
-        <h3>Pre-market whisper release</h3>
-        <p>For high-profile, generational, or unique assets going out before official marketing materials circulate. Pricing stays private by default; the distinguishing fact leads.</p>
-      </div>
-      <div class="what-item">
-        <span class="what-num">02 — Just Listed</span>
-        <h3>Exclusive listing announcement</h3>
-        <p>The workhorse. Front-loads the news and the numbers; bounded superlatives only when the facts back them up. Ready to send to trade press.</p>
-      </div>
-      <div class="what-item">
-        <span class="what-num">03 — Just Sold</span>
-        <h3>Closed transaction release</h3>
-        <p>Celebrates execution and proves the track record. Missing facts (buyer, closing date) become bracketed slots — never invented, always flagged for a disclosure check.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="tool" id="tool">
   <div class="wrap">
     <div class="tool-header">
       <span class="section-eyebrow mono">Use it now</span>
-      <h2 class="section-h">The tool is <em>live</em>.</h2>
+      <h2 class="section-h">Draft your press release.</h2>
     </div>
 
-    <div class="launch-card">
-      <div class="launch-copy">
-        <span class="launch-eyebrow">What you get</span>
-        <ul class="launch-list">
-          <li><strong>Pick a release type</strong> — Coming Soon, Just Listed, or Just Sold.</li>
-          <li><strong>Fill a short form</strong> — property, deal, broker, firm, an optional photo.</li>
-          <li><strong>Get a wire-format draft</strong> in about 15 seconds.</li>
-          <li><strong>Copy the text</strong>, or download it as <strong>.docx</strong> or <strong>.pdf</strong> with your photo dropped in.</li>
-        </ul>
-        <p class="launch-fine">No login. No payment to start. Rate-limited to 5 drafts a day per person.</p>
-      </div>
-      <a href="https://cre-press-release-generator.vercel.app" class="launch-btn" target="_blank" rel="noopener">
-        <span class="launch-btn-eyebrow">Free · No login</span>
-        <span class="launch-btn-main">Open the tool</span>
-        <span class="launch-btn-arrow">↗</span>
-      </a>
+    <div class="app">
+      <!-- FORM -->
+      <section class="form-panel">
+        <h3 class="panel-h">Tell us about the deal</h3>
+        <p class="panel-note">Fill the form — the draft on the right builds as you type. Everything stays in your browser.</p>
+
+        <fieldset>
+          <legend>Release type</legend>
+          <div class="radio-row">
+            <label><input type="radio" name="release_type" value="coming-soon">Coming Soon</label>
+            <label><input type="radio" name="release_type" value="just-listed" checked>Just Listed</label>
+            <label><input type="radio" name="release_type" value="just-sold">Just Sold</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>The property</legend>
+          <div class="field">
+            <label>Property name <span class="opt">(optional)</span></label>
+            <input type="text" id="property_name" value="Franklin Business Park">
+          </div>
+          <div class="field">
+            <label>Street address <span class="req">*</span></label>
+            <input type="text" id="property_address" value="4200 W. Van Buren St.">
+          </div>
+          <div class="two-col">
+            <div class="field">
+              <label>City <span class="req">*</span></label>
+              <input type="text" id="city" value="Phoenix">
+            </div>
+            <div class="field">
+              <label>State <span class="req">*</span></label>
+              <select id="state">
+                <option>AZ</option><option>CA</option><option>CO</option><option>FL</option><option>NY</option><option>TX</option>
+              </select>
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="field">
+              <label>Property type <span class="req">*</span></label>
+              <select id="property_type">
+                <option value="office">Office</option>
+                <option value="multifamily">Multifamily</option>
+                <option value="industrial" selected>Industrial</option>
+                <option value="retail">Retail</option>
+                <option value="mixed-use">Mixed-use</option>
+                <option value="hospitality">Hospitality</option>
+                <option value="land">Land</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Year built <span class="opt">(optional)</span></label>
+              <input type="number" id="year_built" value="2019">
+            </div>
+          </div>
+          <div class="two-col">
+            <div class="field">
+              <label>Key stat <span class="req">*</span></label>
+              <input type="number" id="key_stat_value" value="284000">
+            </div>
+            <div class="field">
+              <label>Unit <span class="req">*</span></label>
+              <select id="key_stat_unit">
+                <option>units</option>
+                <option selected>square feet</option>
+                <option>keys</option>
+                <option>acres</option>
+              </select>
+            </div>
+          </div>
+          <div class="field" id="distinguishing_wrap">
+            <label>What makes this news? <span id="distinguishing_req" class="opt">(optional)</span></label>
+            <textarea id="distinguishing_fact">Four-building Class A industrial park in the Southwest Valley — first institutional-quality product to trade in the submarket in over 18 months.</textarea>
+            <span class="hint">One or two sentences. Required for Coming Soon.</span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Price &amp; transaction</legend>
+          <div class="field" id="asking_price_wrap">
+            <label id="asking_price_label">Asking price <span class="opt" id="asking_price_opt">(optional)</span></label>
+            <input type="number" id="asking_price" value="62500000">
+          </div>
+          <div class="checkbox-field conditional" id="price_visible_wrap">
+            <input type="checkbox" id="price_visible_in_release">
+            <label for="price_visible_in_release">Show the price in the release (Coming Soon default: hidden)</label>
+          </div>
+          <div class="conditional" id="just_sold_fields">
+            <div class="two-col">
+              <div class="field">
+                <label>Buyer <span class="opt">(optional)</span></label>
+                <input type="text" id="buyer_name" placeholder="Leave blank if not for disclosure">
+              </div>
+              <div class="field">
+                <label>Seller <span class="opt">(optional)</span></label>
+                <input type="text" id="seller_name">
+              </div>
+            </div>
+            <div class="field">
+              <label>Closing date <span class="opt">(optional)</span></label>
+              <input type="date" id="closing_date">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Broker &amp; firm</legend>
+          <div class="two-col">
+            <div class="field">
+              <label>Broker name <span class="req">*</span></label>
+              <input type="text" id="broker_name" value="Rachel Halverson">
+            </div>
+            <div class="field">
+              <label>Title <span class="req">*</span></label>
+              <input type="text" id="broker_title" value="Senior Managing Director">
+            </div>
+          </div>
+          <div class="field">
+            <label>Firm name <span class="req">*</span></label>
+            <input type="text" id="firm_name" value="Halverson Industrial Advisors">
+          </div>
+          <div class="field">
+            <label>Firm boilerplate <span class="opt">(optional — will slot in if blank)</span></label>
+            <textarea id="firm_boilerplate">Halverson Industrial Advisors is a Phoenix-based commercial real estate brokerage focused exclusively on industrial investment sales in the Southwest. The firm has closed over $2.4 billion in transactions since 2011.</textarea>
+          </div>
+          <div class="three-col">
+            <div class="field">
+              <label>Media contact <span class="opt">(optional)</span></label>
+              <input type="text" id="media_contact_name" placeholder="Falls back to broker">
+            </div>
+            <div class="field">
+              <label>Email <span class="opt">(optional)</span></label>
+              <input type="email" id="media_contact_email" value="press@halversoncre.com">
+            </div>
+            <div class="field">
+              <label>Phone <span class="opt">(optional)</span></label>
+              <input type="tel" id="media_contact_phone" value="(602) 555-0184">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Voice (optional)</legend>
+          <div class="field">
+            <label>Draft quote <span class="opt">(leave blank and we'll draft one for approval)</span></label>
+            <textarea id="draft_quote" placeholder="Broker's own words — will be used verbatim if provided."></textarea>
+          </div>
+          <div class="field">
+            <label>Angle hint for the quote <span class="opt">(if you leave the quote blank)</span></label>
+            <input type="text" id="quote_angle_hint" value="Emphasize the scarcity of institutional-quality industrial product in the Southwest Valley.">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Property image (optional)</legend>
+          <label class="file-drop" for="property_image">
+            <input type="file" id="property_image" accept="image/jpeg,image/png">
+            <span id="file_label">Click to upload — JPEG or PNG, landscape preferred, max 10MB</span>
+          </label>
+          <div class="field" style="margin-top:12px;">
+            <label>Photo credit <span class="opt">(optional)</span></label>
+            <input type="text" id="image_credit" placeholder="e.g. Jane Doe / Aerial Studio">
+          </div>
+        </fieldset>
+
+        <div class="privacy-note">
+          Your entries are used only to build this draft, right here in your browser — <strong>nothing is stored</strong>. Enter your email once to unlock the draft and downloads. It's <strong>free</strong> — no account, no payment.
+        </div>
+      </section>
+
+      <!-- PREVIEW -->
+      <section class="preview-panel locked" id="preview_panel">
+        <div class="preview-header">
+          <h3 class="panel-h">Your draft press release</h3>
+          <span class="live"><span class="dot"></span>Live preview</span>
+        </div>
+        <div class="preview-body" id="preview_body"></div>
+        <div class="warnings hidden" id="warnings_box">
+          <ul id="warnings_list"></ul>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn-tool" onclick="copyDraft()">Copy text</button>
+          <button type="button" class="btn-tool primary" onclick="downloadDoc()">Download .docx</button>
+          <button type="button" class="btn-tool" onclick="downloadPdf()">Download .pdf</button>
+          <button type="button" class="btn-tool" onclick="resetForm()">Start over</button>
+        </div>
+        <div class="gate-overlay">
+          <div class="gate-card">
+            <span class="gate-eyebrow">One step</span>
+            <h3>See your draft</h3>
+            <p>Enter your email to unlock the full draft plus the .docx and .pdf downloads. Free — no account, no payment.</p>
+            <div class="field">
+              <label>Email address <span class="req">*</span></label>
+              <input type="email" id="gate_email" placeholder="you@brokerage.com">
+            </div>
+            <div class="checkbox-field">
+              <input type="checkbox" id="gate_optin">
+              <label for="gate_optin">Send me occasional updates about CRE Northstar, Julie Chasen's AI marketing platform for CRE brokers.</label>
+            </div>
+            <button type="button" class="btn-tool primary" onclick="unlockGate()">Unlock my draft</button>
+            <p class="gate-micro">Rate-limited to 5 drafts a day. Your email isn't shared.</p>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </section>
@@ -623,7 +798,7 @@
 <section class="fits" id="fits">
   <div class="wrap">
     <span class="section-eyebrow mono">Why I built this</span>
-    <h2 class="section-h">A gift to the industry — and a preview of what I'm <em>building next</em>.</h2>
+    <h2 class="section-h">A gift to the industry.</h2>
     <div class="fits-body">
       <p>I spent years inside one of the country's largest CRE brokerages watching how much time — and how many missed launch windows — went into press releases that never got written. The wire format is well-defined; the bottleneck is drafting.</p>
       <p><strong>No account. No paywall.</strong></p>
@@ -650,6 +825,331 @@
   </div>
 </footer>
 
+<div class="toast" id="toast"></div>
+
+<script>
+  // --- Sample data per release type --------------------------------------
+  const samples = {
+    'coming-soon': {
+      property_name: 'The Alden',
+      property_address: '3200 University Ave.',
+      city: 'San Diego', state: 'CA',
+      property_type: 'multifamily',
+      year_built: '2024',
+      key_stat_value: '118', key_stat_unit: 'units',
+      distinguishing_fact: 'Brand-new Class A multifamily in North Park — first ground-up institutional delivery in the submarket since 2019.',
+      asking_price: '', price_visible_in_release: false,
+      broker_name: 'Diane Ortiz', broker_title: 'Executive Vice President',
+      firm_name: 'Ortiz Multifamily Group',
+      firm_boilerplate: 'Ortiz Multifamily Group is a San Diego–based multifamily investment sales team with $3.1 billion in career transactions across Southern California.',
+      draft_quote: '', quote_angle_hint: 'Emphasize the whisper-campaign posture and generational nature of the asset.',
+      media_contact_name: '', media_contact_email: 'press@ortizmg.com', media_contact_phone: '(619) 555-0142',
+      image_credit: ''
+    },
+    'just-listed': {
+      property_name: 'Franklin Business Park',
+      property_address: '4200 W. Van Buren St.',
+      city: 'Phoenix', state: 'AZ',
+      property_type: 'industrial',
+      year_built: '2019',
+      key_stat_value: '284000', key_stat_unit: 'square feet',
+      distinguishing_fact: 'Four-building Class A industrial park in the Southwest Valley — first institutional-quality product to trade in the submarket in over 18 months.',
+      asking_price: '62500000',
+      broker_name: 'Rachel Halverson', broker_title: 'Senior Managing Director',
+      firm_name: 'Halverson Industrial Advisors',
+      firm_boilerplate: 'Halverson Industrial Advisors is a Phoenix-based commercial real estate brokerage focused exclusively on industrial investment sales in the Southwest. The firm has closed over $2.4 billion in transactions since 2011.',
+      draft_quote: '', quote_angle_hint: 'Emphasize the scarcity of institutional-quality industrial product in the Southwest Valley.',
+      media_contact_name: '', media_contact_email: 'press@halversoncre.com', media_contact_phone: '(602) 555-0184',
+      image_credit: ''
+    },
+    'just-sold': {
+      property_name: 'The Merchant Building',
+      property_address: '1815 Blake St.',
+      city: 'Denver', state: 'CO',
+      property_type: 'mixed-use',
+      year_built: '1902',
+      key_stat_value: '42', key_stat_unit: 'units',
+      distinguishing_fact: 'Historic LoDo mixed-use trophy — 42 loft residences over 8,400 SF of ground-floor retail, fully leased at close.',
+      asking_price: '38400000',
+      buyer_name: 'Cascade Peak Capital', seller_name: 'Pinnacle Blake Holdings LLC', closing_date: '2026-06-24',
+      broker_name: 'Marcus Chen', broker_title: 'Vice Chairman',
+      firm_name: 'Chen Capital Markets',
+      firm_boilerplate: 'Chen Capital Markets advises institutional investors and family offices on mixed-use and adaptive-reuse transactions throughout the Mountain West.',
+      draft_quote: '', quote_angle_hint: "Celebrate execution in a slow market; note the buyer's long-term hold thesis.",
+      media_contact_name: '', media_contact_email: 'press@chencapital.com', media_contact_phone: '(303) 555-0119',
+      image_credit: ''
+    }
+  };
+
+  // --- State helpers -----------------------------------------------------
+  function currentType() {
+    return document.querySelector('input[name="release_type"]:checked').value;
+  }
+  function loadSample(type) {
+    const s = samples[type];
+    for (const k in s) {
+      const el = document.getElementById(k);
+      if (!el) continue;
+      if (el.type === 'checkbox') { el.checked = !!s[k]; }
+      else { el.value = s[k]; }
+    }
+    applyConditionalFields();
+    render();
+  }
+
+  function applyConditionalFields() {
+    const type = currentType();
+    document.getElementById('just_sold_fields').classList.toggle('show', type === 'just-sold');
+    document.getElementById('price_visible_wrap').classList.toggle('show', type === 'coming-soon');
+    const askLabel = document.getElementById('asking_price_label');
+    const askOpt = document.getElementById('asking_price_opt');
+    const distReq = document.getElementById('distinguishing_req');
+    if (type === 'just-sold') {
+      askLabel.childNodes[0].textContent = 'Sale price ';
+      askOpt.innerHTML = '<span class="req">*</span>';
+      distReq.textContent = '(optional)';
+      distReq.classList.remove('req'); distReq.classList.add('opt');
+    } else if (type === 'coming-soon') {
+      askLabel.childNodes[0].textContent = 'Asking price ';
+      askOpt.innerHTML = '(optional — hidden by default)';
+      distReq.textContent = '';
+      distReq.innerHTML = '<span class="req">*</span>';
+    } else {
+      askLabel.childNodes[0].textContent = 'Asking price ';
+      askOpt.innerHTML = '(optional)';
+      distReq.innerHTML = '(optional)';
+    }
+  }
+
+  // --- Value collectors --------------------------------------------------
+  function v(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function isChecked(id) { const el = document.getElementById(id); return el ? el.checked : false; }
+  function fmtMoney(n) {
+    if (!n) return '';
+    const num = Number(n);
+    if (!Number.isFinite(num)) return '';
+    if (num >= 1000000) return '$' + (num / 1000000).toFixed(num % 1000000 === 0 ? 0 : 2).replace(/\.?0+$/, '') + ' million';
+    return '$' + num.toLocaleString('en-US');
+  }
+  function fmtNumber(n) { const num = Number(n); return Number.isFinite(num) ? num.toLocaleString('en-US') : ''; }
+  const today = () => new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  // --- Render the preview ------------------------------------------------
+  function render() {
+    const type = currentType();
+    const propertyName = v('property_name') || v('property_address');
+    const address = v('property_address');
+    const city = v('city');
+    const state = v('state');
+    const propType = v('property_type');
+    const year = v('year_built');
+    const stat = fmtNumber(v('key_stat_value'));
+    const unit = v('key_stat_unit');
+    const distFact = v('distinguishing_fact');
+    const askNum = v('asking_price');
+    const askDollars = fmtMoney(askNum);
+    const showPrice = isChecked('price_visible_in_release');
+    const brokerName = v('broker_name');
+    const brokerTitle = v('broker_title');
+    const firm = v('firm_name');
+    const boilerplate = v('firm_boilerplate');
+    const quote = v('draft_quote');
+    const image = document.getElementById('property_image').files.length > 0;
+    const imageCredit = v('image_credit');
+    const mcName = v('media_contact_name') || brokerName;
+    const mcEmail = v('media_contact_email');
+    const mcPhone = v('media_contact_phone');
+
+    // Headline
+    let headline = '';
+    if (type === 'coming-soon') {
+      headline = `${firm || 'Firm'} to Bring ${stat ? stat + '-' + unitShort(unit) : ''} ${prettyType(propType)} ${propertyName ? propertyName : 'Asset'} to Market in ${city}`;
+    } else if (type === 'just-listed') {
+      headline = `${firm || 'Firm'} Announces Exclusive Listing of ${stat ? stat + '-' + unitShort(unit) : ''} ${prettyType(propType)} ${propertyName || 'Asset'} in ${city}`;
+    } else {
+      headline = `${firm || 'Firm'} Announces Sale of ${propertyName || address} — ${stat ? stat + '-' + unitShort(unit) : ''} ${prettyType(propType)} Asset in ${city}`;
+    }
+
+    // Deck
+    let deck = '';
+    if (type === 'coming-soon') deck = distFact ? distFact.split('.')[0] + '.' : `A rare institutional offering in the ${city} market.`;
+    else if (type === 'just-listed') deck = `${propType === 'industrial' ? 'Class A four-building' : 'Institutional-quality'} offering ${askDollars ? 'priced at ' + askDollars : 'unpriced'}.`;
+    else deck = `${askDollars || 'Undisclosed'} transaction closes to ${v('buyer_name') || '[BUYER NAME — confirm disclosure]'}.`;
+
+    // Dateline
+    const dateline = `${city}, ${state} (${today()}) –`;
+
+    // Lede
+    let lede = '';
+    if (type === 'coming-soon') {
+      lede = `${firm} today announced that it is preparing to bring ${propertyName || 'a ' + stat + ' ' + unit + ' ' + prettyType(propType).toLowerCase() + ' asset'} to market at ${address} in ${city}. Pricing guidance is available upon qualification.`;
+      if (showPrice && askDollars) lede = lede.replace('Pricing guidance is available upon qualification.', `Guidance pricing is ${askDollars}.`);
+    } else if (type === 'just-listed') {
+      lede = `${firm} today announced the exclusive listing of ${propertyName || address}, ${stat ? 'a ' + stat + '-' + unitShort(unit) : 'an'} ${prettyType(propType).toLowerCase()} asset at ${address} in ${city}${askDollars ? '. The offering is priced at ' + askDollars + '.' : '.'}`;
+    } else {
+      const buyer = v('buyer_name') || '<span class="slot">[BUYER NAME — confirm disclosure]</span>';
+      const seller = v('seller_name');
+      lede = `${firm} today announced the sale of ${propertyName || address}, ${stat ? 'a ' + stat + '-' + unitShort(unit) : 'an'} ${prettyType(propType).toLowerCase()} asset at ${address} in ${city}${askDollars ? ', for ' + askDollars : ', for <span class="slot">[SALE PRICE]</span>'}. The property was acquired by ${buyer}${seller ? ' from ' + seller : ''}.`;
+    }
+
+    // Context paragraph
+    let ctx = distFact
+      ? distFact + (year ? ` The ${year}-vintage asset represents a distinct offering in the current ${city} market.` : '')
+      : (year ? `Built in ${year}, the property represents a distinct offering in the current ${city} market.` : '');
+
+    // Detail paragraph
+    const detail = `The property totals ${stat} ${unit}${address ? ' at ' + address : ''}. Full offering materials are available to qualified investors upon request.`;
+
+    // Quote — draft header if generated
+    let quoteText, showQuoteHeader = false;
+    if (quote) {
+      quoteText = `"${quote.replace(/^"|"$/g, '')}," said ${brokerTitle}, ${brokerName}.`;
+    } else {
+      showQuoteHeader = true;
+      if (type === 'coming-soon') {
+        quoteText = `"This is the kind of asset the market waits for," said ${brokerTitle}, ${brokerName}. "We are moving deliberately and expect strong interest from institutional capital when we bring it to market."`;
+      } else if (type === 'just-listed') {
+        quoteText = `"This offering represents a rare opportunity in a supply-constrained submarket," said ${brokerTitle}, ${brokerName}. "We expect strong interest from both institutional and private capital given the fundamentals of the ${city} ${propType} market."`;
+      } else {
+        quoteText = `"Closing this transaction in the current environment underscores the depth of institutional demand for well-positioned ${propType} product," said ${brokerTitle}, ${brokerName}. "The ${city} market continues to attract long-term capital."`;
+      }
+    }
+
+    // Process line (skip on Just Sold)
+    const processLine = type === 'just-sold' ? '' : `Qualified investors may request the offering memorandum by contacting the media contact below.`;
+
+    // Boilerplate
+    const boiler = boilerplate || '<span class="slot">[FIRM BOILERPLATE]</span>';
+
+    // Media contact
+    const media = `${mcName}${mcEmail ? ' · ' + mcEmail : ''}${mcPhone ? ' · ' + mcPhone : ''}`;
+
+    // Warnings
+    const warnings = [];
+    if (type === 'just-sold' && !v('buyer_name')) warnings.push('Buyer name is missing — [BUYER NAME] slot will need approval before publishing.');
+    if (type === 'just-listed' && !askDollars && !distFact) warnings.push('Limited news hook. Add an asking price or a distinguishing fact.');
+    if (!quote) warnings.push('Quote was generated — mark it [DRAFT QUOTE — approve or edit] before sending.');
+    if (image) warnings.push('Portrait vs. landscape check happens server-side; upload landscape crops for the cleanest layout.');
+
+    // Assemble HTML
+    const html = `
+      <div class="for-immediate">For Immediate Release</div>
+      <div class="image-slot${image ? ' has-image' : ''}">${image ? 'Uploaded image will appear here' : '[insert property image here]'}</div>
+      ${imageCredit && image ? `<p style="text-align:center;font-style:italic;font-size:12px;color:#7c828a;margin-top:-14px;margin-bottom:20px;">Photo: ${escapeHtml(imageCredit)}</p>` : ''}
+      <h1>${escapeHtml(headline)}</h1>
+      <p class="deck">${escapeHtml(deck)}</p>
+      <p><strong>${escapeHtml(dateline)}</strong> ${lede}</p>
+      ${ctx ? `<p>${escapeHtml(ctx)}</p>` : ''}
+      <p>${escapeHtml(detail)}</p>
+      ${showQuoteHeader ? '<div class="quote-header">[DRAFT QUOTE — approve or edit]</div>' : ''}
+      <p>${escapeHtml(quoteText)}</p>
+      ${processLine ? `<p>${escapeHtml(processLine)}</p>` : ''}
+      <div class="about">
+        <h3>About ${escapeHtml(firm || 'the Firm')}</h3>
+        <p>${boiler}</p>
+        <p class="media-contact"><strong>Media contact:</strong> ${escapeHtml(media)}</p>
+      </div>
+      <div class="end-mark">##</div>
+      <div class="powered">Powered by <strong>CRE Northstar</strong></div>
+    `;
+    document.getElementById('preview_body').innerHTML = html;
+
+    // Warnings
+    const box = document.getElementById('warnings_box');
+    const list = document.getElementById('warnings_list');
+    if (warnings.length) {
+      list.innerHTML = warnings.map(w => `<li>${escapeHtml(w)}</li>`).join('');
+      box.classList.remove('hidden');
+    } else { box.classList.add('hidden'); }
+  }
+
+  function unitShort(u) {
+    if (u === 'square feet') return 'SF';
+    if (u === 'units') return 'Unit';
+    if (u === 'keys') return 'Key';
+    if (u === 'acres') return 'Acre';
+    return u;
+  }
+  function prettyType(t) {
+    if (t === 'mixed-use') return 'Mixed-Use';
+    return t ? t[0].toUpperCase() + t.slice(1) : '';
+  }
+  function escapeHtml(s) {
+    if (s === undefined || s === null) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // --- Toast -------------------------------------------------------------
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(t._h);
+    t._h = setTimeout(() => t.classList.remove('show'), 2400);
+  }
+
+  // --- Email gate --------------------------------------------------------
+  // NOTE: this is a static (GitHub Pages) build with no backend, so the gate
+  // unlocks the draft locally — the email is not yet sent or stored anywhere.
+  // Wire #gate_email to a form endpoint (or the Vercel API) to capture leads.
+  function unlockGate() {
+    const email = (document.getElementById('gate_email').value || '').trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { toast('Enter a valid email to unlock your draft'); return; }
+    document.getElementById('preview_panel').classList.remove('locked');
+    toast('Draft unlocked — copy or download it below');
+  }
+
+  // --- Actions -----------------------------------------------------------
+  function copyDraft() {
+    const text = document.getElementById('preview_body').innerText;
+    navigator.clipboard.writeText(text).then(() => toast('Draft copied to clipboard'))
+      .catch(() => toast('Copy failed — select the text and copy manually'));
+  }
+  function downloadDoc() {
+    const inner = document.getElementById('preview_body').innerHTML;
+    const doc = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+      body{font-family:Georgia,'Times New Roman',serif;font-size:12pt;line-height:1.6;color:#1a1d21;}
+      h1{font-size:18pt;text-align:center;} .deck{font-style:italic;text-align:center;}
+      .for-immediate{text-align:center;font-family:Arial,sans-serif;font-size:9pt;letter-spacing:2px;text-transform:uppercase;}
+      .image-slot,.quote-header,.powered{display:none;} .slot{background:#fff;}
+      .about{border-top:1px solid #ccc;padding-top:10px;margin-top:20px;} .end-mark{text-align:center;}
+    </style></head><body>${inner}</body></html>`;
+    const blob = new Blob([doc], { type: 'application/msword' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'cre-press-release.doc';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    toast('Draft downloaded as a Word document');
+  }
+  function downloadPdf() {
+    toast('Choose "Save as PDF" in the print dialog');
+    setTimeout(() => window.print(), 400);
+  }
+  function resetForm() {
+    loadSample(currentType());
+    toast('Reset to the sample deal');
+  }
+
+  // --- Wiring ------------------------------------------------------------
+  document.querySelectorAll('input[name="release_type"]').forEach(el => {
+    el.addEventListener('change', () => loadSample(currentType()));
+  });
+  document.querySelectorAll('.form-panel input, .form-panel select, .form-panel textarea').forEach(el => {
+    if (el.name !== 'release_type') el.addEventListener('input', render);
+    if (el.type === 'checkbox') el.addEventListener('change', render);
+  });
+  document.getElementById('property_image').addEventListener('change', (e) => {
+    const label = document.getElementById('file_label');
+    if (e.target.files.length) label.innerHTML = `<span class="filename">${escapeHtml(e.target.files[0].name)}</span> selected · click to change`;
+    else label.textContent = 'Click to upload — JPEG or PNG, landscape preferred, max 10MB';
+    render();
+  });
+
+  // Initial
+  applyConditionalFields();
+  render();
+</script>
 
 </body>
 </html>
