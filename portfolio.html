@@ -295,6 +295,49 @@
     content: ""; width: 6px; height: 6px; border-radius: 50%;
     background: #f5a800; box-shadow: 0 0 0 3px rgba(245,168,0,0.28);
   }
+  .work-cover.cover-leads {
+    background: linear-gradient(135deg, #00263e 0%, #4e738a 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: var(--white); padding: 24px;
+    text-align: center;
+  }
+  .work-cover.cover-leads .placeholder-label { display: none; }
+  .work-cover.cover-leads .stat-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #f5a800;
+    margin-bottom: 12px; font-weight: 600;
+  }
+  .work-cover.cover-leads .stat-number {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 3.9rem);
+    line-height: 1.02; letter-spacing: -0.03em;
+    color: var(--white);
+  }
+  .work-cover.cover-leads .stat-sub {
+    margin-top: 12px;
+    color: rgba(255,255,255,0.72);
+    font-size: 0.82rem;
+    font-family: 'Manrope', sans-serif;
+    max-width: 26ch;
+  }
+  .work-cover.cover-leads .live-badge {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 600;
+    padding: 5px 10px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .work-cover.cover-leads .live-badge::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: #f5a800; box-shadow: 0 0 0 3px rgba(245,168,0,0.28);
+  }
+
   .work-cover .placeholder-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
@@ -938,7 +981,25 @@
         </div>
       </a>
 
-      <!-- CASE 2: National Commercial Lending Platform (hero proof) -->
+      <!-- CASE 2: Deal Lead Service for CRE lenders (offering) -->
+      <a href="#contact" class="work-card">
+        <div class="work-cover cover-leads">
+          <span class="live-badge">Service · Taking Clients</span>
+          <span class="stat-eyebrow">Delivered monthly</span>
+          <span class="stat-number">Deal Leads for<br>CRE Lenders</span>
+          <span class="stat-sub">Researched, qualified, and sent to your inbox.</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Commercial Real Estate</span><span class="dot">·</span><span>Lead Service</span>
+          </div>
+          <h3 class="work-title">Qualified deal leads for CRE lenders — delivered, not licensed</h3>
+          <p class="work-desc">A monthly list of active, financeable projects matched to what you actually lend on — built for C&#8209;PACE, construction, bridge, and private credit lenders. Each lead comes with the project, the sponsor, the stage, and the contact, researched and verified before it reaches you. <em style="font-style:italic;color:var(--granite);">Not a dashboard, not a subscription to software — there's nothing to log into. You pay a flat monthly fee and the leads arrive.</em></p>
+          <span class="work-tag">Ask about availability</span>
+        </div>
+      </a>
+
+      <!-- CASE 3: National Commercial Lending Platform (hero proof) -->
       <a href="/lending-platform" class="work-card">
         <div class="work-cover cover-finance">
           <span class="placeholder-label"></span>
@@ -953,7 +1014,7 @@
         </div>
       </a>
 
-      <!-- CASE 3: TFP Donation Portal -->
+      <!-- CASE 4: TFP Donation Portal -->
       <a href="/tfp-portal" class="work-card">
         <div class="work-cover cover-tfp-portal">
           <span class="stat-eyebrow">Platform-Layer Fees</span>
@@ -970,7 +1031,7 @@
         </div>
       </a>
 
-      <!-- CASE 4: CRE Brokerage Systems -->
+      <!-- CASE 5: CRE Brokerage Systems -->
       <a href="/cre-collateral" class="work-card">
         <div class="work-cover cover-mm">
           <span class="placeholder-label"></span>
@@ -982,21 +1043,6 @@
           <h3 class="work-title">Full CRE marketing — built end to end</h3>
           <p class="work-desc">For independent brokers, growing teams, brokerages, developers, sponsors, and capital partners. Offering memoranda, investor pitch decks, tour books, property fact sheets, capital markets one-pagers, and bespoke deal collateral — refined across years inside one of the country's largest CRE brokerages.</p>
           <span class="work-tag">View the project</span>
-        </div>
-      </a>
-
-      <!-- CASE 5: Serum Brand Refresh -->
-      <a href="/serum-rebrand" class="work-card">
-        <div class="work-cover cover-olanani">
-          <span class="placeholder-label"></span>
-        </div>
-        <div class="work-body">
-          <div class="work-meta">
-            <span>Skincare Brand</span><span class="dot">·</span><span>Brand Refresh + Shopify</span>
-          </div>
-          <h3 class="work-title">From craft serum to retail-ready beauty brand</h3>
-          <p class="work-desc">Full brand refresh for a handcrafted skincare line — new identity, product naming, packaging design, visual system, plus an entire Shopify website built end-to-end. Took the product from homemade-looking to shelf-ready.</p>
-          <span class="work-tag">See the before &amp; after</span>
         </div>
       </a>
 

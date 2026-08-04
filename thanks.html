@@ -50,16 +50,31 @@
   }
   h1 em { color: #007db4; font-style: italic; }
   p { color: #4e738a; font-size: 1rem; margin-bottom: 12px; }
-  .back {
-    margin-top: 32px;
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #00263e; color: #ffffff;
-    padding: 13px 24px; border-radius: 999px;
-    font-weight: 600; font-size: 0.95rem;
+  .download {
+    margin-top: 24px;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #f5a800; color: #00263e;
+    padding: 16px 30px; border-radius: 999px;
+    font-weight: 600; font-size: 1rem;
     text-decoration: none;
-    transition: background 0.15s;
+    transition: background 0.15s, transform 0.15s;
   }
-  .back:hover { background: #007db4; }
+  .download:hover { background: #ffc23d; transform: translateY(-1px); }
+  .divider {
+    margin: 32px 0 22px;
+    border: 0; border-top: 1px solid #dce6ee;
+  }
+  .note { font-size: 0.88rem; color: #6b8ba1; }
+  .note a { color: #007db4; }
+  .back {
+    margin-top: 26px;
+    display: inline-flex; align-items: center; gap: 8px;
+    color: #4e738a;
+    font-weight: 500; font-size: 0.92rem;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .back:hover { color: #00263e; }
   .back .arrow { transition: transform 0.2s; }
   .back:hover .arrow { transform: translateX(-3px); }
 </style>
@@ -67,11 +82,28 @@
 <body>
   <div class="card">
     <div class="check">✓</div>
-    <span class="eyebrow">Reservation received</span>
+    <span class="eyebrow">Got it</span>
     <h1>You're <em>in</em>.</h1>
-    <p>I'll confirm your spot and send the exact date, venue, and payment details as soon as they're locked.</p>
-    <p>Watch your inbox — and thanks for reserving.</p>
-    <a href="/" class="back"><span class="arrow">←</span> Back to portfolio</a>
+
+    <p>Here's your free guide — <strong>10 AI Prompts Every CRE &amp; Finance Pro Needs</strong>. Copy-paste prompts for listings, outreach, investor updates, and LinkedIn posts.</p>
+
+    <a class="download" href="https://juliechasen.com/files/10-ai-prompts-cre-finance.pdf" download>
+      ↓ Download the guide
+    </a>
+
+    <p class="note" style="margin-top:16px;">
+      Didn't start?
+      <a href="https://juliechasen.com/files/10-ai-prompts-cre-finance.pdf" target="_blank" rel="noopener">Open it in a new tab</a>.
+    </p>
+
+    <hr class="divider">
+
+    <p class="note">
+      Reserved a spot for the Claude workshop? I'll be in touch with the exact date,
+      venue, and payment details as soon as they're locked.
+    </p>
+
+    <a href="https://juliechasen.com/" class="back"><span class="arrow">←</span> Back to juliechasen.com</a>
   </div>
 </body>
 </html>
