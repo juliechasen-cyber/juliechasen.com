@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deal Leads for CRE Lenders — Julie Chasen</title>
+<meta name="description" content="A monthly list of active, financeable CRE projects matched to what you lend on. See the sample lead sheet and every field that comes with it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --soft: #eef3f7;
+    --navy: #00263e;
+    --granite: #4e738a;
+    --stone: #a5bac9;
+    --sky: #007db4;
+    --gold: #f5a800;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* SUB-NAV */
+  nav.sub {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--stone);
+  }
+  nav.sub .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .back-link {
+    text-decoration: none; color: var(--navy);
+    font-size: 0.92rem; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .back-link:hover { color: var(--sky); }
+  .back-link .arrow { transition: transform 0.2s; display: inline-block; }
+  .back-link:hover .arrow { transform: translateX(-3px); }
+  .brand {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
+    text-decoration: none; color: var(--navy);
+  }
+  .brand span { color: var(--sky); }
+  .brand-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--granite);
+    font-weight: 600; margin-left: 6px;
+    padding: 3px 8px; background: var(--soft);
+    border-radius: 999px; vertical-align: middle;
+  }
+  @media (max-width: 720px) { .brand-tag { display: none; } }
+  .nav-cta {
+    background: var(--navy); color: var(--white) !important;
+    padding: 9px 16px; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 600; text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-cta:hover { background: var(--sky); }
+
+  /* HERO */
+  header.case-hero {
+    padding: 90px 0 60px;
+    background: var(--soft);
+    position: relative; overflow: hidden;
+  }
+  header.case-hero::before {
+    content: ""; position: absolute;
+    top: -140px; right: -120px;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(0, 125, 180, 0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .eyebrow-row {
+    display: inline-flex; align-items: center; gap: 12px;
+    color: var(--sky); font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .eyebrow-row::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
+  h1.case-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 5.5vw, 4rem);
+    line-height: 1.05; letter-spacing: -0.025em;
+    max-width: 22ch;
+    margin-bottom: 24px;
+  }
+  h1.case-title em { font-style: italic; color: var(--sky); font-weight: 600; }
+  .case-lede {
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--granite);
+    max-width: 60ch; line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .case-lede:last-of-type { margin-bottom: 36px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    text-decoration: none; font-weight: 600; font-size: 0.95rem;
+    padding: 14px 24px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .btn-primary { background: var(--navy); color: var(--white); }
+  .btn-primary:hover { background: var(--sky); transform: translateY(-1px); }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-gold:hover { background: var(--navy); color: var(--white); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent; color: var(--navy);
+    border: 1px solid var(--stone);
+  }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-arrow { transition: transform 0.2s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  /* SECTIONS */
+  section { padding: 90px 0; }
+  .section-eyebrow {
+    color: var(--sky); font-weight: 500;
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
+  .section-h {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 24px; max-width: 22ch;
+  }
+  .section-h em { font-style: italic; color: var(--sky); }
+  .section-intro {
+    color: var(--granite); font-size: 1.02rem;
+    max-width: 62ch; margin-bottom: 40px;
+  }
+
+  /* SAMPLE LEAD SHEET */
+  .sheet {
+    max-width: 720px; margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--stone);
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 38, 62, 0.10);
+    overflow: hidden;
+  }
+  .sheet-head {
+    background: var(--navy); color: var(--white);
+    padding: 22px 30px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  .sheet-head .sheet-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--stone);
+    margin-bottom: 4px;
+  }
+  .sheet-head h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: 1.35rem;
+    letter-spacing: -0.015em; line-height: 1.2;
+  }
+  .sheet-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.66rem; letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 500;
+    color: var(--gold);
+    border: 1px solid rgba(245, 168, 0, 0.55);
+    border-radius: 999px; padding: 6px 14px;
+    white-space: nowrap;
+  }
+  .sheet-body { padding: 8px 30px 30px; }
+  .sheet-row {
+    display: grid; grid-template-columns: 190px 1fr;
+    gap: 20px; padding: 18px 0;
+    border-bottom: 1px solid var(--soft);
+    align-items: baseline;
+  }
+  .sheet-row:last-child { border-bottom: none; }
+  @media (max-width: 620px) {
+    .sheet-row { grid-template-columns: 1fr; gap: 6px; }
+    .sheet-body { padding: 8px 22px 26px; }
+    .sheet-head { padding: 20px 22px; }
+  }
+  .sheet-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--granite);
+    font-weight: 500;
+  }
+  .sheet-value { font-size: 1rem; color: var(--navy); line-height: 1.5; }
+  .sheet-value strong { font-weight: 600; }
+  .sheet-value .held {
+    display: block; margin-top: 4px;
+    font-size: 0.88rem; color: var(--granite);
+  }
+  .sheet-value .fit-list {
+    list-style: none; display: flex; flex-direction: column; gap: 7px;
+  }
+  .sheet-value .fit-list li {
+    padding-left: 22px; position: relative;
+    font-size: 0.97rem;
+  }
+  .sheet-value .fit-list li::before {
+    content: "→"; position: absolute; left: 0;
+    color: var(--sky); font-weight: 600;
+  }
+  .sheet-note {
+    max-width: 720px; margin: 20px auto 0;
+    text-align: center;
+    font-size: 0.87rem; color: var(--granite);
+    line-height: 1.55;
+  }
+
+  /* SERVICE PITCH */
+  section.service-pitch {
+    background: var(--navy); color: var(--white);
+    text-align: center;
+  }
+  section.service-pitch .section-h {
+    color: var(--white); margin: 0 auto 24px;
+    max-width: 24ch;
+  }
+  section.service-pitch .section-h em { color: var(--gold); }
+  section.service-pitch .section-eyebrow {
+    color: var(--gold); justify-content: center; display: inline-flex;
+  }
+  section.service-pitch .section-eyebrow::before { background: var(--gold); }
+  section.service-pitch .lede {
+    color: rgba(255, 255, 255, 0.78); font-size: 1.1rem;
+    max-width: 56ch; margin: 0 auto 36px;
+  }
+  .offer-chips {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    justify-content: center; margin-bottom: 40px;
+  }
+  .offer-chip {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.20);
+    padding: 9px 16px; border-radius: 999px;
+    font-size: 0.92rem; font-weight: 500;
+  }
+  .pitch-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .pitch-actions .btn-primary { background: var(--gold); color: var(--navy); }
+  .pitch-actions .btn-primary:hover { background: var(--white); }
+  .pitch-actions .btn-ghost {
+    background: transparent; color: var(--white);
+    border: 1px solid rgba(255,255,255,0.28);
+  }
+  .pitch-actions .btn-ghost:hover { border-color: var(--white); }
+
+  footer {
+    padding: 40px 0; border-top: 1px solid var(--stone);
+  }
+  footer .wrap {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  footer .mono { color: var(--granite); }
+</style>
+</head>
+<body>
+
+<!-- SUB-NAV -->
+<nav class="sub">
+  <div class="wrap">
+    <a href="/" class="back-link"><span class="arrow">←</span> Back to portfolio</a>
+    <a href="/" class="brand">Julie Chasen<span>.</span> <span class="brand-tag">Portfolio Site</span></a>
+    <a href="mailto:juliechasen@gmail.com" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="case-hero">
+  <div class="wrap">
+    <span class="eyebrow-row mono">Deal Lead Service · CRE Lenders</span>
+    <h1 class="case-title">Deal leads for CRE lenders — <em>delivered, not licensed</em>.</h1>
+    <p class="case-lede">A monthly list of active, financeable projects matched to what you actually lend on. Built for C&#8209;PACE, construction, bridge, and private credit lenders.</p>
+    <p class="case-lede">I won't show you real leads here. That's the whole point — the projects and contacts in your file are yours, and they don't end up on a website. So here's the format instead.</p>
+    <div class="cta-row">
+      <a href="#sample" class="btn btn-gold">See a sample lead <span class="btn-arrow">→</span></a>
+      <a href="#pitch" class="btn btn-ghost">Ask about availability</a>
+    </div>
+  </div>
+</header>
+
+<!-- SAMPLE LEAD -->
+<section id="sample">
+  <div class="wrap">
+    <span class="section-eyebrow mono">The sample</span>
+    <h2 class="section-h">One lead, <em>start to finish</em>.</h2>
+    <p class="section-intro">This is what lands in your inbox — one project, one decision maker, and the reason it fits your box. The record below is invented for illustration. Everything about its shape is real.</p>
+
+    <div class="sheet">
+      <div class="sheet-head">
+        <div>
+          <div class="sheet-id">Lead 04 · Delivered 03 Mar 2026</div>
+          <h3>Multifamily · Raleigh&#8211;Durham, NC</h3>
+        </div>
+        <span class="sheet-stamp">Sample</span>
+      </div>
+      <div class="sheet-body">
+        <div class="sheet-row">
+          <span class="sheet-label">Project</span>
+          <span class="sheet-value"><strong>288 units · 4 stories · 216,000 RBA</strong><span class="held">Garden-style, structured parking, one phase.</span></span>
+        </div>
+        <div class="sheet-row">
+          <span class="sheet-label">Stage</span>
+          <span class="sheet-value"><strong>Proposed</strong> — construction begins Q2 2026<span class="held">Site control secured, entitlements approved, permits pending.</span></span>
+        </div>
+        <div class="sheet-row">
+          <span class="sheet-label">Sponsor</span>
+          <span class="sheet-value"><strong>Regional developer, 6 active NC projects</strong><span class="held">Developer and true owner entity both named in your file.</span></span>
+        </div>
+        <div class="sheet-row">
+          <span class="sheet-label">Decision contact</span>
+          <span class="sheet-value"><strong>VP of Development</strong><span class="held">Full name, direct email, and LinkedIn profile included. Verified within 30 days of delivery — never a generic info@ address.</span></span>
+        </div>
+        <div class="sheet-row">
+          <span class="sheet-label">Capital status</span>
+          <span class="sheet-value"><strong>No lender of record</strong><span class="held">Debt not yet placed at the time of research.</span></span>
+        </div>
+        <div class="sheet-row">
+          <span class="sheet-label">Why it fits you</span>
+          <span class="sheet-value">
+            <ul class="fit-list">
+              <li>C&#8209;PACE eligible — new construction, qualifying improvements</li>
+              <li>Inside your loan size and your two target markets</li>
+              <li>Pre&#8209;close, so the timing still works for a 60&#8211;90 day underwrite</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <p class="sheet-note">Illustrative sample — the project, sponsor, and contact above are composites, not a real deal. Real leads go only to the lender who commissioned them.</p>
+  </div>
+</section>
+
+<!-- SERVICE PITCH -->
+<section class="service-pitch" id="pitch">
+  <div class="wrap">
+    <span class="section-eyebrow mono">Taking clients</span>
+    <h2 class="section-h">Tell me what you lend on. <em>I'll build the list.</em></h2>
+    <p class="lede">Send me your loan size, property types, and markets. I'll come back with what the pipeline looks like in your box, and what a month of it would cost.</p>
+
+    <div class="offer-chips">
+      <span class="offer-chip">C&#8209;PACE</span>
+      <span class="offer-chip">Construction</span>
+      <span class="offer-chip">Bridge</span>
+      <span class="offer-chip">Private credit</span>
+      <span class="offer-chip">Multifamily</span>
+      <span class="offer-chip">Industrial</span>
+      <span class="offer-chip">Hospitality</span>
+      <span class="offer-chip">Office &amp; retail</span>
+    </div>
+
+    <div class="pitch-actions">
+      <a href="mailto:juliechasen@gmail.com?subject=CRE%20deal%20leads%20-%20availability" class="btn btn-primary">Ask about availability <span class="btn-arrow">→</span></a>
+      <a href="/" class="btn btn-ghost">Back to portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <span class="mono">© 2026 Julie Chasen</span>
+    <span class="mono"><a href="/" style="color:inherit;text-decoration:none;">All work →</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
