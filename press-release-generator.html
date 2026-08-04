@@ -329,15 +329,6 @@
   .checkbox-field input { margin-top: 3px; }
   .checkbox-field label { font-size: 0.86rem; color: var(--navy); }
 
-  .file-drop {
-    border: 1px dashed var(--stone); border-radius: 10px;
-    padding: 18px; text-align: center; font-size: 0.86rem; color: var(--granite);
-    cursor: pointer; transition: all .12s; background: var(--soft);
-  }
-  .file-drop:hover { border-color: var(--sky); color: var(--sky); background: rgba(0,125,180,0.04); }
-  .file-drop input { display: none; }
-  .file-drop .filename { color: var(--navy); font-weight: 600; }
-
   .conditional { display: none; }
   .conditional.show { display: block; }
 
@@ -377,10 +368,6 @@
     display: flex; align-items: center; justify-content: center;
     color: #7c828a; font-family: 'Manrope', sans-serif; font-size: 0.8rem;
     border-radius: 4px;
-  }
-  .preview-body .image-slot.has-image {
-    background: linear-gradient(135deg, #cfd9c9, #a2b7a5);
-    border-style: solid; color: #fff;
   }
   .preview-body h1 {
     font-family: 'Source Serif 4', Georgia, serif;
@@ -566,12 +553,12 @@
     <span class="eyebrow-row mono">A free tool for the CRE industry</span>
     <div class="client-line">Built end to end by Julie Chasen</div>
     <h1 class="case-title">Draft a CRE <em>press release</em>.</h1>
-    <p class="case-lede">A tool for brokers and principals — pick a release type, fill a short form, upload a property image, and get a publish-ready first draft. Free to try, no signup — just your email, and the draft is yours.</p>
+    <p class="case-lede">A tool for brokers and principals — pick a release type, fill a short form, and get a publish-ready first draft. Free to try, no signup — just your email, and the draft is yours.</p>
     <div class="badge-row">
       <span class="badge"><span class="dot"></span>Free to try</span>
       <span class="badge"><span class="dot"></span>No login</span>
       <span class="badge"><span class="dot"></span>3 release types</span>
-      <span class="badge"><span class="dot"></span>.docx &amp; .pdf</span>
+      <span class="badge"><span class="dot"></span>.docx download</span>
     </div>
     <div class="cta-row">
       <a href="#tool" class="btn-hero btn-white">Open the tool <span class="btn-arrow">↓</span></a>
@@ -740,18 +727,6 @@
           </div>
         </fieldset>
 
-        <fieldset>
-          <legend>Property image (optional)</legend>
-          <label class="file-drop" for="property_image">
-            <input type="file" id="property_image" accept="image/jpeg,image/png">
-            <span id="file_label">Click to upload — JPEG or PNG, landscape preferred, max 10MB</span>
-          </label>
-          <div class="field" style="margin-top:12px;">
-            <label>Photo credit <span class="opt">(optional)</span></label>
-            <input type="text" id="image_credit" placeholder="e.g. Jane Doe / Aerial Studio">
-          </div>
-        </fieldset>
-
         <div class="privacy-note">
           Your entries are used only to build this draft, right here in your browser — <strong>nothing is stored</strong>. Enter your email once to unlock the draft and downloads. It's <strong>free</strong> — no account, no payment.
         </div>
@@ -770,14 +745,13 @@
         <div class="actions">
           <button type="button" class="btn-tool" onclick="copyDraft()">Copy text</button>
           <button type="button" class="btn-tool primary" onclick="downloadDoc()">Download .docx</button>
-          <button type="button" class="btn-tool" onclick="downloadPdf()">Download .pdf</button>
           <button type="button" class="btn-tool" onclick="resetForm()">Start over</button>
         </div>
         <div class="gate-overlay">
           <div class="gate-card">
             <span class="gate-eyebrow">One step</span>
             <h3>See your draft</h3>
-            <p>Enter your email to unlock the full draft plus the .docx and .pdf downloads. Free — no account, no payment.</p>
+            <p>Enter your email to unlock the full draft plus the .docx download. Free — no account, no payment.</p>
             <div class="field">
               <label>Email address <span class="req">*</span></label>
               <input type="email" id="gate_email" placeholder="you@brokerage.com">
@@ -843,7 +817,6 @@
       firm_boilerplate: 'Ortiz Multifamily Group is a San Diego–based multifamily investment sales team with $3.1 billion in career transactions across Southern California.',
       draft_quote: '', quote_angle_hint: 'Emphasize the whisper-campaign posture and generational nature of the asset.',
       media_contact_name: '', media_contact_email: 'press@ortizmg.com', media_contact_phone: '(619) 555-0142',
-      image_credit: ''
     },
     'just-listed': {
       property_name: 'Franklin Business Park',
@@ -859,7 +832,6 @@
       firm_boilerplate: 'Halverson Industrial Advisors is a Phoenix-based commercial real estate brokerage focused exclusively on industrial investment sales in the Southwest. The firm has closed over $2.4 billion in transactions since 2011.',
       draft_quote: '', quote_angle_hint: 'Emphasize the scarcity of institutional-quality industrial product in the Southwest Valley.',
       media_contact_name: '', media_contact_email: 'press@halversoncre.com', media_contact_phone: '(602) 555-0184',
-      image_credit: ''
     },
     'just-sold': {
       property_name: 'The Merchant Building',
@@ -876,7 +848,6 @@
       firm_boilerplate: 'Chen Capital Markets advises institutional investors and family offices on mixed-use and adaptive-reuse transactions throughout the Mountain West.',
       draft_quote: '', quote_angle_hint: "Celebrate execution in a slow market; note the buyer's long-term hold thesis.",
       media_contact_name: '', media_contact_email: 'press@chencapital.com', media_contact_phone: '(303) 555-0119',
-      image_credit: ''
     }
   };
 
@@ -953,8 +924,6 @@
     const firm = v('firm_name');
     const boilerplate = v('firm_boilerplate');
     const quote = v('draft_quote');
-    const image = document.getElementById('property_image').files.length > 0;
-    const imageCredit = v('image_credit');
     const mcName = v('media_contact_name') || brokerName;
     const mcEmail = v('media_contact_email');
     const mcPhone = v('media_contact_phone');
@@ -1028,13 +997,11 @@
     if (type === 'just-sold' && !v('buyer_name')) warnings.push('Buyer name is missing — [BUYER NAME] slot will need approval before publishing.');
     if (type === 'just-listed' && !askDollars && !distFact) warnings.push('Limited news hook. Add an asking price or a distinguishing fact.');
     if (!quote) warnings.push('Quote was generated — mark it [DRAFT QUOTE — approve or edit] before sending.');
-    if (image) warnings.push('Portrait vs. landscape check happens server-side; upload landscape crops for the cleanest layout.');
 
     // Assemble HTML
     const html = `
       <div class="for-immediate">For Immediate Release</div>
-      <div class="image-slot${image ? ' has-image' : ''}">${image ? 'Uploaded image will appear here' : '[insert property image here]'}</div>
-      ${imageCredit && image ? `<p style="text-align:center;font-style:italic;font-size:12px;color:#7c828a;margin-top:-14px;margin-bottom:20px;">Photo: ${escapeHtml(imageCredit)}</p>` : ''}
+      <div class="image-slot">(insert property photo here)</div>
       <h1>${escapeHtml(headline)}</h1>
       <p class="deck">${escapeHtml(deck)}</p>
       <p><strong>${escapeHtml(dateline)}</strong> ${lede}</p>
@@ -1110,7 +1077,12 @@
       body{font-family:Georgia,'Times New Roman',serif;font-size:12pt;line-height:1.6;color:#1a1d21;}
       h1{font-size:18pt;text-align:center;} .deck{font-style:italic;text-align:center;}
       .for-immediate{text-align:center;font-family:Arial,sans-serif;font-size:9pt;letter-spacing:2px;text-transform:uppercase;}
-      .image-slot,.quote-header,.powered{display:none;} .slot{background:#fff;}
+      .quote-header,.powered{display:none;} .slot{background:#fff;}
+      /* Keep the photo placeholder in the Word file — it's where the broker
+         drops their own image. */
+      .image-slot{border:1px dashed #b8b8b0;background:#f4f4f2;color:#888;
+        font-family:Arial,sans-serif;font-size:10pt;font-style:italic;
+        text-align:center;padding:40px 10px;margin:0 auto 20px;width:60%;}
       .about{border-top:1px solid #ccc;padding-top:10px;margin-top:20px;} .end-mark{text-align:center;}
     </style></head><body>${inner}</body></html>`;
     const blob = new Blob([doc], { type: 'application/msword' });
@@ -1120,10 +1092,6 @@
     document.body.appendChild(a); a.click(); a.remove();
     URL.revokeObjectURL(url);
     toast('Draft downloaded as a Word document');
-  }
-  function downloadPdf() {
-    toast('Choose "Save as PDF" in the print dialog');
-    setTimeout(() => window.print(), 400);
   }
   function resetForm() {
     loadSample(currentType());
@@ -1138,13 +1106,6 @@
     if (el.name !== 'release_type') el.addEventListener('input', render);
     if (el.type === 'checkbox') el.addEventListener('change', render);
   });
-  document.getElementById('property_image').addEventListener('change', (e) => {
-    const label = document.getElementById('file_label');
-    if (e.target.files.length) label.innerHTML = `<span class="filename">${escapeHtml(e.target.files[0].name)}</span> selected · click to change`;
-    else label.textContent = 'Click to upload — JPEG or PNG, landscape preferred, max 10MB';
-    render();
-  });
-
   // Initial
   applyConditionalFields();
   render();
