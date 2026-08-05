@@ -226,6 +226,38 @@
     line-height: 1.55;
   }
 
+  /* DELIVERED FILE SCREENSHOT */
+  .shot-block { margin-top: 64px; }
+  .shot-frame {
+    border: 1px solid var(--stone);
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 38, 62, 0.12);
+    background: var(--white);
+  }
+  .shot-bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 11px 16px;
+    background: var(--soft);
+    border-bottom: 1px solid var(--stone);
+  }
+  .shot-bar i {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--stone); display: block;
+  }
+  .shot-bar span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--granite);
+    margin-left: 10px;
+  }
+  .shot-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .shot-frame img { display: block; width: 100%; min-width: 720px; height: auto; }
+  .shot-caption {
+    text-align: center; margin-top: 18px;
+    font-size: 0.87rem; color: var(--granite); line-height: 1.55;
+  }
+
+
   /* SERVICE PITCH */
   section.service-pitch {
     background: var(--navy); color: var(--white);
@@ -346,6 +378,18 @@
     </div>
 
     <p class="sheet-note">Illustrative sample — the project, sponsor, and contact above are composites, not a real deal. Real leads go only to the lender who commissioned them.</p>
+
+    <!-- DELIVERED FILE SCREENSHOT -->
+    <div class="shot-block">
+      <div class="shot-frame">
+        <div class="shot-bar"><i></i><i></i><i></i><span>enriched.csv · 113 leads</span></div>
+        <div class="shot-scroll">
+          <img src="/images/lead-sample.jpg" width="1800" height="966" loading="lazy" decoding="async"
+               alt="Deal lead file: a scored lead for a $50M, 200-unit senior affordable project in Raleigh, NC, showing deal detail, lender fit, relationship map, verified contact, and source article.">
+        </div>
+      </div>
+      <p class="shot-caption">Contact details partially masked for this sample. Your file arrives unmasked — name, direct phone, verified email, and the article that surfaced the deal.</p>
+    </div>
   </div>
 </section>
 

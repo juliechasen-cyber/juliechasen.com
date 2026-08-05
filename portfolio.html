@@ -920,7 +920,8 @@
       <a href="#about">About</a>
       <!-- TEMPORARILY HIDDEN 2026-07-18 — restore Services link when re-enabling section below -->
       <!-- <a href="#services">Services</a> -->
-      <a href="#courses">Courses</a>
+      <!-- TEMPORARILY HIDDEN 2026-08-05 — restore Courses link when re-enabling section below -->
+      <!-- <a href="#courses">Courses</a> -->
       <a href="mailto:juliechasen@gmail.com" class="nav-cta">Get in touch</a>
     </div>
   </div>
@@ -976,7 +977,7 @@
             <span>Commercial Real Estate</span><span class="dot">·</span><span>Live Tool</span>
           </div>
           <h3 class="work-title">A free press release generator for the CRE industry</h3>
-          <p class="work-desc">Built end to end — Next.js app, Claude Sonnet drafting, .docx and .pdf output with the property photo dropped in. Pick a release type (Coming Soon, Just Listed, Just Sold), fill a short form, get a publish-ready first draft. A gift to the industry, and a preview of the larger AI marketing platform I'm building for CRE.</p>
+          <p class="work-desc">Built end to end — Next.js app, Claude Sonnet drafting, .docx and .pdf output with the property photo dropped in. Pick a release type, fill a short form, get a publish-ready first draft. A gift to the industry, and a preview of the larger AI marketing platform I'm building for CRE.</p>
           <span class="work-tag">Open the tool →</span>
         </div>
       </a>
@@ -1121,6 +1122,15 @@
 <!-- END TEMPORARILY HIDDEN SERVICES SECTION -->
 
 <!-- ============ COURSES ============ -->
+<!-- TEMPORARILY HIDDEN 2026-08-05 — Julie is holding the Claude class until she's
+     ready to promote it. Wrapped in <template> to preserve the source exactly as
+     built (venue, agenda, pricing, reservation form + fetch handler).
+     To restore: delete the <template> line below and its </template> below the
+     section, and uncomment the Courses nav link above.
+     The reservation form uses the registered Netlify form name "course-reservation",
+     shared with the guide form on index.html — that one is still live, so the form
+     stays registered while this is hidden. Do NOT rename it on restore. -->
+<template data-hidden-since="2026-08-05">
 <section id="courses" class="courses">
   <div class="wrap">
     <span class="course-banner"><span class="dot"></span>Now reserving spots · Early November 2026</span>
@@ -1214,6 +1224,8 @@
     </div>
   </div>
 </section>
+</template>
+<!-- END TEMPORARILY HIDDEN COURSES SECTION -->
 
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="contact">
