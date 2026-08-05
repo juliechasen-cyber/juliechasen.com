@@ -1168,8 +1168,10 @@
           </div>
         </div>
 
-        <form name="course-reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="https://juliechasen.netlify.app/thanks.html" class="course-form">
-          <input type="hidden" name="form-name" value="course-reservation">
+        <!-- Claude class list. The free-guide form on the splash page is a
+             separate Netlify form ("ai-prompt-sheet") — keep the two apart. -->
+        <form name="claude-class" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="https://juliechasen.netlify.app/thanks.html" class="course-form">
+          <input type="hidden" name="form-name" value="claude-class">
           <p style="position:absolute;left:-9999px;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
           <div class="form-row">
             <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
