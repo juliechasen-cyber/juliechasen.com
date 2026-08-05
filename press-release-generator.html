@@ -369,11 +369,16 @@
     color: #7c828a; font-family: 'Manrope', sans-serif; font-size: 0.8rem;
     border-radius: 4px;
   }
+  .preview-body.thinking { opacity: 0.45; transition: opacity .15s; }
   .preview-body h1 {
     font-family: 'Source Serif 4', Georgia, serif;
     font-size: 1.5rem; line-height: 1.25; font-weight: 700;
     text-align: center; margin: 0 0 10px; color: #1a1d21;
     letter-spacing: -0.01em;
+  }
+  .preview-body > em {
+    display: block; font-style: italic; text-align: center; color: #4a5058;
+    margin: 0 0 24px; font-size: 0.96rem;
   }
   .preview-body .deck {
     font-style: italic; text-align: center; color: #4a5058;
@@ -743,24 +748,45 @@
           <ul id="warnings_list"></ul>
         </div>
         <div class="actions">
+          <button type="button" class="btn-tool primary" id="ai_btn" onclick="writeWithAI()">Rewrite with AI</button>
           <button type="button" class="btn-tool" onclick="copyDraft()">Copy text</button>
-          <button type="button" class="btn-tool primary" onclick="downloadDoc()">Download .docx</button>
+          <button type="button" class="btn-tool" onclick="downloadDoc()">Download .docx</button>
           <button type="button" class="btn-tool" onclick="resetForm()">Start over</button>
         </div>
         <div class="gate-overlay">
           <div class="gate-card">
             <span class="gate-eyebrow">One step</span>
             <h3>See your draft</h3>
-            <p>Enter your email to unlock the full draft plus the .docx download. Free — no account, no payment.</p>
+            <p>Tell us who you are and Claude will write your release — then it's yours to copy or download as a .docx. Free — no account, no payment.</p>
+            <div class="two-col">
+              <div class="field">
+                <label>First name <span class="req">*</span></label>
+                <input type="text" id="gate_first" placeholder="Jordan">
+              </div>
+              <div class="field">
+                <label>Last name <span class="req">*</span></label>
+                <input type="text" id="gate_last" placeholder="Rivera">
+              </div>
+            </div>
+            <div class="two-col">
+              <div class="field">
+                <label>Title <span class="req">*</span></label>
+                <input type="text" id="gate_title" placeholder="Senior Vice President">
+              </div>
+              <div class="field">
+                <label>Company <span class="req">*</span></label>
+                <input type="text" id="gate_company" placeholder="Rivera Commercial">
+              </div>
+            </div>
             <div class="field">
-              <label>Email address <span class="req">*</span></label>
+              <label>Work email <span class="req">*</span></label>
               <input type="email" id="gate_email" placeholder="you@brokerage.com">
             </div>
             <div class="checkbox-field">
               <input type="checkbox" id="gate_optin">
               <label for="gate_optin">Send me occasional updates about CRE Northstar, Julie Chasen's AI marketing platform for CRE brokers.</label>
             </div>
-            <button type="button" class="btn-tool primary" onclick="unlockGate()">Unlock my draft</button>
+            <button type="button" class="btn-tool primary" id="gate_btn" onclick="unlockGate()">Write my release</button>
             <p class="gate-micro">Rate-limited to 5 drafts a day. Your email isn't shared.</p>
           </div>
         </div>
@@ -1058,11 +1084,125 @@
   // NOTE: this is a static (GitHub Pages) build with no backend, so the gate
   // unlocks the draft locally — the email is not yet sent or stored anywhere.
   // Wire #gate_email to a form endpoint (or the Vercel API) to capture leads.
+  const API = 'https://cre-press-release-generator.vercel.app/api/generate';
+
+  // Holds Claude's draft once it exists. While it does, typing marks it stale
+  // rather than silently replacing it with template text.
+  let aiDraft = null;
+  function onFormEdit() {
+    if (!aiDraft) { render(); return; }
+    const btn = document.getElementById('ai_btn');
+    if (btn && !aiBusy) btn.textContent = 'Rewrite with AI ↻';
+  }
+
   function unlockGate() {
-    const email = (document.getElementById('gate_email').value || '').trim();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { toast('Enter a valid email to unlock your draft'); return; }
+    const first = v('gate_first'), last = v('gate_last');
+    const title = v('gate_title'), company = v('gate_company');
+    const email = v('gate_email');
+    if (!first || !last) { toast('Enter your first and last name'); return; }
+    if (!title || !company) { toast('Enter your title and company'); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { toast('Enter a valid work email'); return; }
     document.getElementById('preview_panel').classList.remove('locked');
-    toast('Draft unlocked — copy or download it below');
+    writeWithAI();
+  }
+
+  // Everything the API needs, mapped from the form. Numbers must be numbers and
+  // blank optional fields must be omitted, or the brief fails validation.
+  function buildBrief() {
+    const type = currentType();
+    const num = (id) => { const n = Number(v(id)); return Number.isFinite(n) && n > 0 ? n : undefined; };
+    const opt = (id) => v(id) || undefined;
+    const brief = {
+      contact_first_name: v('gate_first'),
+      contact_last_name: v('gate_last'),
+      contact_title: v('gate_title'),
+      contact_company: v('gate_company'),
+      contact_email: v('gate_email'),
+      release_type: type,
+      property_name: opt('property_name'),
+      property_address: v('property_address'),
+      city: v('city'),
+      state: v('state'),
+      property_type: v('property_type'),
+      key_stat_value: num('key_stat_value'),
+      key_stat_unit: v('key_stat_unit'),
+      year_built: num('year_built'),
+      distinguishing_fact: opt('distinguishing_fact'),
+      broker_name: v('broker_name'),
+      broker_title: v('broker_title'),
+      firm_name: v('firm_name'),
+      firm_boilerplate: opt('firm_boilerplate'),
+      media_contact_name: opt('media_contact_name'),
+      media_contact_email: opt('media_contact_email'),
+      media_contact_phone: opt('media_contact_phone'),
+      draft_quote: opt('draft_quote'),
+      quote_angle_hint: opt('quote_angle_hint'),
+    };
+    if (type === 'coming-soon') {
+      brief.price_visible_in_release = isChecked('price_visible_in_release');
+      if (brief.price_visible_in_release) brief.asking_price = num('asking_price');
+    } else if (type === 'just-listed') {
+      brief.asking_price = num('asking_price');
+    } else {
+      brief.asking_price = num('asking_price');
+      brief.buyer_name = opt('buyer_name');
+      brief.seller_name = opt('seller_name');
+      brief.closing_date = opt('closing_date');
+    }
+    Object.keys(brief).forEach(k => brief[k] === undefined && delete brief[k]);
+    return brief;
+  }
+
+  let aiBusy = false;
+  async function writeWithAI() {
+    if (aiBusy) return;
+    if (document.getElementById('preview_panel').classList.contains('locked')) {
+      toast('Fill in the unlock form first'); return;
+    }
+    const btn = document.getElementById('ai_btn');
+    const gateBtn = document.getElementById('gate_btn');
+    aiBusy = true;
+    [btn, gateBtn].forEach(b => { if (b) { b.disabled = true; b.dataset.label = b.textContent; b.textContent = 'Claude is writing…'; } });
+    const body = document.getElementById('preview_body');
+    body.classList.add('thinking');
+    try {
+      const res = await fetch(API, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(buildBrief()),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        toast(json.message || 'Could not reach the writer — showing the template draft.');
+        return;
+      }
+      aiDraft = json;
+      renderAiDraft(json);
+      toast('Claude wrote your release — review the [BRACKETED] slots before sending');
+    } catch (err) {
+      toast('Network error — showing the template draft instead.');
+    } finally {
+      aiBusy = false;
+      body.classList.remove('thinking');
+      [btn, gateBtn].forEach(b => { if (b && b.dataset.label) { b.disabled = false; b.textContent = b.dataset.label; } });
+    }
+  }
+
+  // Claude returns an empty <div class="image-slot"></div>; fill it with the
+  // same photo placeholder the template draft uses.
+  function renderAiDraft(json) {
+    let html = json.draft_html || '';
+    if (/<div class="image-slot">\s*<\/div>/i.test(html)) {
+      html = html.replace(/<div class="image-slot">\s*<\/div>/i, '<div class="image-slot">(insert property photo here)</div>');
+    } else {
+      html = '<div class="image-slot">(insert property photo here)</div>' + html;
+    }
+    document.getElementById('preview_body').innerHTML = html;
+    const warnings = json.warnings || [];
+    const box = document.getElementById('warnings_box');
+    const list = document.getElementById('warnings_list');
+    list.innerHTML = warnings.map(w => `<li>${escapeHtml(w)}</li>`).join('');
+    box.classList.toggle('hidden', warnings.length === 0);
   }
 
   // --- Actions -----------------------------------------------------------
@@ -1094,17 +1234,20 @@
     toast('Draft downloaded as a Word document');
   }
   function resetForm() {
+    aiDraft = null;
+    const btn = document.getElementById('ai_btn');
+    if (btn) btn.textContent = 'Rewrite with AI';
     loadSample(currentType());
     toast('Reset to the sample deal');
   }
 
   // --- Wiring ------------------------------------------------------------
   document.querySelectorAll('input[name="release_type"]').forEach(el => {
-    el.addEventListener('change', () => loadSample(currentType()));
+    el.addEventListener('change', () => { aiDraft = null; loadSample(currentType()); });
   });
   document.querySelectorAll('.form-panel input, .form-panel select, .form-panel textarea').forEach(el => {
-    if (el.name !== 'release_type') el.addEventListener('input', render);
-    if (el.type === 'checkbox') el.addEventListener('change', render);
+    if (el.name !== 'release_type') el.addEventListener('input', onFormEdit);
+    if (el.type === 'checkbox') el.addEventListener('change', onFormEdit);
   });
   // Initial
   applyConditionalFields();
