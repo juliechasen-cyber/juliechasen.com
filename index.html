@@ -344,11 +344,14 @@
       <div class="guide-gate">
         <span class="g-eyebrow">Free guide</span>
         <p class="g-title">10 AI Prompts Every CRE &amp; Finance Pro Needs</p>
-        <!-- Its own Netlify form, separate from the class ("claude-class"),
-             so guide leads and class signups land in two distinct lists. -->
-        <form name="ai-prompt-sheet" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+        <!-- Shares the registered Netlify form "course-reservation" with the
+             class form on portfolio.html. Do NOT rename it — see the note there. -->
+        <form name="course-reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field"
               action="https://juliechasen.netlify.app/guide-thanks.html" class="guide-form">
-          <input type="hidden" name="form-name" value="ai-prompt-sheet">
+          <input type="hidden" name="form-name" value="course-reservation">
+          <!-- Netlify only stores fields the form was registered with
+               (bot-field, email, name), so the source label rides in "name". -->
+          <input type="hidden" name="name" value="⬇ Guide download">
           <p class="guide-hp"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
           <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
           <button type="submit">Get the guide →</button>
