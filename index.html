@@ -356,6 +356,34 @@
           <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
           <button type="submit">Get the guide →</button>
         </form>
+        <script>
+        /* Both site forms share the ONE registered Netlify form name
+           ("course-reservation"), and Netlify stores a single success page per
+           form name — so its own redirect sends class signups and guide leads to
+           the same page. We submit by fetch and pick the destination ourselves.
+           The form's action= stays as a no-JS fallback. */
+        (function () {
+          var f = document.querySelector('.guide-form');
+          if (!f) return;
+          f.addEventListener('submit', function (e) {
+            e.preventDefault();
+            /* no-cors: the Netlify form endpoint sends no
+               Access-Control-Allow-Origin, so a normal fetch would reject even
+               though the submission lands. Opaque response is fine — we only
+               need the POST to go out. */
+            fetch('https://juliechasen.netlify.app/', {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: new URLSearchParams(new FormData(f)).toString()
+            }).then(function () {
+              window.location = '/guide-thanks.html';
+            }).catch(function () {
+              f.submit();   // network hiccup — fall back to the native post
+            });
+          });
+        })();
+        </script>
         <p class="g-note">Copy-paste prompts for listings, outreach, investor updates and LinkedIn posts. No spam — unsubscribe anytime.</p>
       </div>
     </div>
