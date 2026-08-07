@@ -146,6 +146,9 @@
     align-items: center;
     gap: 22px;
     flex-wrap: wrap;
+    /* Drops the row below the bright reflection line in the background image,
+       which otherwise cuts straight through the buttons. */
+    margin-top: 44px;
   }
   .overlay .book-btn {
     display: inline-flex;
@@ -297,6 +300,7 @@
       padding: 40px 24px 20px;
       max-width: 100%;
     }
+    .overlay .cta-row { margin-top: 22px; }
     .overlay h1 { font-size: clamp(2.2rem, 10vw, 3.4rem); margin-bottom: 22px; }
     .overlay .bio { font-size: 0.95rem; margin-bottom: 20px; }
     .overlay .status { font-size: 0.76rem; padding: 6px 12px; }
