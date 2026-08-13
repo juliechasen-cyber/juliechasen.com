@@ -191,9 +191,9 @@
 </div>
 
 <div class="book-meta">
-  <div class="eyebrow">Offering Memorandum</div>
+  <div class="eyebrow" id="book-label">Offering Memorandum</div>
   <h1 id="book-title">Westin Cocoa Beach</h1>
-  <div class="sub" id="book-sub">Hospitality · Bayview PACE deal case study</div>
+  <div class="sub" id="book-sub">Hospitality · Deal case study</div>
 </div>
 
 <div id="flipbook-wrap">
@@ -216,8 +216,10 @@
   const file = params.get('file') || 'files/westin-cocoa-beach.pdf';
   const title = params.get('title');
   const sub = params.get('sub');
+  const label = params.get('label');
   if (title) document.getElementById('book-title').textContent = title;
   if (sub) document.getElementById('book-sub').textContent = sub;
+  if (label) document.getElementById('book-label').textContent = label;
 
   const statusEl = document.getElementById('status');
   const flipEl = document.getElementById('flipbook');
@@ -267,7 +269,7 @@
 
       // Build pages: cover + PDF pages + back cover
       const pagesHtml = [];
-      pagesHtml.push(`<div class="page page-cover" data-density="hard"><div class="cover-inner"><div class="eyebrow">Offering Memorandum</div><h2 id="cover-title">${document.getElementById('book-title').textContent}</h2><p>${document.getElementById('book-sub').textContent}</p></div></div>`);
+      pagesHtml.push(`<div class="page page-cover" data-density="hard"><div class="cover-inner"><div class="eyebrow">${document.getElementById('book-label').textContent}</div><h2 id="cover-title">${document.getElementById('book-title').textContent}</h2><p>${document.getElementById('book-sub').textContent}</p></div></div>`);
       for (const src of images) {
         pagesHtml.push(`<div class="page"><img src="${src}" style="width:100%;height:100%;object-fit:contain;background:#fff;" /></div>`);
       }
