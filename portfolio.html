@@ -219,6 +219,15 @@
     background: linear-gradient(135deg, #007db4 0%, #00263e 100%);
     color: var(--white);
   }
+  .work-cover.cover-brand-integration .placeholder-label {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: var(--white);
+    opacity: 1;
+  }
   .work-cover.cover-siteplans { position: relative; }
   .work-cover.cover-siteplans img {
     width: 100%; height: 100%; object-fit: cover; object-position: center;
@@ -1019,42 +1028,6 @@
 
     <div class="work-grid">
 
-      <!-- CASE 1: Free Press Release Generator (live tool) -->
-      <a href="/press-release-generator" class="work-card">
-        <div class="work-cover cover-press-release">
-          <span class="live-badge">Free Tool · Live</span>
-          <span class="stat-eyebrow">Draft in ~60 seconds</span>
-          <span class="stat-number">CRE Press<br>Release Tool</span>
-          <span class="stat-sub">Free for brokers &amp; principals. No login, no payment.</span>
-        </div>
-        <div class="work-body">
-          <div class="work-meta">
-            <span>Commercial Real Estate</span><span class="dot">·</span><span>Live Tool</span>
-          </div>
-          <h3 class="work-title">A free press release generator for the CRE industry</h3>
-          <p class="work-desc">Built end to end — Next.js app, Claude Sonnet drafting, .docx and .pdf output with the property photo dropped in. Pick a release type, fill a short form, get a publish-ready first draft. A gift to the industry, and a preview of the larger AI marketing platform I'm building for CRE.</p>
-          <span class="work-tag">Open the tool →</span>
-        </div>
-      </a>
-
-      <!-- CASE 2: Deal Lead Service for CRE lenders (offering) -->
-      <a href="/deal-leads" class="work-card">
-        <div class="work-cover cover-leads">
-          <span class="live-badge">Service · Taking Clients</span>
-          <span class="stat-eyebrow">Delivered monthly</span>
-          <span class="stat-number">Deal Leads for<br>CRE Lenders</span>
-          <span class="stat-sub">Researched, qualified, and sent to your inbox.</span>
-        </div>
-        <div class="work-body">
-          <div class="work-meta">
-            <span>Commercial Real Estate</span><span class="dot">·</span><span>Lead Service</span>
-          </div>
-          <h3 class="work-title">Qualified deal leads for CRE lenders — delivered, not licensed</h3>
-          <p class="work-desc">A monthly list of active, financeable projects matched to what you actually lend on — built for C&#8209;PACE, construction, bridge, and private credit lenders.</p>
-          <span class="work-tag">See a sample lead →</span>
-        </div>
-      </a>
-
       <!-- CASE 3: National Commercial Lending Platform (hero proof) -->
       <a href="/lending-platform" class="work-card">
         <div class="work-cover cover-finance">
@@ -1067,23 +1040,6 @@
           <h3 class="work-title">Marketing that took a lending platform from $103M to $1B+</h3>
           <p class="work-desc">Authored and executed the multi-year marketing strategy that scaled a national commercial lending platform from $103M in 2022 to over $1B in early 2026. Brand strategy, PR, investor collateral, digital marketing, and campaign execution.</p>
           <span class="work-tag">View the project</span>
-        </div>
-      </a>
-
-      <!-- CASE 4: TFP Donation Portal -->
-      <a href="/tfp-portal" class="work-card">
-        <div class="work-cover cover-tfp-portal">
-          <span class="stat-eyebrow">Platform-Layer Fees</span>
-          <span class="stat-number">$0</span>
-          <span class="stat-sub">Only standard Stripe processing.</span>
-        </div>
-        <div class="work-body">
-          <div class="work-meta">
-            <span>Travel For Purpose</span><span class="dot">·</span><span>Custom Form + Stripe</span>
-          </div>
-          <h3 class="work-title">Custom donation portal — direct to Stripe, no platform middle layer</h3>
-          <p class="work-desc">Custom-coded form, Stripe-integrated, end-to-end tested, live in production. Cuts out the subscription and platform fees that fundraising software layers on top of payment processing — so more of every donation reaches the mission. <em style="font-style:italic;color:var(--granite);">Available for any custom form, checkout, or payment flow.</em></p>
-          <span class="work-tag">View the project + live form</span>
         </div>
       </a>
 
@@ -1161,6 +1117,59 @@
           <h3 class="work-title">Led the brand strategy that saved a name and a logo</h3>
           <p class="work-desc">When the parent organization rebranded every sub-brand, a division I led marketing for was on the path to a full name change and a new logo. I proposed and led the alternative — preserving the identity, protecting years of brand equity, and driving 35× website growth right through the transition.</p>
           <span class="work-tag">See the case study + the pitch</span>
+        </div>
+      </a>
+
+      <!-- CASE 1: Free Press Release Generator (live tool) -->
+      <a href="/press-release-generator" class="work-card">
+        <div class="work-cover cover-press-release">
+          <span class="live-badge">Free Tool · Live</span>
+          <span class="stat-eyebrow">Draft in ~60 seconds</span>
+          <span class="stat-number">CRE Press<br>Release Tool</span>
+          <span class="stat-sub">Free for brokers &amp; principals. No login, no payment.</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Commercial Real Estate</span><span class="dot">·</span><span>Live Tool</span>
+          </div>
+          <h3 class="work-title">A free press release generator for the CRE industry</h3>
+          <p class="work-desc">Built end to end — Next.js app, Claude Sonnet drafting, .docx and .pdf output with the property photo dropped in. Pick a release type, fill a short form, get a publish-ready first draft. A gift to the industry, and a preview of the larger AI marketing platform I'm building for CRE.</p>
+          <span class="work-tag">Open the tool →</span>
+        </div>
+      </a>
+
+      <!-- CASE 2: Deal Lead Service for CRE lenders (offering) -->
+      <a href="/deal-leads" class="work-card">
+        <div class="work-cover cover-leads">
+          <span class="live-badge">Service · Taking Clients</span>
+          <span class="stat-eyebrow">Delivered monthly</span>
+          <span class="stat-number">Deal Leads for<br>CRE Lenders</span>
+          <span class="stat-sub">Researched, qualified, and sent to your inbox.</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Commercial Real Estate</span><span class="dot">·</span><span>Lead Service</span>
+          </div>
+          <h3 class="work-title">Qualified deal leads for CRE lenders — delivered, not licensed</h3>
+          <p class="work-desc">A monthly list of active, financeable projects matched to what you actually lend on — built for C&#8209;PACE, construction, bridge, and private credit lenders.</p>
+          <span class="work-tag">See a sample lead →</span>
+        </div>
+      </a>
+
+      <!-- CASE 4: TFP Donation Portal -->
+      <a href="/tfp-portal" class="work-card">
+        <div class="work-cover cover-tfp-portal">
+          <span class="stat-eyebrow">Platform-Layer Fees</span>
+          <span class="stat-number">$0</span>
+          <span class="stat-sub">Only standard Stripe processing.</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Travel For Purpose</span><span class="dot">·</span><span>Custom Form + Stripe</span>
+          </div>
+          <h3 class="work-title">Custom donation portal — direct to Stripe, no platform middle layer</h3>
+          <p class="work-desc">Custom-coded form, Stripe-integrated, end-to-end tested, live in production. Cuts out the subscription and platform fees that fundraising software layers on top of payment processing — so more of every donation reaches the mission. <em style="font-style:italic;color:var(--granite);">Available for any custom form, checkout, or payment flow.</em></p>
+          <span class="work-tag">View the project + live form</span>
         </div>
       </a>
 
