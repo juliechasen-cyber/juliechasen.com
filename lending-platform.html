@@ -245,6 +245,10 @@
     letter-spacing: -0.02em; color: var(--navy);
     line-height: 1.15;
   }
+  .theme-intro {
+    color: var(--granite); font-size: 1.02rem; line-height: 1.65;
+    margin-bottom: 22px; max-width: 56ch;
+  }
   .theme-bullets {
     list-style: none; padding: 0;
     display: grid; gap: 16px;
@@ -299,6 +303,58 @@
     line-height: 1.55;
   }
   .deal-desc strong { color: var(--sky); font-weight: 600; }
+  a.deal-card { text-decoration: none; color: inherit; cursor: pointer; }
+  .deal-card-featured {
+    background: linear-gradient(180deg, #ffffff 0%, #eef3f7 100%);
+    border-color: var(--gold);
+    box-shadow: 0 6px 24px rgba(245, 168, 0, 0.10);
+    padding: 0 0 28px;
+    overflow: hidden;
+  }
+  .deal-card-featured:hover { box-shadow: 0 18px 40px rgba(245, 168, 0, 0.18); }
+  .deal-thumb {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .deal-thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .deal-card-featured:hover .deal-thumb img { transform: scale(1.04); }
+  .deal-thumb::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,38,62,0) 55%, rgba(0,38,62,0.55) 100%);
+    pointer-events: none;
+  }
+  .deal-thumb-badge {
+    position: absolute; left: 14px; bottom: 12px;
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.06em;
+    text-transform: uppercase; font-weight: 600;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .deal-card-featured .deal-amount,
+  .deal-card-featured .deal-name,
+  .deal-card-featured .deal-meta,
+  .deal-card-featured .deal-cta {
+    padding-left: 28px; padding-right: 28px;
+  }
+  .deal-cta {
+    margin-top: auto;
+    padding-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 600;
+    color: var(--sky);
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .deal-card-featured:hover .deal-cta span { transform: translateX(3px); transition: transform 0.15s; }
   .deals-lede {
     color: var(--granite); font-size: 1.02rem;
     line-height: 1.65; max-width: 58ch;
@@ -381,12 +437,23 @@
   }
   .featured-pub-card {
     background: var(--navy); color: var(--white);
-    border-radius: 14px; padding: 32px 36px;
+    border-radius: 14px; padding: 20px 36px 20px 20px;
     display: flex; justify-content: space-between; align-items: center;
     gap: 24px; text-decoration: none;
     transition: background 0.15s;
   }
   .featured-pub-card:hover { background: #003659; }
+  .featured-pub-media {
+    flex-shrink: 0; width: 140px; height: 92px;
+    border-radius: 8px; overflow: hidden;
+  }
+  .featured-pub-media img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  @media (max-width: 720px) {
+    .featured-pub-card { flex-wrap: wrap; padding: 20px; }
+    .featured-pub-media { width: 100%; height: 160px; }
+  }
   .featured-pub-pub {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.78rem; letter-spacing: 0.12em;
@@ -560,49 +627,64 @@
 <section class="highlights" id="highlights">
   <div class="wrap">
     <span class="section-eyebrow mono">What I led</span>
-    <h2 class="section-h">The work, by <em>theme</em>.</h2>
+    <h2 class="section-h">The work, by <em>pillar</em>.</h2>
 
-    <!-- THEME 1 -->
+    <!-- PILLAR 1 -->
     <div class="theme-block">
       <div class="theme-grid">
         <div class="theme-label">
           <span class="theme-num">01</span>
-          <h3 class="theme-title">Strategy &amp; Growth</h3>
+          <h3 class="theme-title">Brand &amp; Growth</h3>
         </div>
-        <ul class="theme-bullets">
-          <li>Marketing strategy, brand positioning, and growth initiatives</li>
-          <li>LinkedIn strategy</li>
-          <li>Market research and lead generation</li>
-        </ul>
+        <div>
+          <p class="theme-intro">Led marketing for the platform as it scaled from roughly $103M to $1B+ in cumulative financing volume — owning the strategy, not just the execution.</p>
+          <ul class="theme-bullets">
+            <li>Website strategy, positioning, and brand identity</li>
+            <li>Integrated campaign planning and execution</li>
+            <li>LinkedIn strategy and executive presence</li>
+            <li>Email marketing programs</li>
+            <li>PR strategy and press coverage across CRE, hospitality, and capital markets trades</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <!-- THEME 2 -->
+    <!-- PILLAR 2 -->
     <div class="theme-block">
       <div class="theme-grid">
         <div class="theme-label">
           <span class="theme-num">02</span>
-          <h3 class="theme-title">Communications &amp; Content</h3>
+          <h3 class="theme-title">Content &amp; Thought Leadership</h3>
         </div>
-        <ul class="theme-bullets">
-          <li>Thought leadership and strategic partnerships</li>
-          <li>Blogs, LinkedIn posts, and industry articles</li>
-          <li>CRM, email marketing, LinkedIn, PR, website management, and collateral development</li>
-        </ul>
+        <div>
+          <p class="theme-intro">Translated complex C-PACE and structured finance concepts into content that developers, owners, brokers, and lenders could actually act on.</p>
+          <ul class="theme-bullets">
+            <li>Articles, market updates, and program updates</li>
+            <li>Deal case studies and investor-ready collateral</li>
+            <li>Press releases and deal announcements</li>
+            <li>Social content and LinkedIn thought leadership</li>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <!-- THEME 3 -->
+    <!-- PILLAR 3 -->
     <div class="theme-block">
       <div class="theme-grid">
         <div class="theme-label">
           <span class="theme-num">03</span>
-          <h3 class="theme-title">Operations &amp; Cross-Functional</h3>
+          <h3 class="theme-title">Digital &amp; Demand Generation</h3>
         </div>
-        <ul class="theme-bullets">
-          <li>Internal AI team partnership</li>
-          <li>Cross-functional alignment across business units</li>
-        </ul>
+        <div>
+          <p class="theme-intro">Built the digital engine behind the growth — SEO, website traffic, and lead generation that compounded year over year.</p>
+          <ul class="theme-bullets">
+            <li>SEO strategy — website traffic grew from 949 users in 2022 to 33,662 in 2024, a 35× increase</li>
+            <li>Landing page strategy and conversion optimization</li>
+            <li>Email campaign programs</li>
+            <li>Google Ads and paid lead-generation</li>
+            <li>Market research feeding demand-gen targeting</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -628,10 +710,16 @@
         <div class="deal-meta">2025 · Luxury Condo Development</div>
       </article>
 
-      <article class="deal-card">
+      <a class="deal-card deal-card-featured" href="/om-flipbook?file=files/westin-cocoa-beach.pdf&amp;title=Westin%20Cocoa%20Beach&amp;sub=Hospitality%20%C2%B7%20Bayview%20PACE%20Financing">
+        <div class="deal-thumb">
+          <img src="images/thumbs/westin-cover-photo.jpg" alt="Westin Cocoa Beach deal announcement" />
+          <span class="deal-thumb-badge">Flip through →</span>
+        </div>
         <div class="deal-amount">$137M</div>
+        <div class="deal-name">Westin Cocoa Beach</div>
         <div class="deal-meta">2025 · Hospitality &amp; Resort</div>
-      </article>
+        <span class="deal-cta">Flip through the OM <span aria-hidden="true">→</span></span>
+      </a>
 
     </div>
 
@@ -680,17 +768,6 @@
           <li>Seniors Housing Business</li>
           <li>Student Housing Business</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="featured-pub">
-      <span class="featured-pub-eyebrow">Featured editorial placement</span>
-      <div class="featured-pub-card" style="cursor:default;">
-        <div>
-          <div class="featured-pub-pub">National CRE Trade</div>
-          <div class="featured-pub-title">Long-form editorial placement positioning the platform as a category leader in creative capital structures.</div>
-          <div class="featured-pub-sub">Earned coverage that established the platform as a thought leader in the booming C-PACE space.</div>
-        </div>
       </div>
     </div>
   </div>

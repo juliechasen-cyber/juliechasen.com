@@ -198,7 +198,7 @@
   }
   .work-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px var(--shadow); }
   .work-cover {
-    aspect-ratio: 16/10;
+    aspect-ratio: 2/1;
     background: linear-gradient(135deg, var(--paper-soft), var(--line));
     position: relative;
     display: flex; align-items: center; justify-content: center;
@@ -215,6 +215,50 @@
   .work-cover.cover-tfp-news { background: linear-gradient(135deg, #eef3f7 0%, #a5bac9 100%); color: var(--navy); }
   .work-cover.cover-joyshare { background: linear-gradient(135deg, #f5a800 0%, #f5c14b 100%); color: var(--navy); }
   .work-cover.cover-charro { background: linear-gradient(135deg, #f2a33c 0%, #d23b2e 100%); color: var(--white); }
+  .work-cover.cover-brand-integration {
+    background: linear-gradient(135deg, #007db4 0%, #00263e 100%);
+    color: var(--white);
+  }
+  .work-cover.cover-siteplans { position: relative; }
+  .work-cover.cover-siteplans img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+    display: block;
+  }
+  .work-cover.cover-siteplans .placeholder-label { display: none; }
+  .work-cover.cover-siteplans::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,38,62,0) 55%, rgba(0,38,62,0.55) 100%);
+    pointer-events: none;
+  }
+  .siteplans-badge {
+    position: absolute; left: 20px; bottom: 16px;
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.06em;
+    text-transform: uppercase; font-weight: 600;
+    z-index: 1;
+  }
+  .work-cover.cover-oms { position: relative; }
+  .work-cover.cover-oms img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    display: block;
+  }
+  .work-cover.cover-oms .placeholder-label { display: none; }
+  .work-cover.cover-oms::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,38,62,0) 55%, rgba(0,38,62,0.55) 100%);
+    pointer-events: none;
+  }
+  .oms-badge {
+    position: absolute; left: 20px; bottom: 16px;
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.06em;
+    text-transform: uppercase; font-weight: 600;
+    z-index: 1;
+  }
   .work-cover.cover-olanani {
     background-image: url('images/serum-after.webp');
     background-size: cover; background-position: center;
@@ -1052,12 +1096,73 @@
           <div class="work-meta">
             <span>Commercial Real Estate</span>
           </div>
-          <h3 class="work-title">Full CRE marketing — built end to end</h3>
+          <h3 class="work-title">Full CRE marketing library</h3>
           <p class="work-desc">For independent brokers, growing teams, brokerages, developers, sponsors, and capital partners. Offering memoranda, investor pitch decks, tour books, property fact sheets, capital markets one-pagers, and bespoke deal collateral — refined across years inside one of the country's largest CRE brokerages.</p>
-          <span class="work-tag">View the project</span>
+          <span class="work-tag">See real examples</span>
         </div>
       </a>
 
+      <!-- CASE 6: Serum Brand Refresh (OLANANI) -->
+      <a href="/serum-rebrand" class="work-card">
+        <div class="work-cover cover-olanani">
+          <span class="placeholder-label"></span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Skincare Brand</span><span class="dot">·</span><span>Brand Refresh + Shopify</span>
+          </div>
+          <h3 class="work-title">From craft serum to retail-ready beauty brand</h3>
+          <p class="work-desc">Full brand refresh for a handcrafted skincare line — new identity, product naming, packaging design, visual system, plus an entire Shopify website built end-to-end. Took the product from homemade-looking to shelf-ready.</p>
+          <span class="work-tag">See the before &amp; after</span>
+        </div>
+      </a>
+
+      <!-- CASE 9: Site Plans — before/after + gallery -->
+      <a href="/site-plans" class="work-card">
+        <div class="work-cover cover-siteplans">
+          <img src="images/site-plans/hardees-after-web.jpg" alt="" />
+          <span class="siteplans-badge">Before &amp; after →</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Commercial Real Estate</span><span class="dot">·</span><span>Site Plans</span>
+          </div>
+          <h3 class="work-title">Raw CAD drawing to investor-ready site plan</h3>
+          <p class="work-desc">Engineering exports turned into clean, branded, legible marketing plans — parcel outlines, tenant mix, traffic flow, and access points a broker can actually use.</p>
+          <span class="work-tag">See the before &amp; after</span>
+        </div>
+      </a>
+
+      <!-- CASE 8: Offering Memoranda — interactive flipbook -->
+      <a href="/om-flipbook?file=files/westin-cocoa-beach.pdf&amp;title=Westin%20Cocoa%20Beach&amp;sub=Hospitality%20%C2%B7%20Bayview%20PACE%20Financing" class="work-card">
+        <div class="work-cover cover-oms">
+          <img src="images/thumbs/westin-cover-photo.jpg" alt="" />
+          <span class="oms-badge">Click to flip through →</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Commercial Real Estate</span><span class="dot">·</span><span>Offering Memoranda</span>
+          </div>
+          <h3 class="work-title">Investor collateral you can actually flip through</h3>
+          <p class="work-desc">Built a page-turn viewer for offering memoranda and deal announcements — no PDF download, no static thumbnail. Real collateral, browsable like a book, right in the portfolio.</p>
+          <span class="work-tag">Open the flipbook</span>
+        </div>
+      </a>
+
+      <!-- CASE 7: Bayview Brand Integration (Corporate Rebrand Leadership) -->
+      <a href="/bayview-brand-integration" class="work-card">
+        <div class="work-cover cover-brand-integration">
+          <span class="placeholder-label">Brand Strategy</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Financial Services</span><span class="dot">·</span><span>Brand Strategy + Corporate Rebrand</span>
+          </div>
+          <h3 class="work-title">Led the brand strategy that saved a name and a logo</h3>
+          <p class="work-desc">When the parent organization rebranded every sub-brand, a division I led marketing for was on the path to a full name change and a new logo. I proposed and led the alternative — preserving the identity, protecting years of brand equity, and driving 35× website growth right through the transition.</p>
+          <span class="work-tag">See the case study + the pitch</span>
+        </div>
+      </a>
 
     </div>
 
@@ -1244,6 +1349,7 @@
     <div class="contact-actions">
       <a href="mailto:juliechasen@gmail.com" class="btn btn-primary">juliechasen@gmail.com <span class="btn-arrow">→</span></a>
       <a href="https://www.linkedin.com/in/juliechasen/" class="btn btn-secondary" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a href="https://github.com/juliechasen-cyber" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </section>

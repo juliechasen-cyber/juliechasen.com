@@ -174,6 +174,29 @@
   .lib-item p {
     color: var(--granite); font-size: 0.93rem; line-height: 1.55;
   }
+  .lib-item-oms { grid-column: span 2; }
+  @media (max-width: 900px) { .lib-item-oms { grid-column: span 2; } }
+  @media (max-width: 600px) { .lib-item-oms { grid-column: span 1; } }
+  .lib-examples {
+    display: flex; gap: 14px; margin-top: 6px;
+  }
+  .lib-example {
+    flex: 1; text-decoration: none;
+    border-radius: 10px; overflow: hidden;
+    background: var(--soft);
+    border: 1px solid var(--stone);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .lib-example:hover { transform: translateY(-2px); box-shadow: 0 12px 24px var(--shadow); }
+  .lib-example img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  }
+  .lib-example span {
+    display: block; padding: 10px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.04em;
+    color: var(--navy); font-weight: 600;
+  }
 
   /* SYSTEMS FOR BROKERAGES */
   section.systems {
@@ -628,10 +651,20 @@
 
     <div class="lib-grid">
 
-      <div class="lib-item">
+      <div class="lib-item lib-item-oms">
         <span class="lib-num">01</span>
         <h3>Offering Memoranda</h3>
         <p>The centerpiece sales document. Property story, financials, market positioning, and investment thesis — packaged into a polished OM that wins serious buyer attention.</p>
+        <div class="lib-examples">
+          <a href="/om-flipbook?file=files/oms/brigantine.pdf&amp;title=Brigantine&amp;sub=Marcus%20%26%20Millichap%20%C2%B7%20Shelter%20Island%2C%20San%20Diego" class="lib-example">
+            <img src="images/thumbs/brigantine-cover-01.jpg" alt="Brigantine offering memorandum cover" />
+            <span>Brigantine, San Diego <span aria-hidden="true">→</span></span>
+          </a>
+          <a href="/om-flipbook?file=files/oms/totah-2329-india-street.pdf&amp;title=2329%20India%20Street&amp;sub=The%20Totah%20Group%20%C2%B7%20San%20Diego" class="lib-example">
+            <img src="images/thumbs/india-street-cover-01.jpg" alt="2329 India Street offering memorandum cover" />
+            <span>2329 India Street <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
       </div>
 
       <div class="lib-item">

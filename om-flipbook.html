@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Offering Memoranda — Julie Chasen</title>
+<meta name="description" content="Interactive offering memoranda showcase — browse investor-ready CRE marketing collateral by Julie Chasen." />
+<link rel="icon" type="image/png" href="images/favicon.png" />
+
+<style>
+  :root {
+    --ink: #16171a;
+    --paper: #faf7f2;
+    --cream: #f0ece4;
+    --rust: #9c4a2a;
+    --rust-soft: #b56548;
+    --granite: #4b4f56;
+    --line: rgba(22,23,26,0.12);
+    --shadow: rgba(22,23,26,0.28);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #1c1d20 0%, #2b2d33 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    background: rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: #f0ece4;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .topbar a { color: #f0ece4; text-decoration: none; }
+  .brand { font-weight: 600; letter-spacing: -0.01em; }
+  .topbar .back {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+  .topbar .back:hover { opacity: 1; }
+
+  .book-meta {
+    text-align: center;
+    padding: 24px 20px 8px;
+    color: #f0ece4;
+  }
+  .book-meta .eyebrow {
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rust-soft);
+    margin-bottom: 8px;
+  }
+  .book-meta h1 {
+    font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .book-meta .sub {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 6px;
+  }
+
+  #flipbook-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px 12px;
+    min-height: 0;
+  }
+  #flipbook {
+    box-shadow: 0 30px 80px var(--shadow), 0 2px 8px rgba(0,0,0,0.15);
+  }
+  #flipbook .page {
+    background: #fff;
+    overflow: hidden;
+  }
+  #flipbook .page canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  #flipbook .page-cover {
+    background: linear-gradient(135deg, #4b4f56 0%, #16171a 100%);
+    color: #f0ece4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+  }
+  #flipbook .page-cover .cover-inner .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rust-soft);
+    margin-bottom: 16px;
+  }
+  #flipbook .page-cover .cover-inner h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  #flipbook .page-cover .cover-inner p {
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 16px 20px 28px;
+    color: #f0ece4;
+  }
+  .ctrl-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: #f0ece4;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.15s;
+    font-size: 1.1rem;
+  }
+  .ctrl-btn:hover { background: rgba(255,255,255,0.16); transform: translateY(-1px); }
+  .ctrl-btn:disabled { opacity: 0.35; cursor: not-allowed; transform: none; }
+  .page-indicator {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    min-width: 100px;
+    text-align: center;
+    opacity: 0.85;
+  }
+
+  .status {
+    text-align: center;
+    color: #f0ece4;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    padding: 40px 20px;
+  }
+  .status .spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-top-color: var(--rust-soft);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  @media (max-width: 720px) {
+    .topbar { padding: 14px 18px; }
+    .book-meta { padding: 18px 16px 4px; }
+    .controls { gap: 12px; padding: 12px 16px 22px; }
+    .page-indicator { min-width: 80px; font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/portfolio" class="brand">Julie Chasen</a>
+  <a href="/portfolio#work" class="back">← Back to portfolio</a>
+</div>
+
+<div class="book-meta">
+  <div class="eyebrow">Offering Memorandum</div>
+  <h1 id="book-title">Westin Cocoa Beach</h1>
+  <div class="sub" id="book-sub">Hospitality · Bayview PACE deal case study</div>
+</div>
+
+<div id="flipbook-wrap">
+  <div id="status" class="status"><span class="spinner"></span>Loading the book…</div>
+  <div id="flipbook" style="display:none;"></div>
+</div>
+
+<div class="controls" id="controls" style="display:none;">
+  <button class="ctrl-btn" id="prev" aria-label="Previous page">‹</button>
+  <div class="page-indicator" id="indicator">— / —</div>
+  <button class="ctrl-btn" id="next" aria-label="Next page">›</button>
+</div>
+
+<script src="vendor/page-flip.browser.js"></script>
+<script type="module">
+  import * as pdfjsLib from './vendor/pdf.min.mjs';
+  pdfjsLib.GlobalWorkerOptions.workerSrc = './vendor/pdf.worker.min.mjs';
+
+  const params = new URLSearchParams(window.location.search);
+  const file = params.get('file') || 'files/westin-cocoa-beach.pdf';
+  const title = params.get('title');
+  const sub = params.get('sub');
+  if (title) document.getElementById('book-title').textContent = title;
+  if (sub) document.getElementById('book-sub').textContent = sub;
+
+  const statusEl = document.getElementById('status');
+  const flipEl = document.getElementById('flipbook');
+  const controlsEl = document.getElementById('controls');
+  const indicatorEl = document.getElementById('indicator');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+
+  function computeBookSize() {
+    const availW = window.innerWidth - 40;
+    const availH = window.innerHeight - 260;
+    // Page aspect ratio 8.5x11 (letter) — flipbook shows 2 pages side by side
+    const pageAspect = 8.5 / 11;
+    let pageH = Math.min(availH, 900);
+    let pageW = pageH * pageAspect;
+    let bookW = pageW * 2;
+    if (bookW > availW) {
+      bookW = availW;
+      pageW = bookW / 2;
+      pageH = pageW / pageAspect;
+    }
+    return { width: Math.floor(pageW), height: Math.floor(pageH) };
+  }
+
+  async function renderPdfPagesToImages(pdfUrl, targetWidth) {
+    const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+    const images = [];
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale: 1 });
+      const scale = (targetWidth * 2) / viewport.width; // 2x for retina
+      const scaledViewport = page.getViewport({ scale });
+      const canvas = document.createElement('canvas');
+      canvas.width = scaledViewport.width;
+      canvas.height = scaledViewport.height;
+      const ctx = canvas.getContext('2d');
+      await page.render({ canvasContext: ctx, viewport: scaledViewport }).promise;
+      images.push(canvas.toDataURL('image/jpeg', 0.85));
+    }
+    return { images, aspect: (await pdf.getPage(1)).getViewport({ scale: 1 }).width / (await pdf.getPage(1)).getViewport({ scale: 1 }).height };
+  }
+
+  (async () => {
+    try {
+      const size = computeBookSize();
+      const { images } = await renderPdfPagesToImages(file, size.width);
+
+      // Build pages: cover + PDF pages + back cover
+      const pagesHtml = [];
+      pagesHtml.push(`<div class="page page-cover" data-density="hard"><div class="cover-inner"><div class="eyebrow">Offering Memorandum</div><h2 id="cover-title">${document.getElementById('book-title').textContent}</h2><p>${document.getElementById('book-sub').textContent}</p></div></div>`);
+      for (const src of images) {
+        pagesHtml.push(`<div class="page"><img src="${src}" style="width:100%;height:100%;object-fit:contain;background:#fff;" /></div>`);
+      }
+      pagesHtml.push(`<div class="page page-cover" data-density="hard"><div class="cover-inner"><p>End of memorandum</p></div></div>`);
+
+      flipEl.innerHTML = pagesHtml.join('');
+      flipEl.style.display = 'block';
+      statusEl.style.display = 'none';
+      controlsEl.style.display = 'flex';
+
+      const pageFlip = new St.PageFlip(flipEl, {
+        width: size.width,
+        height: size.height,
+        size: 'fixed',
+        minWidth: 300,
+        maxWidth: 1200,
+        minHeight: 400,
+        maxHeight: 1600,
+        drawShadow: true,
+        maxShadowOpacity: 0.5,
+        showCover: true,
+        mobileScrollSupport: false,
+        usePortrait: window.innerWidth < 768,
+        flippingTime: 700,
+      });
+
+      pageFlip.loadFromHTML(document.querySelectorAll('#flipbook .page'));
+
+      function updateIndicator() {
+        const cur = pageFlip.getCurrentPageIndex() + 1;
+        const total = pageFlip.getPageCount();
+        indicatorEl.textContent = `${cur} / ${total}`;
+        prevBtn.disabled = cur <= 1;
+        nextBtn.disabled = cur >= total;
+      }
+      pageFlip.on('flip', updateIndicator);
+      updateIndicator();
+
+      prevBtn.addEventListener('click', () => pageFlip.flipPrev());
+      nextBtn.addEventListener('click', () => pageFlip.flipNext());
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') pageFlip.flipPrev();
+        if (e.key === 'ArrowRight') pageFlip.flipNext();
+      });
+    } catch (err) {
+      console.error(err);
+      statusEl.innerHTML = `Couldn't load the PDF. <br><small style="opacity:0.6">${err.message}</small>`;
+    }
+  })();
+</script>
+
+</body>
+</html>
