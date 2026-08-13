@@ -186,87 +186,83 @@
 
   .brand-tree {
     margin: 48px 0;
-    padding: 40px 32px;
-    background: var(--soft);
+    background: var(--white);
+    border: 1px solid var(--stone);
     border-radius: 14px;
-    text-align: center;
+    overflow: hidden;
   }
-  .brand-tree-label {
+  .brand-tree-row {
+    padding: 30px 34px;
+    border-bottom: 1px solid var(--stone);
+  }
+  .brand-tree-row:last-child { border-bottom: none; }
+  .brand-tree-row-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--granite);
-    font-weight: 600; margin-bottom: 14px;
+    font-size: 0.68rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold);
+    font-weight: 700; margin-bottom: 20px;
   }
-  .brand-tree-parent { display: inline-block; }
+  .brand-tree-row-center { display: flex; justify-content: center; }
   .brand-tree-logo {
     background: var(--white);
     border: 1px solid var(--stone);
     border-radius: 10px;
     padding: 18px 26px;
     display: flex; align-items: center; justify-content: center;
-    height: 90px;
+    height: 90px; min-width: 240px;
     box-shadow: 0 2px 8px rgba(0,38,62,0.04);
   }
-  .brand-tree-logo img {
-    max-width: 100%; max-height: 100%;
-    object-fit: contain;
-    filter: none;
+  .brand-tree-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .brand-tree-logo-dark { background: var(--navy); border-color: var(--navy); }
+  .brand-tree-logo-placeholder {
+    background: var(--soft);
+    border: 1.5px dashed var(--stone);
+    box-shadow: none;
+    flex-direction: column; gap: 4px;
   }
-  .brand-tree-logo-dark {
-    background: var(--navy);
-    border-color: var(--navy);
+  .placeholder-mark {
+    color: var(--granite);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;
+    text-align: center; line-height: 1.5;
   }
-  .brand-tree-logo-lg {
-    min-width: 260px;
-    padding: 20px 32px;
-    height: 100px;
+  .brand-tree-units-row { display: flex; align-items: stretch; gap: 34px; }
+  .brand-tree-units-group { flex: 1.3; }
+  .brand-tree-units-group-label {
+    font-size: 0.72rem; color: var(--granite); font-weight: 600;
+    text-align: center; margin-bottom: 14px;
   }
-  .brand-tree-connector {
-    position: relative;
-    height: 44px;
-    max-width: 560px;
-    margin: 0 auto;
+  .brand-tree-units-divider { width: 1px; background: var(--stone); align-self: stretch; }
+  .brand-tree-units-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .brand-tree-unit-box {
+    border: 1.5px dashed var(--stone);
+    border-radius: 8px;
+    background: var(--soft);
+    padding: 14px 10px;
+    min-height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
   }
-  .brand-tree-line-v {
-    position: absolute;
-    top: 0; left: 50%;
-    width: 2px; height: 20px;
-    background: var(--stone);
-    transform: translateX(-50%);
+  .brand-tree-unit-name { font-size: 0.72rem; color: var(--granite); font-weight: 600; line-height: 1.35; }
+  .brand-tree-real-group { flex: 1; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+  .brand-tree-real-item { text-align: center; }
+  .brand-tree-real-logo {
+    background: var(--white);
+    border: 1px solid var(--stone);
+    border-radius: 10px;
+    padding: 12px 20px;
+    height: 62px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,38,62,0.04);
+    margin: 0 auto 8px;
   }
-  .brand-tree-line-h {
-    position: absolute;
-    top: 20px; left: 12%; right: 12%;
-    height: 2px;
-    background: var(--stone);
-  }
-  .brand-tree-drop {
-    position: absolute;
-    top: 20px;
-    width: 2px; height: 24px;
-    background: var(--stone);
-  }
-  .brand-tree-drop-left { left: 12%; }
-  .brand-tree-drop-right { right: 12%; }
-  .brand-tree-children {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-  .brand-tree-child { display: flex; flex-direction: column; align-items: center; }
+  .brand-tree-real-logo.dark { background: var(--navy); border-color: var(--navy); }
+  .brand-tree-real-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .brand-tree-real-caption { font-size: 0.72rem; color: var(--granite); font-weight: 600; }
   @media (max-width: 680px) {
-    .brand-tree-children { grid-template-columns: 1fr; gap: 22px; }
-    .brand-tree-connector { display: none; }
-    .brand-tree-child { margin-top: 20px; position: relative; }
-    .brand-tree-child::before {
-      content: '';
-      position: absolute; top: -20px; left: 50%;
-      width: 2px; height: 16px; background: var(--stone);
-      transform: translateX(-50%);
-    }
-    .brand-tree-logo-lg { min-width: 0; }
+    .brand-tree-units-row { flex-direction: column; gap: 24px; }
+    .brand-tree-units-divider { display: none; }
+    .brand-tree-logo { min-width: 0; }
   }
 
   section.decisions {
@@ -450,38 +446,56 @@
     <div class="story-body">
       <p>The parent organization was restructuring its portfolio of sub-brands. A neighboring sub-brand was already changing its name and identity. The default plan for this division was the same: a new name, a new logo, a new visual system layered on top of years of built-up market recognition.</p>
 
-      <p>I led the marketing function for this division through the entire process. My position: <strong>the brand equity we had built was too valuable to reset.</strong> The mark was already recognized in the C-PACE lending market. The favicon and visual system tied cleanly to the parent brand — the name every investor and broker in the space already knew.</p>
+      <p>I led the marketing function for this division through the entire process. My position: <strong>the brand equity we had built was too valuable to reset.</strong> The mark was already recognized in the lending market. The favicon and visual system tied cleanly to the parent brand — the name every investor and broker in the space already knew.</p>
 
       <div class="brand-tree">
-        <div class="brand-tree-parent">
-          <div class="brand-tree-label">Parent brand</div>
-          <div class="brand-tree-logo brand-tree-logo-lg">
-            <img src="images/bayview-brands/bayview-asset-management-alt.png" alt="Parent brand logo" />
-          </div>
-        </div>
-        <div class="brand-tree-connector" aria-hidden="true">
-          <div class="brand-tree-line-v"></div>
-          <div class="brand-tree-line-h"></div>
-          <div class="brand-tree-drop brand-tree-drop-left"></div>
-          <div class="brand-tree-drop brand-tree-drop-right"></div>
-        </div>
-        <div class="brand-tree-children">
-          <div class="brand-tree-child">
-            <div class="brand-tree-label">Division · brand preserved</div>
-            <div class="brand-tree-logo brand-tree-logo-dark">
-              <img src="images/bayview-brands/bayview-pace.webp" alt="Division logo — brand preserved" />
+        <div class="brand-tree-row">
+          <div class="brand-tree-row-label">Parent brand</div>
+          <div class="brand-tree-row-center">
+            <div class="brand-tree-logo">
+              <img src="images/bayview-brands/bayview-asset-management-alt.png" alt="Parent brand logo" />
             </div>
           </div>
-          <div class="brand-tree-child">
-            <div class="brand-tree-label">Aligned counterpart</div>
-            <div class="brand-tree-logo">
-              <img src="images/bayview-brands/bayview-commercial-mortgage-finance.png" alt="Aligned counterpart division logo" />
+        </div>
+        <div class="brand-tree-row">
+          <div class="brand-tree-row-label">Sub-brand</div>
+          <div class="brand-tree-row-center">
+            <div class="brand-tree-logo brand-tree-logo-placeholder">
+              <span class="placeholder-mark">Sub-brand</span>
+            </div>
+          </div>
+        </div>
+        <div class="brand-tree-row">
+          <div class="brand-tree-row-label">Sub-brand business units</div>
+          <div class="brand-tree-units-row">
+            <div class="brand-tree-units-group">
+              <div class="brand-tree-units-grid">
+                <div class="brand-tree-unit-box"><span class="brand-tree-unit-name">Small-Balance Commercial</span></div>
+                <div class="brand-tree-unit-box"><span class="brand-tree-unit-name">Residential Bridge</span></div>
+                <div class="brand-tree-unit-box"><span class="brand-tree-unit-name">Correspondent Lending</span></div>
+                <div class="brand-tree-unit-box"><span class="brand-tree-unit-name">Commercial Servicing</span></div>
+              </div>
+            </div>
+            <div class="brand-tree-units-divider" aria-hidden="true"></div>
+            <div class="brand-tree-real-group">
+              <div class="brand-tree-real-item">
+                <div class="brand-tree-real-logo dark">
+                  <img src="images/bayview-brands/bayview-pace.webp" alt="Division logo — brand preserved" />
+                </div>
+                <div class="brand-tree-real-caption">Division · brand preserved</div>
+              </div>
+              <div class="brand-tree-real-item">
+                <div class="brand-tree-real-logo">
+                  <img src="images/bayview-brands/bayview-commercial-mortgage-finance.png" alt="Aligned counterpart division logo" />
+                </div>
+                <div class="brand-tree-real-caption">Aligned counterpart</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <p>Together with the division head, I brought the recommendation forward: <strong>keep the name, keep the logo, keep the favicon that ties us to the parent brand, and reposition the division under our closest counterpart</strong> — the group we were already partnering with on deal flow. The final decision sat with company leadership. The strategic recommendation, the rationale, and the execution plan were mine to build and defend.</p>
+      <p>Together with the division head, I brought the recommendation forward: <strong>keep the name, keep the logo, keep the favicon that ties us to the parent brand, and reposition the division under our closest counterpart</strong> — the group we were already partnering with on deal flow. I built the strategic recommendation, wrote the rationale, and owned the execution plan from start to finish.</p>
     </div>
   </div>
 </section>
