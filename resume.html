@@ -261,10 +261,28 @@
 
   @media print {
     nav.topbar, footer.page-foot { display: none; }
-    body { font-size: 10.5pt; }
-    main { padding: 24pt 32pt; max-width: 100%; }
-    .job li { font-size: 10pt; }
-    p.summary { font-size: 10pt; line-height: 1.5; }
+    body { font-size: 9.5pt; }
+    main { padding: 16pt 28pt; max-width: 100%; }
+
+    header.resume-head { padding-bottom: 12pt; margin-bottom: 14pt; }
+    header.resume-head h1 { font-size: 22pt; margin-bottom: 6pt; }
+    header.resume-head .contact { font-size: 8.5pt; }
+
+    section.block { margin-bottom: 11pt; }
+    h2.section-title { font-size: 8pt; margin-bottom: 6pt; padding-bottom: 3pt; break-after: avoid; }
+
+    p.summary { font-size: 9pt; line-height: 1.4; }
+
+    .job { margin-bottom: 8pt; break-inside: avoid; }
+    .job-company { font-size: 9.5pt; }
+    .job-location, .job-dates { font-size: 8.5pt; }
+    .job-title { font-size: 9pt; }
+    .job li { font-size: 8.8pt; line-height: 1.35; margin-bottom: 2pt; padding-left: 13px; }
+    .job li::before { top: 7px; width: 4px; height: 4px; }
+    .job-note { font-size: 8.5pt; margin-top: 4pt; }
+
+    .education-item { font-size: 9pt; }
+    .skill-row { font-size: 8.5pt; padding: 3pt 0; gap: 12px; grid-template-columns: 130px 1fr; }
   }
 </style>
 </head>
@@ -397,35 +415,12 @@
     <div class="job">
       <div class="job-head">
         <div><span class="job-company">Travel For Purpose</span></div>
+        <span class="job-dates">2022 – Present</span>
       </div>
       <div class="job-meta">
         <span class="job-title">Board Member</span>
       </div>
       <div class="job-note">501(c)(3) nonprofit</div>
-    </div>
-  </section>
-
-  <section class="block">
-    <h2 class="section-title">Internships</h2>
-
-    <div class="job">
-      <div class="job-head">
-        <div><span class="job-company">DataQuick</span><span class="job-location">, San Diego, CA</span></div>
-        <span class="job-dates">2000 – 2001</span>
-      </div>
-      <div class="job-meta">
-        <span class="job-title">Marketing Intern</span>
-      </div>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <div><span class="job-company">San Diego Media Studio</span><span class="job-location">, San Diego, CA</span></div>
-        <span class="job-dates">2000 – 2001</span>
-      </div>
-      <div class="job-meta">
-        <span class="job-title">Intern</span>
-      </div>
     </div>
   </section>
 
