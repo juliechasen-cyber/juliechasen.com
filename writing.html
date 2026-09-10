@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Samples — Julie Chasen</title>
+<meta name="description" content="Writing samples from Julie Chasen — deal announcements, press releases, and marketing copy written for commercial real estate finance and brand campaigns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --soft: #eef3f7;
+    --navy: #00263e;
+    --granite: #4e738a;
+    --stone: #a5bac9;
+    --sky: #007db4;
+    --gold: #f5a800;
+    --shadow: rgba(0, 38, 62, 0.10);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--white); color: var(--navy);
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  nav.sub {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--stone);
+  }
+  nav.sub .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .back-link {
+    text-decoration: none; color: var(--navy);
+    font-size: 0.92rem; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--sky); }
+  .back-link .arrow { transition: transform 0.2s; display: inline-block; }
+  .back-link:hover .arrow { transform: translateX(-3px); }
+  .brand {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
+    text-decoration: none; color: var(--navy);
+  }
+  .brand span { color: var(--sky); }
+  .nav-cta {
+    background: var(--navy); color: var(--white);
+    padding: 9px 16px; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-cta:hover { background: var(--sky); }
+
+  header.case-hero {
+    padding: 90px 0 60px;
+    background: var(--soft);
+    position: relative; overflow: hidden;
+  }
+  header.case-hero::before {
+    content: ""; position: absolute;
+    top: -120px; right: -100px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(0, 125, 180, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .case-meta-row {
+    display: inline-flex; gap: 16px; align-items: center;
+    margin-bottom: 24px; color: var(--granite);
+  }
+  .case-meta-row::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
+  h1.case-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height: 1.05; letter-spacing: -0.025em;
+    max-width: 18ch;
+    margin-bottom: 24px;
+  }
+  h1.case-title em { font-style: italic; color: var(--sky); font-weight: 600; }
+  .case-lede {
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--granite);
+    max-width: 60ch;
+    line-height: 1.65;
+  }
+
+  section.samples { padding: 100px 0 60px; }
+  .section-eyebrow {
+    color: var(--sky); font-weight: 500;
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-bottom: 24px;
+  }
+  .section-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
+  .section-h {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 20px; max-width: 24ch;
+  }
+  .section-h em { font-style: italic; color: var(--sky); }
+  .section-lede {
+    color: var(--granite); font-size: 1.02rem;
+    max-width: 60ch; margin-bottom: 48px;
+  }
+
+  .sample-card {
+    background: var(--soft);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+  .sample-head {
+    padding: 28px 32px 0;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    justify-content: space-between;
+  }
+  .sample-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--sky); font-weight: 600;
+  }
+  .sample-context {
+    color: var(--granite); font-size: 0.88rem;
+  }
+  .sample-body { padding: 24px 32px 32px; }
+  .sample-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: 1.3rem;
+    letter-spacing: -0.01em; margin-bottom: 16px;
+    max-width: 40ch;
+  }
+  .sample-excerpt {
+    background: var(--white);
+    border-left: 3px solid var(--sky);
+    border-radius: 4px;
+    padding: 20px 24px;
+    font-size: 0.98rem; line-height: 1.7;
+    color: var(--navy);
+  }
+  .sample-excerpt p { margin-bottom: 14px; }
+  .sample-excerpt p:last-child { margin-bottom: 0; }
+  .sample-note {
+    margin-top: 16px; color: var(--granite); font-size: 0.85rem;
+  }
+
+  .more-coming {
+    margin-top: 16px; padding: 28px;
+    border: 1px dashed var(--stone);
+    border-radius: 14px;
+    text-align: center;
+    color: var(--granite);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88rem; letter-spacing: 0.06em;
+  }
+  .more-coming strong {
+    color: var(--navy); font-weight: 600;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.05rem; letter-spacing: -0.01em;
+    display: block; margin-bottom: 4px;
+  }
+
+  section.close-cta {
+    padding: 90px 0;
+    text-align: center;
+  }
+  .close-cta h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700; font-size: clamp(1.7rem, 3vw, 2.2rem);
+    letter-spacing: -0.02em;
+    color: var(--navy); margin-bottom: 24px;
+  }
+  .cta-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    text-decoration: none; font-weight: 600; font-size: 0.95rem;
+    padding: 14px 26px; border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: transform 0.15s, box-shadow 0.2s, background 0.15s;
+  }
+  .btn-primary { background: var(--navy); color: var(--white); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,38,62,0.25); }
+  .btn-outline { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+  .btn-arrow { transition: transform 0.15s; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+
+  footer.page-foot {
+    background: var(--navy); color: rgba(255,255,255,0.6);
+    padding: 32px 0; text-align: center;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<nav class="sub">
+  <div class="wrap">
+    <a href="/" class="back-link"><span class="arrow">←</span> Back to portfolio</a>
+    <a href="/" class="brand">Julie Chasen<span>.</span></a>
+    <a href="mailto:juliechasen@gmail.com" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <div class="wrap">
+    <span class="case-meta-row mono">Portfolio · Writing</span>
+    <h1 class="case-title">Writing <em>samples</em>.</h1>
+    <p class="case-lede">Deal announcements, press releases, and marketing copy — a working sample of how I write for commercial real estate finance and brand campaigns. More being added as I pull them together.</p>
+  </div>
+</header>
+
+<section class="samples">
+  <div class="wrap">
+    <span class="section-eyebrow mono">Sample 01</span>
+    <h2 class="section-h">Deal announcement <em>email</em>.</h2>
+    <p class="section-lede">Written for a national C&#8209;PACE lender's deal-announcement series — a short, factual write-up sent to subscribers when a financed project reaches a milestone. The job is to make a complex capital stack legible in three short paragraphs.</p>
+
+    <div class="sample-card">
+      <div class="sample-head">
+        <span class="sample-tag">Email · Deal Announcement</span>
+        <span class="sample-context">Historic adaptive reuse — Hudson, NY</span>
+      </div>
+      <div class="sample-body">
+        <h3 class="sample-title">Now Open: C&#8209;PACE-Financed Hudson Project Showcases C&#8209;PACE + EB&#8209;5 Success</h3>
+        <div class="sample-excerpt">
+          <p>A national C&#8209;PACE lender provided $7 million in C&#8209;PACE financing to help revitalize Hudson's historic Pocketbook Factory, a 19th-century mill that has now reopened as a mixed-use hotel.</p>
+          <p>The $42 million redevelopment, which began in 2024, was completed through a capital stack that included C&#8209;PACE financing, a senior loan, EB&#8209;5 funds, historic tax credits, and sponsor equity, among other sources. The result is a vibrant new hospitality, retail, and community destination that preserves Hudson's architectural legacy while generating local economic impact.</p>
+          <p>This project exemplifies how C&#8209;PACE capital can work alongside EB&#8209;5 and tax credit programs to strengthen complex capital stacks and accelerate project timelines.</p>
+        </div>
+        <p class="sample-note">Lender name genericized for this portfolio; deal terms and project details are as reported.</p>
+      </div>
+    </div>
+
+    <span class="section-eyebrow mono" style="margin-top:16px;">Sample 02</span>
+    <h2 class="section-h">Investment <em>pitch deck</em>.</h2>
+    <p class="section-lede">An early concept deck written for Travel For Purpose in 2018, before it became the 501(c)(3) it is today. Included as a style example of vision, mission, and value-proposition copy for an investor audience — not current TFP messaging.</p>
+
+    <div class="sample-card">
+      <div class="sample-head">
+        <span class="sample-tag">Pitch Deck · Investor Copy</span>
+        <span class="sample-context">Travel For Purpose — 2018 concept deck</span>
+      </div>
+      <div class="sample-body">
+        <h3 class="sample-title">Travel For Purpose: Investment Opportunity</h3>
+        <div class="sample-excerpt">
+          <p><strong>Vision:</strong> To leverage the tourism industry into a major resource of funding for Pure Hope Restored.</p>
+          <p><strong>Mission:</strong> To inspire people all over the world to experience pure joy.</p>
+          <p>Backed by investors in Maui and San Diego. Exponential marketplace opportunities. Innovative millennial appeal. ROI for collaborative partnerships. An all-electric vehicle fleet. An exclusive adventure community.</p>
+          <p>The company reduces the cost of travel while building grassroots communities experiencing pure joy in the tourism marketplace — funding an official launch through a debt-free beta phase built on two membership tiers.</p>
+        </div>
+        <p class="sample-note">Excerpted and lightly cleaned up from the original 2018 deck; contact details from the original sign-up page have been removed for this portfolio.</p>
+      </div>
+    </div>
+
+    <div class="more-coming">
+      <strong>More samples coming soon.</strong>
+      Additional press releases and marketing copy being added regularly.
+    </div>
+  </div>
+</section>
+
+<section class="close-cta">
+  <div class="wrap">
+    <h2>Need copy that makes a complex story simple?</h2>
+    <div class="cta-row">
+      <a href="mailto:juliechasen@gmail.com?subject=Writing%20project" class="btn btn-primary">juliechasen@gmail.com <span class="btn-arrow">→</span></a>
+      <a href="/portfolio" class="btn btn-outline">See more work</a>
+    </div>
+  </div>
+</section>
+
+<footer class="page-foot">
+  <div class="wrap">© 2026 Julie Chasen · United States</div>
+</footer>
+
+</body>
+</html>

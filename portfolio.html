@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Julie Chasen — Marketing, Design & AI</title>
+<title>Julie Chasen — Marketing, Communication, Design & AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -405,6 +405,35 @@
   .work-cover.cover-leads .live-badge::before {
     content: ""; width: 6px; height: 6px; border-radius: 50%;
     background: #f5a800; box-shadow: 0 0 0 3px rgba(245,168,0,0.28);
+  }
+
+  .work-cover.cover-writing {
+    background: linear-gradient(135deg, #4e738a 0%, #00263e 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: var(--white); padding: 24px;
+    text-align: center;
+  }
+  .work-cover.cover-writing .placeholder-label { display: none; }
+  .work-cover.cover-writing .stat-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 12px; font-weight: 600;
+  }
+  .work-cover.cover-writing .stat-number {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 3.9rem);
+    line-height: 1.02; letter-spacing: -0.03em;
+    color: var(--white);
+  }
+  .work-cover.cover-writing .stat-sub {
+    margin-top: 12px;
+    color: rgba(255,255,255,0.72);
+    font-size: 0.82rem;
+    font-family: 'Manrope', sans-serif;
+    max-width: 26ch;
   }
 
   .work-cover .placeholder-label {
@@ -1011,8 +1040,8 @@
 <!-- ============ HERO ============ -->
 <header>
   <div class="wrap">
-    <span class="eyebrow mono">Marketing, Design &amp; AI · USA</span>
-    <h1 class="display">Marketing, Design &amp; AI.</h1>
+    <span class="eyebrow mono">Marketing, Communication, Design &amp; AI · USA</span>
+    <h1 class="display">Marketing, Communication, Design &amp; AI.</h1>
     <div class="cta-row">
       <a href="#work" class="btn btn-primary">See selected work <span class="btn-arrow">→</span></a>
       <a href="mailto:juliechasen@gmail.com?subject=Hello" class="btn btn-secondary">Let's talk</a>
@@ -1193,6 +1222,23 @@
           <h3 class="work-title">Raw CAD drawing to investor-ready site plan</h3>
           <p class="work-desc">Engineering exports turned into clean, branded, legible marketing plans — parcel outlines, tenant mix, traffic flow, and access points a broker can actually use.</p>
           <span class="work-tag">See the before &amp; after</span>
+        </div>
+      </a>
+
+      <!-- CASE 11: Writing Samples -->
+      <a href="/writing" class="work-card">
+        <div class="work-cover cover-writing">
+          <span class="stat-eyebrow">Deal Announcements · Press Releases</span>
+          <span class="stat-number">Writing<br>Samples</span>
+          <span class="stat-sub">Marketing copy for CRE finance and brand campaigns.</span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Writing</span><span class="dot">·</span><span>Copy Samples</span>
+          </div>
+          <h3 class="work-title">Writing samples — deal announcements, press releases, marketing copy</h3>
+          <p class="work-desc">A working sample of how I write for commercial real estate finance and brand campaigns, from short deal-announcement emails to longer press releases.</p>
+          <span class="work-tag">Read the samples</span>
         </div>
       </a>
 
