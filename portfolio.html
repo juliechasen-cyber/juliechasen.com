@@ -182,19 +182,13 @@
   }
   .section-label { color: var(--rust); }
 
-  /* ---------- VIDEO GRID ---------- */
-  .video-card-wrap {
-    background: var(--paper-soft);
-    border-radius: 24px;
-    padding: 32px;
-  }
+  /* ---------- VIDEO CARD (nested in work-grid) ---------- */
+  .video-work-card { display: block; padding-bottom: 8px; }
+  .video-work-card .work-body { padding-bottom: 12px; }
   .video-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-  @media (max-width: 820px) {
-    .video-grid { grid-template-columns: 1fr; }
-    .video-card-wrap { padding: 20px; border-radius: 16px; }
+    display: grid; grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 28px 28px;
   }
   .video-card {
     background: var(--paper);
@@ -1272,76 +1266,73 @@
         </div>
       </a>
 
+      <!-- CASE 12: Videos -->
+      <div id="videos" class="work-card video-work-card">
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Video</span>
+          </div>
+          <h3 class="work-title">Selected videos</h3>
+        </div>
+        <div class="video-grid">
+
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/219123989" title="Video 01" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3 class="video-title">Video 01</h3>
+          </div>
+
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/127087306" title="Video 02" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3 class="video-title">Video 02</h3>
+          </div>
+
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/165570036" title="Video 03" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3 class="video-title">Video 03</h3>
+          </div>
+
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/127087114" title="Video 04" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3 class="video-title">Video 04</h3>
+          </div>
+
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/13307835" title="Video 05" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3 class="video-title">Video 05</h3>
+          </div>
+
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/127086688" title="Video 06" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3 class="video-title">Video 06</h3>
+          </div>
+
+          <div class="video-card">
+            <div class="video-embed">
+              <iframe src="https://player.vimeo.com/video/9862557" title="Video 07" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <h3 class="video-title">Video 07</h3>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
     <div class="more-coming">
       <strong>More case studies coming soon.</strong>
       Additional CRE, AI, and brand work being added regularly.
-    </div>
-  </div>
-</section>
-
-<!-- ============ VIDEOS ============ -->
-<section id="videos">
-  <div class="wrap">
-    <div class="section-header">
-      <h2 class="section-title display">Selected <em style="font-style:italic;color:var(--rust)">videos</em>.</h2>
-      <span class="mono section-label">02 — Video</span>
-    </div>
-
-    <div class="video-card-wrap">
-    <div class="video-grid">
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/219123989" title="Video 01" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <h3 class="video-title">Video 01</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/127087306" title="Video 02" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <h3 class="video-title">Video 02</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/165570036" title="Video 03" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <h3 class="video-title">Video 03</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/127087114" title="Video 04" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <h3 class="video-title">Video 04</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/13307835" title="Video 05" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <h3 class="video-title">Video 05</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/127086688" title="Video 06" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <h3 class="video-title">Video 06</h3>
-      </div>
-
-      <div class="video-card">
-        <div class="video-embed">
-          <iframe src="https://player.vimeo.com/video/9862557" title="Video 07" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <h3 class="video-title">Video 07</h3>
-      </div>
-
-    </div>
     </div>
   </div>
 </section>
