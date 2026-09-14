@@ -182,29 +182,6 @@
   }
   .section-label { color: var(--rust); }
 
-  /* ---------- VIDEO CARD (nested in work-grid) ---------- */
-  .video-work-card { display: block; padding-bottom: 8px; }
-  .video-work-card .work-body { padding-bottom: 12px; }
-  .video-grid {
-    display: grid; grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 28px 28px;
-  }
-  .video-card {
-    background: var(--paper);
-    border-radius: 16px;
-    overflow: hidden;
-    display: flex; flex-direction: column;
-  }
-  .video-embed { position: relative; aspect-ratio: 16/9; background: var(--line); }
-  .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .video-title {
-    padding: 16px 20px 20px;
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 600;
-    font-size: 1.05rem;
-  }
-
   /* ---------- WORK GRID ---------- */
   .work-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
@@ -452,6 +429,35 @@
     color: var(--white);
   }
   .work-cover.cover-writing .stat-sub {
+    margin-top: 12px;
+    color: rgba(255,255,255,0.72);
+    font-size: 0.82rem;
+    font-family: 'Manrope', sans-serif;
+    max-width: 26ch;
+  }
+
+  .work-cover.cover-videos {
+    background: linear-gradient(135deg, #00263e 0%, #007db4 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: var(--white); padding: 24px;
+    text-align: center;
+  }
+  .work-cover.cover-videos .placeholder-label { display: none; }
+  .work-cover.cover-videos .stat-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 12px; font-weight: 600;
+  }
+  .work-cover.cover-videos .stat-number {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 3.9rem);
+    line-height: 1.02; letter-spacing: -0.03em;
+    color: var(--white);
+  }
+  .work-cover.cover-videos .stat-sub {
     margin-top: 12px;
     color: rgba(255,255,255,0.72);
     font-size: 0.82rem;
@@ -1050,7 +1056,6 @@
     <a href="/" class="brand">Julie Chasen<span>.</span> <span class="brand-tag">Portfolio Site</span></a>
     <div class="nav-links">
       <a href="#work">Work</a>
-      <a href="#videos">Videos</a>
       <a href="#about">About</a>
       <!-- TEMPORARILY HIDDEN 2026-07-18 — restore Services link when re-enabling section below -->
       <!-- <a href="#services">Services</a> -->
@@ -1266,67 +1271,22 @@
         </div>
       </a>
 
-      <!-- CASE 12: Videos -->
-      <div id="videos" class="work-card video-work-card">
+      <!-- CASE 12: Video Samples -->
+      <a href="/videos" class="work-card">
+        <div class="work-cover cover-videos">
+          <span class="stat-eyebrow">Reels · Brand Films</span>
+          <span class="stat-number">Video<br>Samples</span>
+          <span class="stat-sub">A working reel of video work — brand, product, and campaign.</span>
+        </div>
         <div class="work-body">
           <div class="work-meta">
             <span>Video</span>
           </div>
-          <h3 class="work-title">Selected videos</h3>
+          <h3 class="work-title">Video samples</h3>
+          <p class="work-desc">A working sample of video work — brand films, product reels, and campaign spots.</p>
+          <span class="work-tag">Watch the reel</span>
         </div>
-        <div class="video-grid">
-
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe src="https://player.vimeo.com/video/219123989" title="Video 01" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <h3 class="video-title">Video 01</h3>
-          </div>
-
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe src="https://player.vimeo.com/video/127087306" title="Video 02" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <h3 class="video-title">Video 02</h3>
-          </div>
-
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe src="https://player.vimeo.com/video/165570036" title="Video 03" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <h3 class="video-title">Video 03</h3>
-          </div>
-
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe src="https://player.vimeo.com/video/127087114" title="Video 04" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <h3 class="video-title">Video 04</h3>
-          </div>
-
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe src="https://player.vimeo.com/video/13307835" title="Video 05" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <h3 class="video-title">Video 05</h3>
-          </div>
-
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe src="https://player.vimeo.com/video/127086688" title="Video 06" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <h3 class="video-title">Video 06</h3>
-          </div>
-
-          <div class="video-card">
-            <div class="video-embed">
-              <iframe src="https://player.vimeo.com/video/9862557" title="Video 07" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <h3 class="video-title">Video 07</h3>
-          </div>
-
-        </div>
-      </div>
+      </a>
 
     </div>
 
