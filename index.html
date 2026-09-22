@@ -322,7 +322,10 @@
     <nav>
       <a href="/" class="brand">Julie Chasen</a>
       <div class="nav-links">
-        <a href="/portfolio">Portfolio</a>
+        <!-- PORTFOLIO LINK HIDDEN 2026-09-22 — Julie asked to hide the whole portfolio
+             "for right now" and keep just the CV, LinkedIn and GitHub.
+             To restore: uncomment the line below. -->
+        <!-- <a href="/portfolio">Portfolio</a> -->
         <a href="/resume">CV</a>
         <a href="https://www.linkedin.com/in/juliechasen" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/juliechasen-cyber" target="_blank" rel="noopener">GitHub</a>
@@ -331,7 +334,7 @@
     </nav>
 
     <div class="overlay">
-      <h1>Marketing that drives growth.<span class="subline">Strategy • Brand • Digital Marketing • Communications</span></h1>
+      <h1>Marketing that moves capital.<span class="subline">Strategy • Brand • Digital Marketing • Communications</span></h1>
       <p class="bio">
         Senior marketing leader with 15+ years of experience driving brand, marketing, communications, and growth strategy across diverse industries. Led marketing for a national lending platform as it scaled from $103M to $1B+ in financing volume, overseeing brand strategy, digital marketing, content, and communications. Combines strategic leadership with hands-on creative execution and strong communication skills.
       </p>
@@ -406,9 +409,14 @@
       </template>
     </div>
 
+    <!-- FOOTER PORTFOLIO LINK HIDDEN 2026-09-22 — the only thing in this bar was the
+         "View portfolio →" link, so the whole bar is wrapped rather than left empty.
+         To restore: delete this <template> line and its </template> below. -->
+    <template data-hidden-since="2026-09-22" data-what="footer-portfolio-link">
     <div class="footer-note">
       <span><a href="/portfolio">View portfolio →</a></span>
     </div>
+    </template>
   </div>
 </body>
 </html>
