@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julie Chasen | Services</title>
+<meta name="description" content="Strategic marketing, growth, lead generation, and AI consulting for C-PACE, commercial real estate, financial services, and other growth-focused organizations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --ink: #1f3b57;
+    --body: #2a2a2a;
+    --muted: #6b6b6b;
+    --line: #e2e6ea;
+    --bg: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--body);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+  }
+
+  nav.topbar {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.topbar .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    letter-spacing: 0.24em;
+    color: var(--ink);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 0.6; }
+  .nav-links .download {
+    padding: 8px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-links .download:hover {
+    background: var(--ink);
+    color: #fff;
+    opacity: 1;
+  }
+
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 64px 40px 96px;
+  }
+
+  footer.page-foot {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 40px 48px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer.page-foot a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+  footer.page-foot a:hover { border-color: var(--ink); }
+
+  header.page-head { padding-bottom: 36px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+  header.page-head h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin-bottom: 18px;
+  }
+  header.page-head p { font-size: 1rem; line-height: 1.65; }
+  .service { padding: 32px 0; border-bottom: 1px solid var(--line); }
+  .service:last-of-type { border-bottom: none; }
+  .service h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 1.55rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .service .desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; }
+  .service ul {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    column-gap: 40px;
+  }
+  .service li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 6px;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    break-inside: avoid;
+  }
+  .service li::before {
+    content: '';
+    position: absolute;
+    left: 4px; top: 9px;
+    width: 5px; height: 5px;
+    background: var(--ink);
+    border-radius: 50%;
+  }
+  .service p.fractional { font-size: 0.95rem; line-height: 1.65; }
+  .cta { margin-top: 24px; text-align: center; }
+  .cta a {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+  .cta a:hover { background: var(--ink); color: #fff; }
+
+  @media (max-width: 640px) {
+    nav.topbar .wrap { padding: 16px 20px; }
+    .brand { font-size: 0.95rem; letter-spacing: 0.2em; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 0.82rem; }
+    main { padding: 40px 24px 64px; }
+    .service ul { columns: 1; }
+    footer.page-foot { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Julie Chasen</a>
+    <div class="nav-links">
+      <a href="/resume">CV</a>
+      <a href="mailto:juliechasen@gmail.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="page-head">
+    <h1>Consulting Services</h1>
+    <p>I provide strategic marketing, growth, lead generation, and AI consulting for C-PACE, commercial real estate, financial services, and other growth-focused organizations. My work spans strategy through selective execution, with a focus on helping organizations strengthen market positioning, reach the right audiences, generate opportunities, and build smarter systems.</p>
+  </header>
+
+  <section class="service">
+    <h2>C-PACE, Commercial Real Estate &amp; Finance Marketing</h2>
+    <p class="desc">Specialized marketing support for C-PACE lenders, program administrators, brokers, consultants, and commercial real estate and finance organizations.</p>
+    <ul>
+      <li>Market positioning and growth strategy</li>
+      <li>Lender, developer, contractor, property owner, and stakeholder outreach</li>
+      <li>Competitive and market analysis</li>
+      <li>Transaction and case-study marketing</li>
+      <li>Industry education and program messaging</li>
+      <li>Thought leadership and executive visibility</li>
+      <li>Complex financial messaging translated into clear, audience-focused communications</li>
+      <li>Business development and sales enablement support</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Marketing Strategy &amp; Advisory</h2>
+    <p class="desc">Senior-level marketing guidance built around business goals, audience needs, and growth opportunities.</p>
+    <ul>
+      <li>Marketing assessments and strategic roadmaps</li>
+      <li>Audience segmentation and campaign planning</li>
+      <li>Quarterly and annual marketing strategies</li>
+      <li>Go-to-market and growth planning</li>
+      <li>Marketing performance reviews and recommendations</li>
+      <li>Customer journey and conversion strategy</li>
+      <li>Vendor, agency, and project direction</li>
+      <li>Cross-channel campaign development</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Brand Positioning &amp; Messaging</h2>
+    <p class="desc">Clarifying what an organization does, why it matters, and how to communicate that value effectively.</p>
+    <ul>
+      <li>Brand and market positioning</li>
+      <li>Value propositions and key messaging</li>
+      <li>Audience-specific messaging frameworks</li>
+      <li>Executive and company talking points</li>
+      <li>Website and sales messaging</li>
+      <li>Messaging for technical or complex services</li>
+      <li>Brand consistency across marketing channels</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Targeted Lead Generation &amp; Market Intelligence</h2>
+    <p class="desc">Custom prospect and opportunity research built around specific business-development objectives—not generic purchased lists.</p>
+    <ul>
+      <li>Target account and decision-maker list development</li>
+      <li>Developer, owner, lender, contractor, and stakeholder research</li>
+      <li>Geographic and industry-specific targeting</li>
+      <li>Project and opportunity research</li>
+      <li>Prospect segmentation and prioritization</li>
+      <li>Competitive intelligence</li>
+      <li>Public-data research</li>
+      <li>AI-assisted market intelligence and prospecting workflows</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>AI Automation &amp; Implementation</h2>
+    <p class="desc">Helping organizations use AI to improve communication, lead handling, research, customer experience, and repetitive business processes.</p>
+    <ul>
+      <li>AI receptionist solutions</li>
+      <li>Website and customer-service chatbots</li>
+      <li>Lead intake and qualification automation</li>
+      <li>Marketing and CRM workflow automation</li>
+      <li>AI-assisted research and prospecting systems</li>
+      <li>Custom automation development</li>
+      <li>Internal workflow automation</li>
+      <li>Identification and implementation of practical AI use cases</li>
+      <li>Integration of AI into existing marketing and business-development processes</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>LinkedIn, Content &amp; Thought Leadership</h2>
+    <p class="desc">Strategic content designed to increase visibility, establish authority, and support business development.</p>
+    <ul>
+      <li>LinkedIn strategy for companies and executives</li>
+      <li>Executive thought leadership</li>
+      <li>Campaign themes and content planning</li>
+      <li>Articles, explainers, FAQs, and educational content</li>
+      <li>Case studies and transaction stories</li>
+      <li>Content calendars</li>
+      <li>Repurposing long-form content across channels</li>
+      <li>Industry and media positioning</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Email Marketing &amp; Audience Engagement</h2>
+    <p class="desc">Email strategy focused on segmentation, engagement, and measurable business outcomes.</p>
+    <ul>
+      <li>Newsletter strategy and optimization</li>
+      <li>Targeted email campaigns</li>
+      <li>Audience segmentation</li>
+      <li>Business-development outreach</li>
+      <li>Nurture communications</li>
+      <li>Campaign messaging and content</li>
+      <li>Performance review and recommendations</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Website &amp; Digital Strategy</h2>
+    <p class="desc">Improving how organizations communicate their value and move visitors toward action.</p>
+    <ul>
+      <li>Website marketing audits</li>
+      <li>Messaging and content strategy</li>
+      <li>Landing page strategy</li>
+      <li>Calls-to-action and conversion paths</li>
+      <li>Customer journey improvements</li>
+      <li>Content consolidation and site structure recommendations</li>
+      <li>SEO and local visibility strategy</li>
+      <li>Google Business Profile and digital presence guidance</li>
+      <li>Paid campaign and landing-page strategy</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>PR &amp; Executive Visibility</h2>
+    <p class="desc">Building credibility and increasing exposure through strategic communications and leadership positioning.</p>
+    <ul>
+      <li>PR strategy and story development</li>
+      <li>Press releases and announcements</li>
+      <li>Media and thought-leadership opportunities</li>
+      <li>Executive commentary and talking points</li>
+      <li>Contributed article concepts</li>
+      <li>Industry visibility strategy</li>
+      <li>Coordination with PR firms, writers, and external partners</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Corporate &amp; Executive Video</h2>
+    <p class="desc">Strategic video content for brand positioning, executive visibility, education, and digital campaigns.</p>
+    <ul>
+      <li>Corporate video strategy</li>
+      <li>Executive interview concepts</li>
+      <li>Video scripting and messaging</li>
+      <li>Thought-leadership videos</li>
+      <li>Short-form video development</li>
+      <li>Interview production and editing</li>
+      <li>Repurposing video across websites, LinkedIn, email, and digital channels</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Sales &amp; Marketing Collateral</h2>
+    <p class="desc">Strategic materials that support business development, investor communication, and client engagement.</p>
+    <ul>
+      <li>Presentations and pitch decks</li>
+      <li>One-sheets and brochures</li>
+      <li>Case studies</li>
+      <li>Offering memorandum design</li>
+      <li>Sales-support materials</li>
+      <li>Executive presentations</li>
+      <li>Marketing and business-development collateral</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Marketing Technology &amp; CRM Advisory</h2>
+    <p class="desc">Helping organizations choose and structure tools that support marketing, outreach, and business development.</p>
+    <ul>
+      <li>CRM and marketing-platform evaluation</li>
+      <li>Salesforce, HubSpot, Constant Contact, and related platform guidance</li>
+      <li>Marketing workflow recommendations</li>
+      <li>CRM and campaign structure</li>
+      <li>Lead-management process improvement</li>
+      <li>Automation and integration planning</li>
+      <li>Technology-stack recommendations</li>
+    </ul>
+  </section>
+
+  <section class="service">
+    <h2>Fractional Marketing Leadership</h2>
+    <p class="desc">Experienced marketing leadership for organizations that need strategic direction without adding a full-time senior marketing hire.</p>
+    <p class="fractional">I can serve as an extension of the leadership team—developing strategy, overseeing initiatives, directing vendors and specialists, improving marketing systems, and providing hands-on execution where it adds the most value.</p>
+  </section>
+
+  <div class="cta"><a href="mailto:juliechasen@gmail.com">Get in touch</a></div>
+</main>
+
+<footer class="page-foot">
+  <span>© Julie Chasen</span>
+  <a href="/">Home</a>
+</footer>
+
+</body>
+</html>
