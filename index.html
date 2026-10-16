@@ -203,6 +203,57 @@
   }
   .footer-note a:hover { opacity: 0.7; }
 
+  /* ---- Certifications bar ---- */
+  .certs-bar {
+    position: absolute;
+    bottom: 36px;
+    left: 64px;
+    right: 64px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .certs-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    flex: none;
+  }
+  .certs-list { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cert-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.72rem;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.82);
+    white-space: nowrap;
+  }
+  .cert-pill.cert-progress {
+    border-style: dashed;
+    border-color: rgba(255, 196, 110, 0.55);
+    color: rgba(255, 224, 178, 0.95);
+  }
+  .cert-pill .progress-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #ffb86b;
+    box-shadow: 0 0 0 3px rgba(255, 184, 107, 0.25);
+    flex: none;
+  }
+  @media (max-width: 1100px) {
+    .certs-bar { bottom: 20px; }
+    .cert-pill { white-space: normal; }
+  }
+
   /* ---- Free guide (email-gated lead magnet) ---- */
   .guide-gate {
     margin-top: 30px;
@@ -284,6 +335,7 @@
       max-width: 720px;
     }
     .footer-note { position: static; margin: 0 8vw 30px; }
+    .certs-bar { position: static; margin: 0 8vw 30px; left: auto; right: auto; }
   }
 
   @media (max-width: 720px) {
@@ -313,6 +365,16 @@
       gap: 10px;
       align-items: flex-start;
       font-size: 0.7rem;
+    }
+    .certs-bar {
+      position: static;
+      margin-top: 24px;
+      padding: 0 24px;
+      left: auto;
+      right: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
     }
   }
 </style>
@@ -418,6 +480,19 @@
       <span><a href="/portfolio">View portfolio →</a></span>
     </div>
     </template>
+
+    <!-- CERTIFICATIONS — added 2026-10-15. -->
+    <div class="certs-bar">
+      <span class="certs-label">Certifications</span>
+      <div class="certs-list">
+        <span class="cert-pill">Claude Academy — Building Effective Human-Agent Teams</span>
+        <span class="cert-pill">AI Fluency Framework &amp; Foundations</span>
+        <span class="cert-pill">Claude Code in Action</span>
+        <span class="cert-pill">Claude Code 101</span>
+        <span class="cert-pill">Claude 101</span>
+        <span class="cert-pill cert-progress"><span class="progress-dot"></span>AWS AI Business Strategist · In Progress</span>
+      </div>
+    </div>
   </div>
 </body>
 </html>
