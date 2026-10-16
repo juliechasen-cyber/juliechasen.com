@@ -149,6 +149,27 @@
     border-radius: 50%;
   }
   .service p.fractional { font-size: 0.95rem; line-height: 1.65; }
+  .service-cert {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.8rem;
+    color: #d6006c;
+  }
+  .service-cert img { width: 44px; height: 44px; display: block; }
+  .service-cert strong { color: #d6006c; font-weight: 600; }
+  .service-certs-anthropic {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    color: var(--ink);
+  }
+  .service-certs-anthropic img { height: 13px; width: auto; display: block; }
+  .service-certs-anthropic .cert-names { color: #000; line-height: 1.5; }
   .cta { margin-top: 24px; text-align: center; }
   .cta a {
     display: inline-block;
@@ -256,6 +277,14 @@
   <section class="service">
     <h2>AI Automation &amp; Implementation</h2>
     <p class="desc">Helping organizations use AI to improve communication, lead handling, research, customer experience, and repetitive business processes.</p>
+    <div class="service-cert">
+      <img src="images/badges/aws-ai-business-strategist.jpg" alt="AWS Certified AI Business Strategist badge">
+      <span><strong>AWS Certified AI Business Strategist</strong> · In Progress</span>
+    </div>
+    <div class="service-certs-anthropic">
+      <img src="images/badges/anthropic-logo.png" alt="Anthropic">
+      <span class="cert-names">Claude Academy — Building Effective Human-Agent Teams · AI Fluency Framework &amp; Foundations · AI Fluency for Nonprofits · Teaching AI Fluency · Claude Code in Action · Claude Code 101 · Claude 101</span>
+    </div>
     <ul>
       <li>AI receptionist solutions</li>
       <li>Website and customer-service chatbots</li>
