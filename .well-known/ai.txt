@@ -1,0 +1,7 @@
+# ai.txt — AI crawler guidance for Julie Chasen Consulting
+
+User-Agent: *
+Allow: /
+
+Sitemap: https://juliechasen.com/sitemap.xml
+LLMs: https://juliechasen.com/llms.txt
