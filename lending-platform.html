@@ -11,27 +11,27 @@
 <title>National Commercial Lending Platform · Julie Chasen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --white: #ffffff;
-    --soft: #eef3f7;
-    --navy: #00263e;
-    --granite: #4e738a;
-    --stone: #a5bac9;
-    --sky: #007db4;
-    --gold: #f5a800;
+    --soft: #f4f4f4;
+    --navy: #141414;
+    --granite: #6b6b6b;
+    --stone: #d6d6d6;
+    --sky: #4a4a4a;
+    --gold: #6b6b6b;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: var(--white); color: var(--navy);
     line-height: 1.6; -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .mono { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
 
   /* SUB-NAV */
   nav.sub {
@@ -53,13 +53,13 @@
   .back-link .arrow { transition: transform 0.2s; display: inline-block; }
   .back-link:hover .arrow { transform: translateX(-3px); }
   .brand {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
     text-decoration: none; color: var(--navy);
   }
   .brand span { color: var(--sky); }
   .brand-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 600; margin-left: 6px;
@@ -78,7 +78,7 @@
   /* HERO */
   header.case-hero {
     padding: 90px 0 60px;
-    background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%);
+    background: linear-gradient(135deg, var(--navy) 0%, #2a2a2a 100%);
     color: var(--white);
     position: relative; overflow: hidden;
   }
@@ -86,31 +86,31 @@
     content: ""; position: absolute;
     top: -180px; right: -100px;
     width: 520px; height: 520px;
-    background: radial-gradient(circle, rgba(245, 168, 0, 0.18), transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.18), transparent 70%);
     pointer-events: none;
   }
   header.case-hero::after {
     content: ""; position: absolute;
     bottom: -220px; left: -100px;
     width: 480px; height: 480px;
-    background: radial-gradient(circle, rgba(0, 125, 180, 0.30), transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.30), transparent 70%);
     pointer-events: none;
   }
   .case-hero .wrap { position: relative; z-index: 1; }
   .eyebrow-row {
     display: inline-flex; align-items: center; gap: 12px;
-    color: var(--gold); font-weight: 500;
+    color: rgba(255,255,255,0.68); font-weight: 500;
     margin-bottom: 28px;
   }
-  .eyebrow-row::before { content: ""; width: 28px; height: 1px; background: var(--gold); }
+  .eyebrow-row::before { content: ""; width: 28px; height: 1px; background: rgba(255,255,255,0.68); }
   .client-line {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.86rem; letter-spacing: 0.14em;
     text-transform: uppercase; color: rgba(255,255,255,0.6);
     margin-bottom: 16px;
   }
   h1.case-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.4rem, 5.5vw, 4.2rem);
     line-height: 1.05; letter-spacing: -0.025em;
@@ -118,7 +118,7 @@
     margin-bottom: 28px;
     color: var(--white);
   }
-  h1.case-title em { font-style: italic; color: var(--gold); font-weight: 600; }
+  h1.case-title em { font-style: italic; font-weight: 600; }
   .case-lede {
     font-size: clamp(1.05rem, 1.6vw, 1.2rem);
     color: rgba(255,255,255,0.75);
@@ -132,8 +132,8 @@
     display: inline-flex; align-items: center; gap: 8px;
     transition: transform 0.15s, background 0.15s;
   }
-  .btn-gold { background: var(--gold); color: var(--navy); }
-  .btn-gold:hover { background: var(--white); transform: translateY(-1px); }
+  .btn-gold { background: var(--white); color: var(--navy); }
+  .btn-gold:hover { background: var(--stone); transform: translateY(-1px); }
   .btn-ghost-dark {
     background: transparent; color: var(--white);
     border: 1px solid rgba(255,255,255,0.28);
@@ -156,26 +156,26 @@
     text-align: center;
   }
   .stat-big .stat-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--sky);
     margin-bottom: 14px; font-weight: 600;
   }
   .stat-big .multiplier {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(7rem, 16vw, 12rem);
     line-height: 0.9; letter-spacing: -0.04em;
     color: var(--navy);
   }
-  .stat-big .multiplier em { color: var(--gold); font-style: normal; }
+  .stat-big .multiplier em { color: var(--navy); font-style: normal; }
   .stat-big .stat-sub {
     margin-top: 12px;
     color: var(--granite); font-size: 1.05rem;
     font-weight: 500;
   }
   .stat-detail h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(1.6rem, 2.8vw, 2.2rem);
     line-height: 1.15; letter-spacing: -0.02em;
@@ -191,12 +191,12 @@
     background: var(--white); border: 1px solid var(--stone);
     border-radius: 999px;
     padding: 8px 18px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.88rem; font-weight: 600;
     color: var(--navy);
   }
   .stat-detail .pill.gold {
-    background: var(--gold); border-color: var(--gold);
+    background: var(--navy); border-color: var(--navy); color: var(--white);
   }
   .stat-detail .arrow-stat {
     color: var(--granite); font-size: 1.2rem;
@@ -217,7 +217,7 @@
   }
   .section-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
   .section-h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.1;
     margin-bottom: 50px; max-width: 26ch;
@@ -240,12 +240,12 @@
     display: flex; flex-direction: column; gap: 10px;
   }
   .theme-num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.12em;
-    color: var(--gold); font-weight: 600;
+    color: var(--navy); font-weight: 600;
   }
   .theme-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.55rem;
     letter-spacing: -0.02em; color: var(--navy);
     line-height: 1.15;
@@ -284,21 +284,21 @@
     display: flex; flex-direction: column; gap: 10px;
     transition: transform 0.15s, box-shadow 0.15s;
   }
-  .deal-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0, 38, 62, 0.08); }
+  .deal-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08); }
   .deal-amount {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 2.4rem;
-    color: var(--gold); letter-spacing: -0.02em;
+    color: var(--navy); letter-spacing: -0.02em;
     line-height: 1;
   }
   .deal-meta {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--granite);
     margin-top: 4px;
   }
   .deal-name {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.2rem;
     color: var(--navy); letter-spacing: -0.015em;
     line-height: 1.2; margin-top: 6px;
@@ -310,13 +310,13 @@
   .deal-desc strong { color: var(--sky); font-weight: 600; }
   a.deal-card { text-decoration: none; color: inherit; cursor: pointer; }
   .deal-card-featured {
-    background: linear-gradient(180deg, #ffffff 0%, #eef3f7 100%);
-    border-color: var(--gold);
-    box-shadow: 0 6px 24px rgba(245, 168, 0, 0.10);
+    background: linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
+    border-color: var(--navy);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
     padding: 0 0 28px;
     overflow: hidden;
   }
-  .deal-card-featured:hover { box-shadow: 0 18px 40px rgba(245, 168, 0, 0.18); }
+  .deal-card-featured:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18); }
   .deal-thumb {
     position: relative;
     aspect-ratio: 4/3;
@@ -333,13 +333,13 @@
   .deal-thumb::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(0,38,62,0) 55%, rgba(0,38,62,0.55) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%);
     pointer-events: none;
   }
   .deal-thumb-badge {
     position: absolute; left: 14px; bottom: 12px;
     color: var(--white);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; letter-spacing: 0.06em;
     text-transform: uppercase; font-weight: 600;
     display: flex; align-items: center; gap: 4px;
@@ -353,7 +353,7 @@
   .deal-cta {
     margin-top: auto;
     padding-top: 14px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.08em;
     text-transform: uppercase; font-weight: 600;
     color: var(--sky);
@@ -374,11 +374,11 @@
     align-items: flex-start;
     transition: transform 0.15s, box-shadow 0.15s;
   }
-  .deal-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0, 38, 62, 0.08); }
+  .deal-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08); }
   .deal-amount {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(2.6rem, 5vw, 3.4rem);
-    color: var(--gold); letter-spacing: -0.03em;
+    color: var(--navy); letter-spacing: -0.03em;
     line-height: 0.95;
   }
   .deals-total {
@@ -390,13 +390,13 @@
     flex-wrap: wrap; gap: 12px;
   }
   .deals-total-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     font-weight: 600;
   }
   .deals-total-amount {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(2rem, 4vw, 2.6rem);
     color: var(--white); letter-spacing: -0.02em;
   }
@@ -419,9 +419,9 @@
   @media (max-width: 720px) { .pubs-grid { grid-template-columns: 1fr; gap: 28px; } }
   .pub-group { display: flex; flex-direction: column; gap: 14px; }
   .pub-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: var(--navy);
     font-weight: 600;
   }
   .pub-list {
@@ -429,15 +429,15 @@
     display: flex; flex-direction: column; gap: 8px;
   }
   .pub-list li {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600; font-size: 1.05rem;
     color: var(--navy); letter-spacing: -0.01em;
   }
   .featured-pub { display: flex; flex-direction: column; gap: 14px; }
   .featured-pub-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     font-weight: 600;
   }
   .featured-pub-card {
@@ -447,7 +447,7 @@
     gap: 24px; text-decoration: none;
     transition: background 0.15s;
   }
-  .featured-pub-card:hover { background: #003659; }
+  .featured-pub-card:hover { background: #2a2a2a; }
   .featured-pub-media {
     flex-shrink: 0; width: 140px; height: 92px;
     border-radius: 8px; overflow: hidden;
@@ -460,13 +460,13 @@
     .featured-pub-media { width: 100%; height: 160px; }
   }
   .featured-pub-pub {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     margin-bottom: 10px;
   }
   .featured-pub-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.25rem;
     line-height: 1.25; letter-spacing: -0.015em;
     color: var(--white); margin-bottom: 8px;
@@ -475,7 +475,7 @@
     color: rgba(255,255,255,0.7); font-size: 0.92rem;
   }
   .featured-arrow {
-    flex-shrink: 0; color: var(--gold);
+    flex-shrink: 0; color: rgba(255,255,255,0.7);
     font-size: 1.6rem; font-weight: 700;
   }
 
@@ -484,7 +484,7 @@
     margin-top: 56px;
     padding: 26px 32px;
     background: var(--soft);
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid var(--navy);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -492,11 +492,11 @@
     flex-wrap: wrap;
   }
   .now-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--navy);
     font-weight: 700;
     white-space: nowrap;
   }
@@ -531,14 +531,14 @@
     flex-shrink: 0;
     width: 56px; height: 56px;
     background: var(--navy);
-    color: var(--gold);
+    color: var(--white);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 24px;
   }
   .nda-text { flex: 1; min-width: 240px; }
   .nda-text strong {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.15rem;
     color: var(--navy); display: block; margin-bottom: 6px;
   }
@@ -553,14 +553,14 @@
     padding: 100px 0;
   }
   section.cta-block .section-eyebrow {
-    color: var(--gold); justify-content: center; display: inline-flex;
+    color: rgba(255,255,255,0.68); justify-content: center; display: inline-flex;
   }
-  section.cta-block .section-eyebrow::before { background: var(--gold); }
+  section.cta-block .section-eyebrow::before { background: rgba(255,255,255,0.68); }
   section.cta-block .section-h {
     color: var(--white); margin: 0 auto 24px;
     max-width: 26ch; font-weight: 700;
   }
-  section.cta-block .section-h em { color: var(--gold); font-style: italic; }
+  section.cta-block .section-h em { font-style: italic; color: var(--white); }
   section.cta-block .lede {
     color: rgba(255, 255, 255, 0.78); font-size: 1.1rem;
     max-width: 58ch; margin: 0 auto 40px;
@@ -568,8 +568,8 @@
   .cta-actions {
     display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
   }
-  .cta-actions .btn-primary { background: var(--gold); color: var(--navy); }
-  .cta-actions .btn-primary:hover { background: var(--white); }
+  .cta-actions .btn-primary { background: var(--white); color: var(--navy); }
+  .cta-actions .btn-primary:hover { background: var(--stone); }
 
   footer {
     padding: 40px 0; border-top: 1px solid var(--stone);

@@ -12,28 +12,28 @@
 <meta name="description" content="Case study: how Julie Chasen made the case that preserved a division's logo, favicon, and colors through a full organizational rebrand — protecting years of brand equity and driving 35× SEO growth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --white: #ffffff;
-    --soft: #eef3f7;
-    --navy: #00263e;
-    --granite: #4e738a;
-    --stone: #a5bac9;
-    --sky: #007db4;
-    --gold: #f5a800;
+    --soft: #f4f4f4;
+    --navy: #141414;
+    --granite: #6b6b6b;
+    --stone: #d6d6d6;
+    --sky: #4a4a4a;
+    --gold: #6b6b6b;
     --ink: #16171a;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: var(--white); color: var(--navy);
     line-height: 1.6; -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .mono { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
 
   nav.sub {
     position: sticky; top: 0; z-index: 50;
@@ -54,13 +54,13 @@
   .back-link .arrow { transition: transform 0.2s; display: inline-block; }
   .back-link:hover .arrow { transform: translateX(-3px); }
   .brand {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
     text-decoration: none; color: var(--navy);
   }
   .brand span { color: var(--sky); }
   .brand-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 600; margin-left: 6px;
@@ -74,7 +74,7 @@
   .nav-cta:hover { background: var(--sky); }
 
   header.case-hero {
-    background: linear-gradient(180deg, #00263e 0%, #013651 100%);
+    background: linear-gradient(180deg, #141414 0%, #2a2a2a 100%);
     color: var(--white);
     padding: 88px 0 76px;
     position: relative; overflow: hidden;
@@ -82,30 +82,30 @@
   header.case-hero::after {
     content: ''; position: absolute; inset: 0;
     background:
-      radial-gradient(600px 300px at 90% 0%, rgba(245,168,0,0.16), transparent 60%),
+      radial-gradient(600px 300px at 90% 0%, rgba(255,255,255,0.16), transparent 60%),
       radial-gradient(500px 300px at 0% 100%, rgba(0,125,180,0.20), transparent 60%);
     pointer-events: none;
   }
   header.case-hero .wrap { position: relative; z-index: 1; }
   .eyebrow-row {
-    color: var(--gold); font-weight: 600;
+    color: rgba(255,255,255,0.68); font-weight: 600;
     display: flex; align-items: center; gap: 12px;
     margin-bottom: 22px;
   }
-  .eyebrow-row::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+  .eyebrow-row::before { content: ''; width: 32px; height: 1px; background: rgba(255,255,255,0.68); }
   .client-line {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.82rem; letter-spacing: 0.14em;
     text-transform: uppercase; color: var(--stone);
     margin-bottom: 18px;
   }
   h1.case-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(2.4rem, 5.2vw, 4rem);
     letter-spacing: -0.025em; line-height: 1.05;
     margin-bottom: 24px; max-width: 22ch;
   }
-  h1.case-title em { font-style: italic; color: var(--gold); }
+  h1.case-title em { font-style: italic; }
   p.case-lede {
     font-size: clamp(1.05rem, 1.5vw, 1.2rem);
     color: rgba(255,255,255,0.85);
@@ -122,8 +122,8 @@
     display: inline-flex; align-items: center; gap: 10px;
     transition: transform 0.15s, box-shadow 0.2s;
   }
-  .btn-gold { background: var(--gold); color: var(--navy); }
-  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(245,168,0,0.35); }
+  .btn-gold { background: var(--white); color: var(--navy); }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,255,255,0.35); }
   .btn-ghost-dark {
     background: transparent; color: var(--white);
     border: 1px solid rgba(255,255,255,0.30);
@@ -141,23 +141,23 @@
   }
   @media (max-width: 820px) { .pull-stat .wrap { grid-template-columns: 1fr; gap: 36px; } }
   .stat-hero {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(4rem, 9vw, 6.5rem);
     color: var(--navy); letter-spacing: -0.04em;
     line-height: 0.95;
   }
   .stat-hero em {
-    font-style: normal; color: var(--gold);
+    font-style: normal; color: var(--navy);
   }
   .stat-hero-sub {
     display: block;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.85rem; letter-spacing: 0.10em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 500; margin-top: 12px;
   }
   .pull-stat h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.6rem, 2.6vw, 2.15rem);
     color: var(--navy); letter-spacing: -0.02em; line-height: 1.2;
     margin-bottom: 16px;
@@ -174,7 +174,7 @@
     display: inline-block;
   }
   .story h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.9rem, 3.4vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.15;
     color: var(--navy); margin-bottom: 28px; max-width: 22ch;
@@ -202,9 +202,9 @@
   }
   .brand-tree-row:last-child { border-bottom: none; }
   .brand-tree-row-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.68rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: var(--navy);
     font-weight: 700; margin-bottom: 20px;
   }
   .brand-tree-row-center { display: flex; justify-content: center; }
@@ -215,7 +215,7 @@
     padding: 18px 26px;
     display: flex; align-items: center; justify-content: center;
     height: 90px; min-width: 240px;
-    box-shadow: 0 2px 8px rgba(0,38,62,0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
   .brand-tree-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
   .brand-tree-logo-dark { background: var(--navy); border-color: var(--navy); }
@@ -227,7 +227,7 @@
   }
   .placeholder-mark {
     color: var(--granite);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;
     text-align: center; line-height: 1.5;
   }
@@ -258,7 +258,7 @@
     padding: 12px 20px;
     height: 62px;
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,38,62,0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     margin: 0 auto 8px;
   }
   .brand-tree-real-logo.dark { background: var(--navy); border-color: var(--navy); }
@@ -275,14 +275,14 @@
     color: var(--white);
     padding: 88px 0;
   }
-  .decisions .section-eyebrow { color: var(--gold); margin-bottom: 14px; display: inline-block; }
+  .decisions .section-eyebrow { color: rgba(255,255,255,0.68); margin-bottom: 14px; display: inline-block; }
   .decisions h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.9rem, 3.4vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.15;
     color: var(--white); margin-bottom: 44px; max-width: 24ch;
   }
-  .decisions h2 em { font-style: italic; color: var(--gold); }
+  .decisions h2 em { font-style: italic; }
   .decision-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -295,13 +295,13 @@
     padding: 30px 26px;
   }
   .decision-num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.75rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.68);
     font-weight: 600; margin-bottom: 14px;
   }
   .decision-card h3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.2rem;
     letter-spacing: -0.01em; line-height: 1.25;
     margin-bottom: 12px;
@@ -317,7 +317,7 @@
   }
   .results .section-eyebrow { color: var(--sky); margin-bottom: 14px; display: inline-block; }
   .results h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.9rem, 3.4vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.15;
     color: var(--navy); margin-bottom: 12px; max-width: 22ch;
@@ -339,13 +339,13 @@
     display: flex; flex-direction: column; gap: 6px;
   }
   .growth-year {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 600;
   }
   .growth-num {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(2.2rem, 5vw, 3rem);
     color: var(--navy); letter-spacing: -0.025em;
     line-height: 1;
@@ -356,24 +356,24 @@
   .growth-card.hero-year {
     background: var(--navy); color: var(--white);
   }
-  .growth-card.hero-year .growth-year { color: var(--gold); }
+  .growth-card.hero-year .growth-year { color: rgba(255,255,255,0.7); }
   .growth-card.hero-year .growth-num { color: var(--white); }
   .growth-card.hero-year .growth-label { color: rgba(255,255,255,0.7); }
 
   section.flipbook-cta {
-    background: linear-gradient(135deg, #016b9c 0%, #00263e 100%);
+    background: linear-gradient(135deg, #4a4a4a 0%, #141414 100%);
     color: var(--white);
     padding: 84px 0;
     text-align: center;
   }
   .flipbook-cta h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.9rem, 3.4vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.15;
     margin-bottom: 16px; max-width: 22ch;
     margin-inline: auto;
   }
-  .flipbook-cta h2 em { font-style: italic; color: var(--gold); }
+  .flipbook-cta h2 em { font-style: italic; }
   .flipbook-cta p {
     color: rgba(255,255,255,0.8);
     max-width: 52ch;
@@ -387,14 +387,14 @@
     text-align: center;
   }
   .close-cta h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.7rem, 3vw, 2.2rem);
     letter-spacing: -0.02em;
     color: var(--navy); margin-bottom: 24px;
   }
   .close-cta .cta-row { justify-content: center; }
   .btn-primary { background: var(--navy); color: var(--white); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,38,62,0.25); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
   .btn-outline {
     background: transparent; color: var(--navy);
     border: 1px solid var(--navy);

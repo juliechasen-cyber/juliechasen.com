@@ -11,22 +11,22 @@
 <title>Deal Leads for CRE Lenders — Julie Chasen</title>
 <meta name="description" content="A monthly list of active, financeable CRE projects matched to what you lend on. See the sample lead sheet and every field that comes with it."><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --white: #ffffff;
-    --soft: #eef3f7;
-    --navy: #00263e;
-    --granite: #4e738a;
-    --stone: #a5bac9;
-    --sky: #007db4;
-    --gold: #f5a800;
+    --soft: #f4f4f4;
+    --navy: #141414;
+    --granite: #6b6b6b;
+    --stone: #d6d6d6;
+    --sky: #4a4a4a;
+    --gold: #6b6b6b;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: var(--white);
     color: var(--navy);
     line-height: 1.6;
@@ -34,7 +34,7 @@
     overflow-x: hidden;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .mono { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
 
   /* SUB-NAV */
   nav.sub {
@@ -56,13 +56,13 @@
   .back-link .arrow { transition: transform 0.2s; display: inline-block; }
   .back-link:hover .arrow { transform: translateX(-3px); }
   .brand {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
     text-decoration: none; color: var(--navy);
   }
   .brand span { color: var(--sky); }
   .brand-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 600; margin-left: 6px;
@@ -88,7 +88,7 @@
     content: ""; position: absolute;
     top: -140px; right: -120px;
     width: 420px; height: 420px;
-    background: radial-gradient(circle, rgba(0, 125, 180, 0.12), transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.12), transparent 70%);
     pointer-events: none;
   }
   .eyebrow-row {
@@ -98,7 +98,7 @@
   }
   .eyebrow-row::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
   h1.case-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.4rem, 5.5vw, 4rem);
     line-height: 1.05; letter-spacing: -0.025em;
@@ -122,8 +122,8 @@
   }
   .btn-primary { background: var(--navy); color: var(--white); }
   .btn-primary:hover { background: var(--sky); transform: translateY(-1px); }
-  .btn-gold { background: var(--gold); color: var(--navy); }
-  .btn-gold:hover { background: var(--navy); color: var(--white); transform: translateY(-1px); }
+  .btn-gold { background: var(--navy); color: var(--white); }
+  .btn-gold:hover { background: var(--granite); color: var(--white); transform: translateY(-1px); }
   .btn-ghost {
     background: transparent; color: var(--navy);
     border: 1px solid var(--stone);
@@ -141,7 +141,7 @@
   }
   .section-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
   .section-h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.1;
     margin-bottom: 24px; max-width: 22ch;
@@ -158,7 +158,7 @@
     background: var(--white);
     border: 1px solid var(--stone);
     border-radius: 16px;
-    box-shadow: 0 24px 60px rgba(0, 38, 62, 0.10);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.10);
     overflow: hidden;
   }
   .sheet-head {
@@ -168,22 +168,22 @@
     gap: 16px; flex-wrap: wrap;
   }
   .sheet-head .sheet-id {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.12em;
     text-transform: uppercase; color: var(--stone);
     margin-bottom: 4px;
   }
   .sheet-head h3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.35rem;
     letter-spacing: -0.015em; line-height: 1.2;
   }
   .sheet-stamp {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.66rem; letter-spacing: 0.14em;
     text-transform: uppercase; font-weight: 500;
-    color: var(--gold);
-    border: 1px solid rgba(245, 168, 0, 0.55);
+    color: var(--navy);
+    border: 1px solid rgba(0, 0, 0, 0.55);
     border-radius: 999px; padding: 6px 14px;
     white-space: nowrap;
   }
@@ -201,7 +201,7 @@
     .sheet-head { padding: 20px 22px; }
   }
   .sheet-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.7rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 500;
@@ -235,7 +235,7 @@
   .shot-frame {
     border: 1px solid var(--stone);
     border-radius: 14px; overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0, 38, 62, 0.12);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
     background: var(--white);
   }
   .shot-bar {
@@ -249,7 +249,7 @@
     background: var(--stone); display: block;
   }
   .shot-bar span {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.68rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
     margin-left: 10px;
@@ -271,11 +271,11 @@
     color: var(--white); margin: 0 auto 24px;
     max-width: 24ch;
   }
-  section.service-pitch .section-h em { color: var(--gold); }
+  section.service-pitch .section-h em { color: var(--white); font-style: italic; }
   section.service-pitch .section-eyebrow {
-    color: var(--gold); justify-content: center; display: inline-flex;
+    color: rgba(255,255,255,0.68); justify-content: center; display: inline-flex;
   }
-  section.service-pitch .section-eyebrow::before { background: var(--gold); }
+  section.service-pitch .section-eyebrow::before { background: rgba(255,255,255,0.68); }
   section.service-pitch .lede {
     color: rgba(255, 255, 255, 0.78); font-size: 1.1rem;
     max-width: 56ch; margin: 0 auto 36px;
@@ -291,8 +291,8 @@
     font-size: 0.92rem; font-weight: 500;
   }
   .pitch-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .pitch-actions .btn-primary { background: var(--gold); color: var(--navy); }
-  .pitch-actions .btn-primary:hover { background: var(--white); }
+  .pitch-actions .btn-primary { background: var(--white); color: var(--navy); }
+  .pitch-actions .btn-primary:hover { background: var(--stone); }
   .pitch-actions .btn-ghost {
     background: transparent; color: var(--white);
     border: 1px solid rgba(255,255,255,0.28);

@@ -11,27 +11,27 @@
 <title>CRE Marketing Collateral · Julie Chasen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --white: #ffffff;
-    --soft: #eef3f7;
-    --navy: #00263e;
-    --granite: #4e738a;
-    --stone: #a5bac9;
-    --sky: #007db4;
-    --gold: #f5a800;
+    --soft: #f4f4f4;
+    --navy: #141414;
+    --granite: #6b6b6b;
+    --stone: #d6d6d6;
+    --sky: #4a4a4a;
+    --gold: #6b6b6b;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: var(--white); color: var(--navy);
     line-height: 1.6; -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .mono { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
 
   /* SUB-NAV */
   nav.sub {
@@ -53,13 +53,13 @@
   .back-link .arrow { transition: transform 0.2s; display: inline-block; }
   .back-link:hover .arrow { transform: translateX(-3px); }
   .brand {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
     text-decoration: none; color: var(--navy);
   }
   .brand span { color: var(--sky); }
   .brand-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 600; margin-left: 6px;
@@ -78,7 +78,7 @@
   /* HERO */
   header.case-hero {
     padding: 90px 0 60px;
-    background: linear-gradient(135deg, #4e738a 0%, #a5bac9 100%);
+    background: linear-gradient(135deg, #6b6b6b 0%, #d6d6d6 100%);
     color: var(--white);
     position: relative; overflow: hidden;
   }
@@ -97,13 +97,13 @@
   }
   .eyebrow-row::before { content: ""; width: 28px; height: 1px; background: rgba(255,255,255,0.7); }
   .client-line {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.82rem; letter-spacing: 0.14em;
     text-transform: uppercase; color: rgba(255,255,255,0.7);
     margin-bottom: 16px;
   }
   h1.case-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.4rem, 5.5vw, 4rem);
     line-height: 1.05; letter-spacing: -0.025em;
@@ -126,7 +126,7 @@
     transition: transform 0.15s, background 0.15s;
   }
   .btn-white { background: var(--white); color: var(--navy); }
-  .btn-white:hover { background: var(--gold); transform: translateY(-1px); }
+  .btn-white:hover { background: var(--stone); transform: translateY(-1px); }
   .btn-ghost-dark {
     background: transparent; color: var(--white);
     border: 1px solid rgba(255,255,255,0.32);
@@ -144,7 +144,7 @@
   }
   .section-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
   .section-h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.1;
     margin-bottom: 48px; max-width: 26ch;
@@ -166,12 +166,12 @@
     display: flex; flex-direction: column; gap: 10px;
   }
   .lib-num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.1em;
     color: var(--sky); font-weight: 500;
   }
   .lib-item h3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.2rem;
     color: var(--navy); letter-spacing: -0.015em;
     line-height: 1.2;
@@ -198,7 +198,7 @@
   }
   .lib-example span {
     display: block; padding: 10px 12px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; letter-spacing: 0.04em;
     color: var(--navy); font-weight: 600;
   }
@@ -210,13 +210,13 @@
     color: var(--white);
   }
   section.systems .section-eyebrow {
-    color: var(--gold);
+    color: rgba(255,255,255,0.68);
   }
-  section.systems .section-eyebrow::before { background: var(--gold); }
+  section.systems .section-eyebrow::before { background: rgba(255,255,255,0.68); }
   section.systems .section-h {
     color: var(--white);
   }
-  section.systems .section-h em { color: var(--gold); }
+  section.systems .section-h em { font-style: italic; color: var(--white); }
   .systems-lede {
     color: rgba(255,255,255,0.78);
     font-size: 1.05rem; line-height: 1.65;
@@ -237,13 +237,13 @@
   .system-icon {
     font-size: 1.6rem;
     width: 44px; height: 44px;
-    background: var(--gold); color: var(--navy);
+    background: var(--white); color: var(--navy);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 4px;
   }
   .system h3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.2rem;
     color: var(--white); letter-spacing: -0.015em;
     line-height: 1.2;
@@ -279,7 +279,7 @@
     border-radius: 10px 10px 2px 2px;
     padding: 10px 10px 0;
     aspect-ratio: 16/10;
-    box-shadow: 0 20px 50px rgba(0,38,62,0.18);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.18);
   }
   .laptop-inner {
     background: var(--white);
@@ -290,17 +290,17 @@
   }
   .laptop-base {
     height: 16px;
-    background: linear-gradient(180deg, #cfd8e0, #a5bac9);
+    background: linear-gradient(180deg, #e4e4e4, #d6d6d6);
     border-radius: 0 0 16px 16px;
     margin: 0 -24px;
-    box-shadow: 0 6px 12px rgba(0,38,62,0.10);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.10);
     position: relative;
   }
   .laptop-base::before {
     content: ""; position: absolute;
     top: 0; left: 50%; transform: translateX(-50%);
     width: 80px; height: 6px;
-    background: rgba(0,38,62,0.12);
+    background: rgba(0,0,0,0.12);
     border-radius: 0 0 10px 10px;
   }
 
@@ -319,7 +319,7 @@
     border-radius: 18px;
     padding: 14px 10px;
     aspect-ratio: 3/4;
-    box-shadow: 0 16px 40px rgba(0,38,62,0.20);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.20);
   }
   .tablet-inner {
     background: var(--white);
@@ -343,7 +343,7 @@
     border-radius: 18px;
     padding: 10px 6px;
     aspect-ratio: 9/19;
-    box-shadow: 0 14px 30px rgba(0,38,62,0.22);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.22);
   }
   .phone-inner {
     background: var(--white);
@@ -355,20 +355,20 @@
   /* OM MOCKUP (laptop content) */
   .om-mock { padding: 18px 22px; height: 100%; display: flex; flex-direction: column; }
   .om-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.55rem; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: var(--navy);
     font-weight: 600; margin-bottom: 6px;
   }
   .om-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.05rem;
     color: var(--navy); letter-spacing: -0.02em;
     line-height: 1.15; margin-bottom: 10px;
   }
   .om-hero {
     background-image:
-      linear-gradient(180deg, rgba(0,38,62,0.10) 50%, rgba(0,38,62,0.75) 100%),
+      linear-gradient(180deg, rgba(0,0,0,0.10) 50%, rgba(0,0,0,0.75) 100%),
       url('images/cre-multifamily.jpg');
     background-size: cover;
     background-position: center;
@@ -382,7 +382,7 @@
   .om-hero-label {
     position: relative; z-index: 1;
     color: var(--white);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.5rem; letter-spacing: 0.16em;
     text-transform: uppercase;
   }
@@ -393,12 +393,12 @@
   }
   .om-stat { display: flex; flex-direction: column; gap: 2px; }
   .om-stat .label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.42rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
   }
   .om-stat .value {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 0.7rem;
     color: var(--navy);
   }
@@ -412,13 +412,13 @@
     margin-bottom: 10px;
   }
   .deck-num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.5rem; letter-spacing: 0.12em;
-    color: var(--gold); font-weight: 600;
+    color: var(--navy); font-weight: 600;
     margin-bottom: 6px;
   }
   .deck-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 0.85rem;
     color: var(--navy); line-height: 1.15;
     margin-bottom: 10px;
@@ -438,13 +438,13 @@
     border-top: 1px solid var(--stone);
   }
   .deck-stat .big {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.4rem;
-    color: var(--gold); letter-spacing: -0.02em;
+    color: var(--navy); letter-spacing: -0.02em;
     line-height: 1;
   }
   .deck-stat .small {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.45rem; letter-spacing: 0.08em;
     color: var(--granite); margin-top: 2px;
   }
@@ -458,7 +458,7 @@
     margin-bottom: 8px;
   }
   .fact-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 0.55rem;
     color: var(--navy); line-height: 1.15;
     margin-bottom: 6px;
@@ -469,11 +469,11 @@
     font-size: 0.4rem;
   }
   .fact-row .k {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     color: var(--granite); letter-spacing: 0.04em;
   }
   .fact-row .v {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600; color: var(--navy);
   }
   .device-caption {
@@ -487,7 +487,7 @@
   section.strategy-plan {
     padding: 90px 0;
     background: var(--white);
-    border-top: 3px solid var(--gold);
+    border-top: 3px solid var(--navy);
   }
   .strategy-lede {
     color: var(--granite); font-size: 1.02rem;
@@ -503,12 +503,12 @@
     display: flex; flex-direction: column; gap: 14px;
   }
   .strategy-num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.12em;
-    color: var(--gold); font-weight: 600;
+    color: var(--navy); font-weight: 600;
   }
   .strategy-col h3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.4rem;
     color: var(--navy); letter-spacing: -0.02em;
     line-height: 1.15;
@@ -540,19 +540,19 @@
     text-align: center;
   }
   .why-callout .callout-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.68);
     margin-bottom: 16px;
   }
   .why-callout .callout-h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     line-height: 1.15; letter-spacing: -0.02em;
     color: var(--white);
   }
-  .why-callout .callout-h em { color: var(--gold); font-style: italic; }
+  .why-callout .callout-h em { color: var(--white); font-style: italic; }
   .why-body p {
     font-size: 1.05rem; color: var(--navy);
     line-height: 1.7; margin-bottom: 18px;
@@ -574,13 +574,13 @@
     display: flex; flex-direction: column; gap: 12px;
   }
   .step-num {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 2.4rem;
-    color: var(--gold); letter-spacing: -0.03em;
+    color: var(--navy); letter-spacing: -0.03em;
     line-height: 1;
   }
   .step h4 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.2rem;
     color: var(--navy); letter-spacing: -0.015em;
   }
@@ -595,14 +595,14 @@
     padding: 100px 0;
   }
   section.cta-block .section-eyebrow {
-    color: var(--gold); justify-content: center; display: inline-flex;
+    color: rgba(255,255,255,0.68); justify-content: center; display: inline-flex;
   }
-  section.cta-block .section-eyebrow::before { background: var(--gold); }
+  section.cta-block .section-eyebrow::before { background: rgba(255,255,255,0.68); }
   section.cta-block .section-h {
     color: var(--white); margin: 0 auto 24px;
     max-width: 28ch; font-weight: 700;
   }
-  section.cta-block .section-h em { color: var(--gold); font-style: italic; }
+  section.cta-block .section-h em { color: var(--white); font-style: italic; }
   section.cta-block .lede {
     color: rgba(255, 255, 255, 0.78); font-size: 1.1rem;
     max-width: 58ch; margin: 0 auto 40px;
@@ -610,8 +610,8 @@
   .cta-actions {
     display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
   }
-  .cta-actions .btn-primary { background: var(--gold); color: var(--navy); }
-  .cta-actions .btn-primary:hover { background: var(--white); }
+  .cta-actions .btn-primary { background: var(--white); color: var(--navy); }
+  .cta-actions .btn-primary:hover { background: var(--stone); }
 
   footer {
     padding: 40px 0; border-top: 1px solid var(--stone);

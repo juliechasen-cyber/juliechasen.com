@@ -11,23 +11,23 @@
 <title>Brand Refresh — Serum &amp; Shopify · Julie Chasen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Caveat:wght@500;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --white: #ffffff;
-    --soft: #eef3f7;
-    --navy: #00263e;
-    --granite: #4e738a;
-    --stone: #a5bac9;
-    --sky: #007db4;
-    --gold: #f5a800;
-    --shadow: rgba(0, 38, 62, 0.10);
+    --soft: #f4f4f4;
+    --navy: #141414;
+    --granite: #6b6b6b;
+    --stone: #d6d6d6;
+    --sky: #4a4a4a;
+    --gold: #6b6b6b;
+    --shadow: rgba(0, 0, 0, 0.10);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: var(--white);
     color: var(--navy);
     line-height: 1.6;
@@ -35,8 +35,8 @@
     overflow-x: hidden;
   }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
-  .display { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; line-height: 1; }
+  .mono { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .display { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.02em; line-height: 1; }
 
   /* ---------- SUB-NAV ---------- */
   nav.sub {
@@ -59,12 +59,12 @@
   .back-link .arrow { transition: transform 0.2s; display: inline-block; }
   .back-link:hover .arrow { transform: translateX(-3px); }
   .brand {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
   }
   .brand span { color: var(--sky); }
   .brand-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 600; margin-left: 6px;
@@ -91,7 +91,7 @@
     content: ""; position: absolute;
     top: -120px; right: -100px;
     width: 380px; height: 380px;
-    background: radial-gradient(circle, rgba(0, 125, 180, 0.10), transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.10), transparent 70%);
     pointer-events: none;
   }
   .case-meta-row {
@@ -107,7 +107,7 @@
     display: block;
   }
   h1.case-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.4rem, 6vw, 4.2rem);
     line-height: 1.05; letter-spacing: -0.025em;
@@ -133,7 +133,7 @@
     content: ""; width: 28px; height: 1px; background: var(--sky);
   }
   .section-h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.1;
     margin-bottom: 48px; max-width: 22ch;
@@ -155,7 +155,7 @@
   }
   .ba-label {
     padding: 14px 20px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.12em;
     text-transform: uppercase;
     display: flex; justify-content: space-between; align-items: center;
@@ -167,7 +167,7 @@
     padding: 3px 10px; border-radius: 999px;
     font-size: 0.68rem; letter-spacing: 0.08em;
   }
-  .ba-card.after .ba-label .badge { background: var(--gold); color: var(--navy); }
+  .ba-card.after .ba-label .badge { background: var(--white); color: var(--navy); }
   .ba-image-wrap {
     flex: 1;
     aspect-ratio: 4/3;
@@ -185,7 +185,7 @@
     background: var(--white);
   }
   .ba-caption .name {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.15rem;
     color: var(--navy); margin-bottom: 6px;
   }
@@ -206,7 +206,7 @@
   }
   .logo-rebrand .section-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--sky); }
   .logo-rebrand h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     letter-spacing: -0.02em; line-height: 1.1;
     margin-bottom: 14px;
@@ -246,7 +246,7 @@
   }
   .logo-label {
     position: absolute; top: 14px; left: 18px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.68rem; letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--granite); font-weight: 600;
@@ -266,7 +266,7 @@
   }
   .logo-arrow {
     font-size: 2.4rem;
-    color: var(--gold);
+    color: var(--navy);
     align-self: center;
     line-height: 1;
     font-weight: 700;
@@ -285,7 +285,7 @@
   .why-body p strong { color: var(--sky); font-weight: 600; }
   .why-body p em {
     font-style: italic;
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1.25rem; color: var(--navy);
     line-height: 1.4;
     display: block;
@@ -312,12 +312,12 @@
     display: flex; flex-direction: column; gap: 8px;
   }
   .deliverable .num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.1em;
     color: var(--sky); font-weight: 500;
   }
   .deliverable h4 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.1rem;
     color: var(--navy); letter-spacing: -0.01em;
   }
@@ -342,7 +342,7 @@
     background: #1a1a1a;
     border-radius: 12px 12px 4px 4px;
     padding: 14px 14px 0;
-    box-shadow: 0 24px 60px rgba(0, 38, 62, 0.18);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
   }
   .laptop-bar {
     background: #2a2a2a;
@@ -361,7 +361,7 @@
   .laptop-bar .addr {
     flex: 1; background: #1a1a1a;
     padding: 6px 14px; border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; color: #aaa;
     text-align: center;
   }
@@ -377,17 +377,17 @@
   }
   .laptop-base {
     height: 14px;
-    background: linear-gradient(180deg, #cfd8e0, #a5bac9);
+    background: linear-gradient(180deg, #e4e4e4, #d6d6d6);
     border-radius: 0 0 18px 18px;
     margin: 0 -30px;
-    box-shadow: 0 8px 16px rgba(0,38,62,0.12);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
     position: relative;
   }
   .laptop-base::before {
     content: ""; position: absolute;
     top: 0; left: 50%; transform: translateX(-50%);
     width: 100px; height: 6px;
-    background: rgba(0,38,62,0.14);
+    background: rgba(0,0,0,0.14);
     border-radius: 0 0 12px 12px;
   }
 
@@ -400,7 +400,7 @@
   .mock-logo { height: 28px; width: auto; }
   .mock-nav-links {
     display: flex; gap: 24px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.7rem; letter-spacing: 0.14em;
     color: #2a4a55; font-weight: 600;
   }
@@ -432,13 +432,13 @@
     display: flex; flex-direction: column; justify-content: center;
   }
   .mock-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.6rem; letter-spacing: 0.16em;
     color: #f5a800; margin-bottom: 10px;
     font-weight: 600;
   }
   .mock-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.8rem;
     line-height: 1.05; letter-spacing: -0.02em;
     margin-bottom: 16px;
@@ -467,12 +467,12 @@
     margin-bottom: 12px;
   }
   .mock-product-name {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600; font-size: 0.85rem;
     color: #2a4a55; margin-bottom: 4px;
   }
   .mock-product-price {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; color: #5a6a6f;
   }
 
@@ -483,7 +483,7 @@
   }
   .products-shelf .section-eyebrow {
     display: inline-flex; align-items: center; gap: 12px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
     color: var(--granite); margin-bottom: 20px;
   }
@@ -515,7 +515,7 @@
     object-fit: contain;
   }
   .product-card-name {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
     font-size: 1rem;
     letter-spacing: 0.14em;
@@ -524,7 +524,7 @@
     margin-top: 22px;
   }
   .product-card-price {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 0.95rem;
     color: var(--granite);
     margin-top: 8px;
@@ -547,7 +547,7 @@
     max-width: 24ch;
     font-size: clamp(2rem, 4.5vw, 3.4rem);
   }
-  section.cta-block .section-h em { color: var(--gold); }
+  section.cta-block .section-h em { color: var(--white); font-style: italic; }
   section.cta-block .lede {
     color: rgba(255, 255, 255, 0.72);
     font-size: 1.1rem; max-width: 52ch;
@@ -562,8 +562,8 @@
     display: inline-flex; align-items: center; gap: 8px;
     transition: transform 0.15s, background 0.15s;
   }
-  .btn-primary { background: var(--gold); color: var(--navy); }
-  .btn-primary:hover { background: var(--white); transform: translateY(-1px); }
+  .btn-primary { background: var(--white); color: var(--navy); }
+  .btn-primary:hover { background: var(--stone); transform: translateY(-1px); }
   .btn-secondary {
     background: transparent; color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.28);
@@ -783,7 +783,7 @@
 <!-- CTA -->
 <section class="cta-block">
   <div class="wrap">
-    <span class="section-eyebrow mono" style="color: rgba(245,168,0,0.9); justify-content: center; display: inline-flex;">Have a brand that needs refreshing?</span>
+    <span class="section-eyebrow mono" style="color: rgba(255,255,255,0.9); justify-content: center; display: inline-flex;">Have a brand that needs refreshing?</span>
     <h2 class="section-h">Let's give your product the <em>visual credibility</em> it deserves.</h2>
     <p class="lede">If your packaging, identity, or brand presence is holding the product back — let's talk about what a refresh would look like.</p>
     <div class="cta-actions">
