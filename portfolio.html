@@ -11,18 +11,18 @@
 <title>Julie Chasen — Marketing, Communication, Design & AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Brand palette: Sky / Navy / Granite / Stone / White / Gold */
+    /* Monochrome palette: Ink / Granite / Stone / Soft / White */
     --white: #ffffff;
-    --soft: #eef3f7;        /* pale stone tint for card + section backgrounds */
-    --navy: #00263e;
-    --granite: #4e738a;
-    --stone: #a5bac9;
-    --sky: #007db4;
-    --gold: #f5a800;
-    --shadow: rgba(0, 38, 62, 0.10);
+    --soft: #f4f4f4;        /* pale grey tint for card + section backgrounds */
+    --navy: #141414;
+    --granite: #6b6b6b;
+    --stone: #d6d6d6;
+    --sky: #1a1a1a;
+    --gold: #6b6b6b;
+    --shadow: rgba(0, 0, 0, 0.10);
 
     /* Legacy aliases so existing class rules still resolve */
     --paper: var(--white);
@@ -37,7 +37,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     background: var(--paper);
     color: var(--ink);
     line-height: 1.6;
@@ -47,8 +47,8 @@
   }
 
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
-  .display { font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; line-height: 1; }
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .display { font-family: 'Cormorant Garamond', serif; letter-spacing: -0.02em; line-height: 1; }
+  .mono { font-family: 'Inter', system-ui, sans-serif; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
   .ink-soft { color: var(--ink-soft); }
   .rust { color: var(--rust); }
 
@@ -64,12 +64,13 @@
     height: 72px;
   }
   .brand {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em;
+    color: var(--navy); text-decoration: none;
   }
   .brand span { color: var(--rust); }
   .brand-tag {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem !important;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -109,14 +110,14 @@
     content: ""; position: absolute;
     top: -200px; right: -100px;
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(0, 125, 180, 0.10), transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.10), transparent 70%);
     pointer-events: none;
   }
   header::after {
     content: ""; position: absolute;
     bottom: -180px; left: -120px;
     width: 460px; height: 460px;
-    background: radial-gradient(circle, rgba(245, 168, 0, 0.08), transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.08), transparent 70%);
     pointer-events: none;
   }
   .eyebrow {
@@ -128,7 +129,7 @@
     content: ""; width: 28px; height: 1px; background: var(--rust);
   }
   h1 {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.8rem, 7vw, 5.4rem);
     line-height: 1.02;
@@ -170,7 +171,7 @@
   }
   .meta-item .mono { color: var(--ink-soft); margin-bottom: 4px; display: block; }
   .meta-item .value {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600; font-size: 1.1rem;
   }
 
@@ -178,7 +179,7 @@
   section { padding: 100px 0; }
   .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
   .section-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2rem, 4vw, 3rem);
     letter-spacing: -0.02em;
@@ -211,21 +212,21 @@
     overflow: hidden;
   }
   .work-cover.cover-finance {
-    background-image: linear-gradient(rgba(0, 38, 62, 0.40), rgba(0, 38, 62, 0.55)), url('images/lending-cover.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.55)), url('images/lending-cover.jpg');
     background-size: cover; background-position: center;
     color: var(--white);
   }
   .work-cover.cover-finance .placeholder-label { display: none; }
-  .work-cover.cover-tfp-portal { background: linear-gradient(135deg, #007db4 0%, #4e738a 100%); color: var(--white); }
-  .work-cover.cover-tfp-news { background: linear-gradient(135deg, #eef3f7 0%, #a5bac9 100%); color: var(--navy); }
-  .work-cover.cover-joyshare { background: linear-gradient(135deg, #f5a800 0%, #f5c14b 100%); color: var(--navy); }
-  .work-cover.cover-charro { background: linear-gradient(135deg, #f2a33c 0%, #d23b2e 100%); color: var(--white); }
+  .work-cover.cover-tfp-portal { background: linear-gradient(135deg, #4a4a4a 0%, #6b6b6b 100%); color: var(--white); }
+  .work-cover.cover-tfp-news { background: linear-gradient(135deg, #f4f4f4 0%, #d6d6d6 100%); color: var(--navy); }
+  .work-cover.cover-joyshare { background: linear-gradient(135deg, #e0e0e0 0%, #cfcfcf 100%); color: var(--navy); }
+  .work-cover.cover-charro { background: linear-gradient(135deg, #5a5a5a 0%, #2a2a2a 100%); color: var(--white); }
   .work-cover.cover-brand-integration {
-    background: linear-gradient(135deg, #007db4 0%, #00263e 100%);
+    background: linear-gradient(135deg, #4a4a4a 0%, #141414 100%);
     color: var(--white);
   }
   .work-cover.cover-brand-integration .placeholder-label {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2rem, 5vw, 3.2rem);
     letter-spacing: -0.02em;
@@ -234,11 +235,11 @@
     opacity: 1;
   }
   .work-cover.cover-brand-transition {
-    background: linear-gradient(135deg, #4e738a 0%, #00263e 100%);
+    background: linear-gradient(135deg, #6b6b6b 0%, #141414 100%);
     color: var(--white);
   }
   .work-cover.cover-brand-transition .placeholder-label {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(1.6rem, 4vw, 2.6rem);
     letter-spacing: -0.02em;
@@ -258,13 +259,13 @@
   .work-cover.cover-siteplans::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(0,38,62,0) 55%, rgba(0,38,62,0.55) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%);
     pointer-events: none;
   }
   .siteplans-badge {
     position: absolute; left: 20px; bottom: 16px;
     color: var(--white);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.75rem; letter-spacing: 0.06em;
     text-transform: uppercase; font-weight: 600;
     z-index: 1;
@@ -278,13 +279,13 @@
   .work-cover.cover-oms::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(0,38,62,0) 55%, rgba(0,38,62,0.55) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%);
     pointer-events: none;
   }
   .oms-badge {
     position: absolute; left: 20px; bottom: 16px;
     color: var(--white);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.75rem; letter-spacing: 0.06em;
     text-transform: uppercase; font-weight: 600;
     z-index: 1;
@@ -295,7 +296,7 @@
   }
   .work-cover.cover-olanani .placeholder-label { display: none; }
   .work-cover.cover-mm {
-    background-image: linear-gradient(rgba(78, 115, 138, 0.30), rgba(0, 38, 62, 0.50)), url('images/cre-cover.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.50)), url('images/cre-cover.jpg');
     background-size: cover; background-position: center;
     color: var(--white);
   }
@@ -309,13 +310,13 @@
   }
   .work-cover.cover-tfp-portal .placeholder-label { display: none; }
   .work-cover.cover-tfp-portal .stat-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     margin-bottom: 12px; font-weight: 600;
   }
   .work-cover.cover-tfp-portal .stat-number {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(3.4rem, 8vw, 5.4rem);
     line-height: 0.95; letter-spacing: -0.04em;
@@ -325,10 +326,10 @@
     margin-top: 12px;
     color: rgba(255,255,255,0.65);
     font-size: 0.82rem;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
   }
   .work-cover.cover-press-release {
-    background: linear-gradient(135deg, #00263e 0%, #007db4 100%);
+    background: linear-gradient(135deg, #141414 0%, #4a4a4a 100%);
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     color: var(--white); padding: 24px;
@@ -336,13 +337,13 @@
   }
   .work-cover.cover-press-release .placeholder-label { display: none; }
   .work-cover.cover-press-release .stat-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: #f5a800;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     margin-bottom: 12px; font-weight: 600;
   }
   .work-cover.cover-press-release .stat-number {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(3rem, 7vw, 4.6rem);
     line-height: 1; letter-spacing: -0.03em;
@@ -352,14 +353,14 @@
     margin-top: 12px;
     color: rgba(255,255,255,0.72);
     font-size: 0.82rem;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     max-width: 22ch;
   }
   .work-cover.cover-press-release .live-badge {
     position: absolute; top: 14px; right: 14px;
     background: rgba(255,255,255,0.14);
     color: #fff;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
     font-weight: 600;
     padding: 5px 10px; border-radius: 999px;
@@ -367,10 +368,10 @@
   }
   .work-cover.cover-press-release .live-badge::before {
     content: ""; width: 6px; height: 6px; border-radius: 50%;
-    background: #f5a800; box-shadow: 0 0 0 3px rgba(245,168,0,0.28);
+    background: #ffffff; box-shadow: 0 0 0 3px rgba(255,255,255,0.28);
   }
   .work-cover.cover-leads {
-    background: linear-gradient(135deg, #00263e 0%, #4e738a 100%);
+    background: linear-gradient(135deg, #141414 0%, #6b6b6b 100%);
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     color: var(--white); padding: 24px;
@@ -378,13 +379,13 @@
   }
   .work-cover.cover-leads .placeholder-label { display: none; }
   .work-cover.cover-leads .stat-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: #f5a800;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     margin-bottom: 12px; font-weight: 600;
   }
   .work-cover.cover-leads .stat-number {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.6rem, 6vw, 3.9rem);
     line-height: 1.02; letter-spacing: -0.03em;
@@ -394,14 +395,14 @@
     margin-top: 12px;
     color: rgba(255,255,255,0.72);
     font-size: 0.82rem;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     max-width: 26ch;
   }
   .work-cover.cover-leads .live-badge {
     position: absolute; top: 14px; right: 14px;
     background: rgba(255,255,255,0.14);
     color: #fff;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
     font-weight: 600;
     padding: 5px 10px; border-radius: 999px;
@@ -409,11 +410,11 @@
   }
   .work-cover.cover-leads .live-badge::before {
     content: ""; width: 6px; height: 6px; border-radius: 50%;
-    background: #f5a800; box-shadow: 0 0 0 3px rgba(245,168,0,0.28);
+    background: #ffffff; box-shadow: 0 0 0 3px rgba(255,255,255,0.28);
   }
 
   .work-cover.cover-writing {
-    background: linear-gradient(135deg, #4e738a 0%, #00263e 100%);
+    background: linear-gradient(135deg, #6b6b6b 0%, #141414 100%);
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     color: var(--white); padding: 24px;
@@ -421,13 +422,13 @@
   }
   .work-cover.cover-writing .placeholder-label { display: none; }
   .work-cover.cover-writing .stat-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     margin-bottom: 12px; font-weight: 600;
   }
   .work-cover.cover-writing .stat-number {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.6rem, 6vw, 3.9rem);
     line-height: 1.02; letter-spacing: -0.03em;
@@ -437,12 +438,12 @@
     margin-top: 12px;
     color: rgba(255,255,255,0.72);
     font-size: 0.82rem;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     max-width: 26ch;
   }
 
   .work-cover.cover-videos {
-    background: linear-gradient(135deg, #00263e 0%, #007db4 100%);
+    background: linear-gradient(135deg, #141414 0%, #4a4a4a 100%);
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     color: var(--white); padding: 24px;
@@ -450,13 +451,13 @@
   }
   .work-cover.cover-videos .placeholder-label { display: none; }
   .work-cover.cover-videos .stat-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--gold);
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
     margin-bottom: 12px; font-weight: 600;
   }
   .work-cover.cover-videos .stat-number {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(2.6rem, 6vw, 3.9rem);
     line-height: 1.02; letter-spacing: -0.03em;
@@ -466,25 +467,25 @@
     margin-top: 12px;
     color: rgba(255,255,255,0.72);
     font-size: 0.82rem;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     max-width: 26ch;
   }
 
   .work-cover .placeholder-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
     opacity: 0.7;
   }
   .work-body { padding: 28px; }
   .work-meta {
     display: flex; gap: 12px; margin-bottom: 14px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--ink-soft);
   }
   .work-meta .dot { color: var(--rust); }
   .work-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.45rem;
     letter-spacing: -0.015em; line-height: 1.15;
     margin-bottom: 10px;
@@ -494,7 +495,7 @@
   }
   .work-tag {
     display: inline-block; margin-top: 16px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--rust); font-weight: 500;
   }
@@ -507,12 +508,12 @@
     border-radius: 14px;
     text-align: center;
     color: var(--granite);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.88rem; letter-spacing: 0.06em;
   }
   .more-coming strong {
     color: var(--navy); font-weight: 600;
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1.05rem; letter-spacing: -0.01em;
     display: block; margin-bottom: 4px;
   }
@@ -536,7 +537,7 @@
     overflow: hidden;
     display: flex; align-items: center; justify-content: center;
     color: var(--white);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
   }
   .about-portrait img {
@@ -581,7 +582,7 @@
     border-radius: 50%;
     overflow: hidden;
     background: var(--white);
-    box-shadow: 0 12px 36px rgba(0, 38, 62, 0.10);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.10);
     border: 4px solid var(--white);
   }
   .team-photo img {
@@ -589,7 +590,7 @@
     object-fit: cover;
   }
   .team-name {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: 1.6rem;
     color: var(--navy);
@@ -597,7 +598,7 @@
     line-height: 1.15;
   }
   .team-title {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -613,7 +614,7 @@
     margin: 0 auto;
   }
   .team-link {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.72rem;
     letter-spacing: 0.08em;
     color: var(--sky);
@@ -635,12 +636,12 @@
     display: flex; flex-direction: column; gap: 16px;
   }
   .service-num {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.1em;
     color: var(--rust); font-weight: 500;
   }
   .service-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.4rem;
     letter-spacing: -0.015em; line-height: 1.15;
   }
@@ -650,13 +651,13 @@
   .service-featured {
     grid-column: 1 / -1;
     background: linear-gradient(135deg, var(--soft) 0%, var(--white) 100%);
-    border-left: 3px solid var(--gold);
+    border-left: 3px solid var(--navy);
   }
-  .service-featured .service-num { color: var(--gold); }
+  .service-featured .service-num { color: var(--granite); }
   .service-featured .service-title { font-size: 1.55rem; }
   .service-featured .service-desc { max-width: 72ch; }
   @media (max-width: 720px) {
-    .service-featured { border-left: none; border-top: 3px solid var(--gold); }
+    .service-featured { border-left: none; border-top: 3px solid var(--navy); }
   }
 
   /* ---------- COURSES ---------- */
@@ -666,9 +667,9 @@
   }
   .course-banner {
     display: inline-flex; align-items: center; gap: 12px;
-    background: var(--gold); color: var(--navy);
+    background: var(--navy); color: var(--white);
     padding: 8px 16px; border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.1em;
     text-transform: uppercase; font-weight: 600;
     margin-bottom: 24px;
@@ -686,7 +687,7 @@
     border-radius: 20px;
     overflow: hidden;
     display: grid; grid-template-columns: 1fr 1fr;
-    box-shadow: 0 20px 60px rgba(0, 38, 62, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   }
   @media (max-width: 820px) {
     .course-card { grid-template-columns: 1fr; }
@@ -696,9 +697,9 @@
     min-height: 360px;
     background:
       linear-gradient(135deg,
-        rgba(0, 38, 62, 0.78) 0%,
-        rgba(0, 125, 180, 0.45) 55%,
-        rgba(245, 168, 0, 0.30) 100%),
+        rgba(0, 0, 0, 0.78) 0%,
+        rgba(0, 0, 0, 0.45) 55%,
+        rgba(0, 0, 0, 0.30) 100%),
       url('images/mission-bay-resort.jpg') center / cover no-repeat;
     display: flex; flex-direction: column; justify-content: space-between;
     padding: 36px;
@@ -717,7 +718,7 @@
     top: 25%; left: -40px;
     width: 200px; height: 200px;
     border-radius: 50%;
-    background: rgba(0, 38, 62, 0.18);
+    background: rgba(0, 0, 0, 0.18);
   }
   .course-visual > * { position: relative; z-index: 1; }
   .course-visual::before {
@@ -732,13 +733,13 @@
     top: 25%; left: -40px;
     width: 200px; height: 200px;
     border-radius: 50%;
-    background: rgba(0, 38, 62, 0.18);
+    background: rgba(0, 0, 0, 0.18);
   }
   .course-visual .v-top, .course-visual .v-bottom {
     position: relative; z-index: 1;
   }
   .course-visual .location-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem; letter-spacing: 0.16em;
     text-transform: uppercase;
     opacity: 0.85; margin-bottom: 8px;
@@ -748,17 +749,17 @@
     content: ""; width: 22px; height: 1px; background: var(--white); opacity: 0.6;
   }
   .course-visual .location-name {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: clamp(1.8rem, 3.5vw, 2.4rem);
     letter-spacing: -0.02em; line-height: 1.05;
   }
   .course-visual .location-addr {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.82rem; letter-spacing: 0.04em;
     opacity: 0.9; margin-top: 10px; line-height: 1.5;
   }
   .course-visual .swap-note {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.68rem; letter-spacing: 0.06em;
     opacity: 0.55;
   }
@@ -767,14 +768,14 @@
     display: flex; flex-direction: column; justify-content: center;
   }
   .course-eyebrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--sky); font-weight: 500;
     margin-bottom: 14px;
   }
   .course-name {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: clamp(1.6rem, 2.6vw, 2.1rem);
     line-height: 1.15; letter-spacing: -0.02em;
@@ -795,13 +796,13 @@
   @media (max-width: 480px) { .course-meta { grid-template-columns: 1fr; } }
   .course-meta div { display: flex; flex-direction: column; gap: 4px; }
   .course-meta strong {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.7rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--granite);
     font-weight: 500;
   }
   .course-meta span {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 600; font-size: 1rem;
     color: var(--navy);
   }
@@ -830,7 +831,7 @@
   .course-bullets li::before {
     content: "✓"; position: absolute;
     left: 0; top: 0;
-    color: var(--gold);
+    color: var(--navy);
     font-weight: 700; font-size: 1.05rem;
     line-height: 1.5;
   }
@@ -863,7 +864,7 @@
   }
   .reservation-count {
     margin-top: 14px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.78rem;
     letter-spacing: 0.06em;
     color: #1e8a3a;
@@ -900,7 +901,7 @@
   }
   .role-header { display: flex; flex-direction: column; gap: 8px; }
   .role-company {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.4rem;
     letter-spacing: -0.015em; line-height: 1.15;
     color: var(--navy);
@@ -910,7 +911,7 @@
     font-weight: 500; line-height: 1.4;
   }
   .role-dates {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--sky);
     font-weight: 500;
@@ -937,7 +938,7 @@
     .earlier-roles { grid-template-columns: 1fr; gap: 12px; }
   }
   .earlier-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.08em;
     text-transform: uppercase; color: var(--granite);
   }
@@ -954,13 +955,13 @@
     .experience-extras { grid-template-columns: 1fr; gap: 48px; }
   }
   .extras-block .extras-label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.74rem; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--sky);
     margin-bottom: 16px; display: block; font-weight: 500;
   }
   .extras-block .extras-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.25rem;
     line-height: 1.25; color: var(--navy);
     margin-bottom: 8px;
@@ -989,7 +990,7 @@
   }
   .resume-cta-text { flex: 1; min-width: 240px; }
   .resume-cta-text strong {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-weight: 700; font-size: 1.2rem;
     color: var(--navy); display: block; margin-bottom: 4px;
   }
@@ -997,9 +998,9 @@
     color: var(--granite); font-size: 0.95rem;
   }
   .resume-cta .btn-primary {
-    background: var(--gold); color: var(--navy);
+    background: var(--navy); color: var(--white);
   }
-  .resume-cta .btn-primary:hover { background: var(--navy); color: var(--white); }
+  .resume-cta .btn-primary:hover { background: var(--granite); color: var(--white); }
 
   /* ---------- CONTACT ---------- */
   .contact {
@@ -1011,7 +1012,7 @@
     font-size: clamp(2.4rem, 5vw, 4rem);
     max-width: 20ch;
   }
-  .contact .section-title em { color: var(--gold); font-style: italic; }
+  .contact .section-title em { font-style: italic; }
   .contact .lede {
     color: rgba(255, 255, 255, 0.72);
     margin: 0 auto 40px; text-align: center;
@@ -1030,8 +1031,8 @@
     transition: color 0.2s ease, border-color 0.2s ease;
   }
   .contact .skill-note a:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.6); }
-  .contact .btn-primary { background: var(--gold); color: var(--navy); }
-  .contact .btn-primary:hover { background: var(--white); }
+  .contact .btn-primary { background: var(--white); color: var(--navy); }
+  .contact .btn-primary:hover { background: var(--stone); }
   .contact .btn-secondary {
     background: transparent; color: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.28);
@@ -1135,21 +1136,6 @@
           <h3 class="work-title">Full CRE marketing library</h3>
           <p class="work-desc">For independent brokers, growing teams, brokerages, developers, sponsors, and capital partners. Offering memoranda, investor pitch decks, tour books, property fact sheets, capital markets one-pagers, and bespoke deal collateral.</p>
           <span class="work-tag">See real examples</span>
-        </div>
-      </a>
-
-      <!-- CASE 6: Serum Brand Refresh (OLANANI) -->
-      <a href="/serum-rebrand" class="work-card">
-        <div class="work-cover cover-olanani">
-          <span class="placeholder-label"></span>
-        </div>
-        <div class="work-body">
-          <div class="work-meta">
-            <span>Skincare Brand</span><span class="dot">·</span><span>Brand Refresh + Shopify</span>
-          </div>
-          <h3 class="work-title">From craft serum to retail-ready beauty brand</h3>
-          <p class="work-desc">Full brand refresh for a handcrafted skincare line — new identity, product naming, packaging design, visual system, plus an entire Shopify website built end-to-end. Took the product from homemade-looking to shelf-ready.</p>
-          <span class="work-tag">See the before &amp; after</span>
         </div>
       </a>
 
@@ -1267,6 +1253,21 @@
           <h3 class="work-title">Writing samples — deal announcements, press releases, marketing copy</h3>
           <p class="work-desc">A working sample of how I write for commercial real estate finance and brand campaigns, from short deal-announcement emails to longer press releases.</p>
           <span class="work-tag">Read the samples</span>
+        </div>
+      </a>
+
+      <!-- CASE 6: Serum Brand Refresh (OLANANI) -->
+      <a href="/serum-rebrand" class="work-card">
+        <div class="work-cover cover-olanani">
+          <span class="placeholder-label"></span>
+        </div>
+        <div class="work-body">
+          <div class="work-meta">
+            <span>Skincare Brand</span><span class="dot">·</span><span>Brand Refresh + Shopify</span>
+          </div>
+          <h3 class="work-title">From craft serum to retail-ready beauty brand</h3>
+          <p class="work-desc">Full brand refresh for a handcrafted skincare line — new identity, product naming, packaging design, visual system, plus an entire Shopify website built end-to-end. Took the product from homemade-looking to shelf-ready.</p>
+          <span class="work-tag">See the before &amp; after</span>
         </div>
       </a>
 
@@ -1473,7 +1474,7 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="contact">
   <div class="wrap">
-    <span class="eyebrow mono" style="color:var(--rust-soft);">Let's work together</span>
+    <span class="eyebrow mono" style="color:rgba(255,255,255,0.68);">Let's work together</span>
     <h2 class="section-title display">Have a project? <em>Let's talk</em>.</h2>
     <div class="contact-actions">
       <a href="mailto:juliechasen@gmail.com" class="btn btn-primary">juliechasen@gmail.com <span class="btn-arrow">→</span></a>
